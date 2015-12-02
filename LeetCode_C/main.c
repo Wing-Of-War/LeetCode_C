@@ -9,11 +9,13 @@
 #include <stdio.h>
 #include "add-two-numbers.h"
 #include "linked-list.h"
+#include "two-sum.h"
 
 int main(int argc, const char * argv[]) {
     
 //    linklist_test();
 
-    testAddTowNumber();
+//    testAddTowNumber();
+    testTwoSum();
     return 0;
 }

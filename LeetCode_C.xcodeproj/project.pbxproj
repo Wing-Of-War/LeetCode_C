@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */; settings = {ASSET_TAGS = (); }; };
-		4EC4C2B71C0DED73001CE3BA /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B51C0DED73001CE3BA /* linked-list.c */; settings = {ASSET_TAGS = (); }; };
+		2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */ = {isa = PBXBuildFile; fileRef = 2857A9911C0EA1AE00B5F475 /* two-sum.c */; };
+		4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */; };
+		4EC4C2B71C0DED73001CE3BA /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B51C0DED73001CE3BA /* linked-list.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2857A9911C0EA1AE00B5F475 /* two-sum.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "two-sum.c"; sourceTree = "<group>"; };
+		2857A9921C0EA1AE00B5F475 /* two-sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "two-sum.h"; sourceTree = "<group>"; };
 		4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
 		4EC4C2B11C0DE56D001CE3BA /* add-two-numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "add-two-numbers.h"; sourceTree = "<group>"; };
 		4EC4C2B51C0DED73001CE3BA /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
@@ -49,6 +52,8 @@
 			children = (
 				4EC4C2B11C0DE56D001CE3BA /* add-two-numbers.h */,
 				4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */,
+				2857A9921C0EA1AE00B5F475 /* two-sum.h */,
+				2857A9911C0EA1AE00B5F475 /* two-sum.c */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			files = (
 				4EC4C2B71C0DED73001CE3BA /* linked-list.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
+				2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */,
 				4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
