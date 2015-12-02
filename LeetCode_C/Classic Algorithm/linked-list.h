@@ -23,6 +23,8 @@ linknodep insert_head(linknodep, linknodep);
 linknodep insert_tail(linknodep, linknodep);
 linknodep insert_local(linknodep, linknodep, int);
 
+linknodep delnode(linknodep, int);
+
 void output(linknodep head);
 int size_of_linknode(linknodep head);
 #endif /* linked_list_h */

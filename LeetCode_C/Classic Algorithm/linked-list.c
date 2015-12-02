@@ -53,6 +53,45 @@ void linklist_test(void) {
         output(node);
     }
     
+    int data = 0;
+    printf("pls input need del data");
+    scanf("%d", &data);
+    linknodep temp = delnode(node, data);
+    if (temp) {
+        output(temp);
+    } else {
+        
+    }
+    
+    
+}
+
+linknodep delnode(linknodep head, int data) {
+    if (head == NULL) {
+        return NULL;
+    }
+    linknodep temp = head;
+    if (temp->data == data) {
+        head = head->next;
+        free(temp);
+        return head;
+    }
+
+    linknodep pre = temp;
+    //find the location of data.
+    while (temp && temp->data != data) {
+        pre = temp;
+        temp = temp->next;
+    }
+    
+    if (temp==NULL) {
+        return NULL;
+    }
+    
+    pre->next = temp->next;
+    free(temp);
+    
+    return head;
 }
 
 void output(linknodep head) {

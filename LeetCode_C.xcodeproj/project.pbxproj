@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */ = {isa = PBXBuildFile; fileRef = 2857A9911C0EA1AE00B5F475 /* two-sum.c */; };
+		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */; };
-		4EC4C2B71C0DED73001CE3BA /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B51C0DED73001CE3BA /* linked-list.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -28,10 +28,10 @@
 /* Begin PBXFileReference section */
 		2857A9911C0EA1AE00B5F475 /* two-sum.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "two-sum.c"; sourceTree = "<group>"; };
 		2857A9921C0EA1AE00B5F475 /* two-sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "two-sum.h"; sourceTree = "<group>"; };
+		28E980071C0EB3DB00D408F6 /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
+		28E980081C0EB3DB00D408F6 /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
 		4EC4C2B11C0DE56D001CE3BA /* add-two-numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "add-two-numbers.h"; sourceTree = "<group>"; };
-		4EC4C2B51C0DED73001CE3BA /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
-		4EC4C2B61C0DED73001CE3BA /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4EE440FD1C097D8700F9088E /* LeetCode_C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode_C; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE441001C097D8700F9088E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28E980061C0EB3DB00D408F6 /* Classic Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				28E980071C0EB3DB00D408F6 /* linked-list.c */,
+				28E980081C0EB3DB00D408F6 /* linked-list.h */,
+			);
+			path = "Classic Algorithm";
+			sourceTree = "<group>";
+		};
 		4EC4C2A91C0DE518001CE3BA /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +65,6 @@
 				2857A9911C0EA1AE00B5F475 /* two-sum.c */,
 			);
 			path = Leetcode;
-			sourceTree = "<group>";
-		};
-		4EC4C2B41C0DED4A001CE3BA /* Classic Algorithm 163 */ = {
-			isa = PBXGroup;
-			children = (
-				4EC4C2B51C0DED73001CE3BA /* linked-list.c */,
-				4EC4C2B61C0DED73001CE3BA /* linked-list.h */,
-			);
-			path = "Classic Algorithm 163";
 			sourceTree = "<group>";
 		};
 		4EE440F41C097D8700F9088E = {
@@ -86,7 +86,7 @@
 		4EE440FF1C097D8700F9088E /* LeetCode_C */ = {
 			isa = PBXGroup;
 			children = (
-				4EC4C2B41C0DED4A001CE3BA /* Classic Algorithm 163 */,
+				28E980061C0EB3DB00D408F6 /* Classic Algorithm */,
 				4EC4C2A91C0DE518001CE3BA /* Leetcode */,
 				4EE441001C097D8700F9088E /* main.c */,
 			);
@@ -149,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EC4C2B71C0DED73001CE3BA /* linked-list.c in Sources */,
+				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */,
 				4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */,

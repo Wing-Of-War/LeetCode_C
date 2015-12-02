@@ -13,9 +13,9 @@
 
 int main(int argc, const char * argv[]) {
     
-//    linklist_test();
+    linklist_test();
 
 //    testAddTowNumber();
-    testTwoSum();
+//    testTwoSum();
     return 0;
 }
