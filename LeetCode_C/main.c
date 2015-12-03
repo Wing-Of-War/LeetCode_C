@@ -7,14 +7,21 @@
 //
 
 #include <stdio.h>
-#include "add-two-numbers.h"
+
 #include "linked-list.h"
+
+#pragma mark - Leetcode
+#include "zigzag-conversion.h"
 #include "two-sum.h"
+#include "add-two-numbers.h"
 
 int main(int argc, const char * argv[]) {
     
-    linklist_test();
+//    linklist_test();
 
+    
+#pragma mark - Leetcode
+    testZigzag();
 //    testAddTowNumber();
 //    testTwoSum();
     return 0;

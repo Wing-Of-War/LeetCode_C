@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */ = {isa = PBXBuildFile; fileRef = 2857A9911C0EA1AE00B5F475 /* two-sum.c */; };
+		28D55A3F1C10000400212D3C /* zigzag-conversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 28D55A3D1C10000400212D3C /* zigzag-conversion.c */; };
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		2857A9911C0EA1AE00B5F475 /* two-sum.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "two-sum.c"; sourceTree = "<group>"; };
 		2857A9921C0EA1AE00B5F475 /* two-sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "two-sum.h"; sourceTree = "<group>"; };
+		28D55A3D1C10000400212D3C /* zigzag-conversion.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "zigzag-conversion.c"; sourceTree = "<group>"; };
+		28D55A3E1C10000400212D3C /* zigzag-conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zigzag-conversion.h"; sourceTree = "<group>"; };
 		28E980071C0EB3DB00D408F6 /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
 		28E980081C0EB3DB00D408F6 /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */,
 				2857A9921C0EA1AE00B5F475 /* two-sum.h */,
 				2857A9911C0EA1AE00B5F475 /* two-sum.c */,
+				28D55A3D1C10000400212D3C /* zigzag-conversion.c */,
+				28D55A3E1C10000400212D3C /* zigzag-conversion.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */,
 				4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */,
+				28D55A3F1C10000400212D3C /* zigzag-conversion.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
