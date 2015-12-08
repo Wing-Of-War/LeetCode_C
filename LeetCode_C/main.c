@@ -15,14 +15,18 @@
 #include "two-sum.h"
 #include "add-two-numbers.h"
 
+//#include "median-of-two-sorted-arrays.h"
+
 int main(int argc, const char * argv[]) {
     
 //    linklist_test();
 
     
 #pragma mark - Leetcode
-    testZigzag();
+//    testZigzag();
 //    testAddTowNumber();
 //    testTwoSum();
+    sortedArray(10);
+    
     return 0;
 }

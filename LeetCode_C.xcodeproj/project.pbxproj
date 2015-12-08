@@ -11,6 +11,8 @@
 		28D55A3F1C10000400212D3C /* zigzag-conversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 28D55A3D1C10000400212D3C /* zigzag-conversion.c */; };
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */; };
+		4ED5B4A01C172A0200787711 /* median-of-two-sorted-arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B49E1C172A0200787711 /* median-of-two-sorted-arrays.c */; settings = {ASSET_TAGS = (); }; };
+		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; settings = {ASSET_TAGS = (); }; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,11 @@
 		28E980081C0EB3DB00D408F6 /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
 		4EC4C2B11C0DE56D001CE3BA /* add-two-numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "add-two-numbers.h"; sourceTree = "<group>"; };
+		4ED5B49E1C172A0200787711 /* median-of-two-sorted-arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "median-of-two-sorted-arrays.c"; sourceTree = "<group>"; };
+		4ED5B49F1C172A0200787711 /* median-of-two-sorted-arrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "median-of-two-sorted-arrays.h"; sourceTree = "<group>"; };
+		4ED5B4A21C1730D100787711 /* PublicUtilize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicUtilize.h; sourceTree = "<group>"; };
+		4ED5B4A31C1730E500787711 /* NumberArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NumberArray.c; sourceTree = "<group>"; };
+		4ED5B4A41C1730E500787711 /* NumberArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberArray.h; sourceTree = "<group>"; };
 		4EE440FD1C097D8700F9088E /* LeetCode_C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode_C; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE441001C097D8700F9088E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,8 +75,20 @@
 				2857A9911C0EA1AE00B5F475 /* two-sum.c */,
 				28D55A3D1C10000400212D3C /* zigzag-conversion.c */,
 				28D55A3E1C10000400212D3C /* zigzag-conversion.h */,
+				4ED5B49E1C172A0200787711 /* median-of-two-sorted-arrays.c */,
+				4ED5B49F1C172A0200787711 /* median-of-two-sorted-arrays.h */,
 			);
 			path = Leetcode;
+			sourceTree = "<group>";
+		};
+		4ED5B4A11C1730BF00787711 /* PublicUtilize */ = {
+			isa = PBXGroup;
+			children = (
+				4ED5B4A21C1730D100787711 /* PublicUtilize.h */,
+				4ED5B4A31C1730E500787711 /* NumberArray.c */,
+				4ED5B4A41C1730E500787711 /* NumberArray.h */,
+			);
+			path = PublicUtilize;
 			sourceTree = "<group>";
 		};
 		4EE440F41C097D8700F9088E = {
@@ -91,6 +110,7 @@
 		4EE440FF1C097D8700F9088E /* LeetCode_C */ = {
 			isa = PBXGroup;
 			children = (
+				4ED5B4A11C1730BF00787711 /* PublicUtilize */,
 				28E980061C0EB3DB00D408F6 /* Classic Algorithm */,
 				4EC4C2A91C0DE518001CE3BA /* Leetcode */,
 				4EE441001C097D8700F9088E /* main.c */,
@@ -154,6 +174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */,
+				4ED5B4A01C172A0200787711 /* median-of-two-sorted-arrays.c in Sources */,
 				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */,
