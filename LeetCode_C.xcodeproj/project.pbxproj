@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */ = {isa = PBXBuildFile; fileRef = 2857A9911C0EA1AE00B5F475 /* two-sum.c */; };
+		28748CC81C17F29800B86046 /* longest-substring-without-repeating-characters.c in Sources */ = {isa = PBXBuildFile; fileRef = 28748CC61C17F29800B86046 /* longest-substring-without-repeating-characters.c */; };
 		28D55A3F1C10000400212D3C /* zigzag-conversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 28D55A3D1C10000400212D3C /* zigzag-conversion.c */; };
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */; };
-		4ED5B4A01C172A0200787711 /* median-of-two-sorted-arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B49E1C172A0200787711 /* median-of-two-sorted-arrays.c */; settings = {ASSET_TAGS = (); }; };
-		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; settings = {ASSET_TAGS = (); }; };
+		4ED5B4A01C172A0200787711 /* median-of-two-sorted-arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B49E1C172A0200787711 /* median-of-two-sorted-arrays.c */; };
+		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		2857A9911C0EA1AE00B5F475 /* two-sum.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "two-sum.c"; sourceTree = "<group>"; };
 		2857A9921C0EA1AE00B5F475 /* two-sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "two-sum.h"; sourceTree = "<group>"; };
+		28748CC61C17F29800B86046 /* longest-substring-without-repeating-characters.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "longest-substring-without-repeating-characters.c"; sourceTree = "<group>"; };
+		28748CC71C17F29800B86046 /* longest-substring-without-repeating-characters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "longest-substring-without-repeating-characters.h"; sourceTree = "<group>"; };
 		28D55A3D1C10000400212D3C /* zigzag-conversion.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "zigzag-conversion.c"; sourceTree = "<group>"; };
 		28D55A3E1C10000400212D3C /* zigzag-conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zigzag-conversion.h"; sourceTree = "<group>"; };
 		28E980071C0EB3DB00D408F6 /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				28D55A3E1C10000400212D3C /* zigzag-conversion.h */,
 				4ED5B49E1C172A0200787711 /* median-of-two-sorted-arrays.c */,
 				4ED5B49F1C172A0200787711 /* median-of-two-sorted-arrays.h */,
+				28748CC61C17F29800B86046 /* longest-substring-without-repeating-characters.c */,
+				28748CC71C17F29800B86046 /* longest-substring-without-repeating-characters.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */,
+				28748CC81C17F29800B86046 /* longest-substring-without-repeating-characters.c in Sources */,
 				4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */,
 				28D55A3F1C10000400212D3C /* zigzag-conversion.c in Sources */,
 			);
