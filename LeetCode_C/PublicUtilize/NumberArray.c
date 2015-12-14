@@ -20,9 +20,26 @@ int * sortedArray(int size) {
         }while(value < lastValue);
         result[i] = value;
         lastValue = value;
-        printf("%d", value);
-        putchar(' ');
     }
     
     return result;
+}
+
+
+int * randomArray(int size) {
+    int * result = (int *)malloc(sizeof(int) * size);
+    for(int i=0; i<size; i++) {
+        int value = arc4random() % 100;
+        result[i] = value;
+    }
+    return result;
+}
+
+
+
+
+void outputArray(int *input, int size) {
+    putchar('\n');
+    for(int i=0;i<size;i++)
+        printf("%d ",input[i]);
 }

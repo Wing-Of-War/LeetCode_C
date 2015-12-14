@@ -13,4 +13,8 @@
 
 int * sortedArray(int size);
 
+int * randomArray(int size);
+
+void outputArray(int *, int size);
+
 #endif /* NumberArray_h */

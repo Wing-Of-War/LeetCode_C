@@ -12,6 +12,9 @@
 		28D55A3F1C10000400212D3C /* zigzag-conversion.c in Sources */ = {isa = PBXBuildFile; fileRef = 28D55A3D1C10000400212D3C /* zigzag-conversion.c */; };
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4E230CE31C1F1E1F0079B81F /* nim-game.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE11C1F1E1F0079B81F /* nim-game.c */; settings = {ASSET_TAGS = (); }; };
+		4E230CE61C1F71710079B81F /* move-zeroes.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE41C1F71710079B81F /* move-zeroes.c */; settings = {ASSET_TAGS = (); }; };
+		4E230CE91C1F78DB0079B81F /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE71C1F78DB0079B81F /* Tree.c */; settings = {ASSET_TAGS = (); }; };
+		4E230CEC1C1F7A7B0079B81F /* invert-binary-tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CEA1C1F7A7B0079B81F /* invert-binary-tree.c */; settings = {ASSET_TAGS = (); }; };
 		4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */; };
 		4ED5B4A01C172A0200787711 /* median-of-two-sorted-arrays.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B49E1C172A0200787711 /* median-of-two-sorted-arrays.c */; };
 		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; };
@@ -41,6 +44,12 @@
 		28E980081C0EB3DB00D408F6 /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4E230CE11C1F1E1F0079B81F /* nim-game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "nim-game.c"; sourceTree = "<group>"; };
 		4E230CE21C1F1E1F0079B81F /* nim-game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nim-game.h"; sourceTree = "<group>"; };
+		4E230CE41C1F71710079B81F /* move-zeroes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "move-zeroes.c"; sourceTree = "<group>"; };
+		4E230CE51C1F71710079B81F /* move-zeroes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "move-zeroes.h"; sourceTree = "<group>"; };
+		4E230CE71C1F78DB0079B81F /* Tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Tree.c; sourceTree = "<group>"; };
+		4E230CE81C1F78DB0079B81F /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		4E230CEA1C1F7A7B0079B81F /* invert-binary-tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "invert-binary-tree.c"; sourceTree = "<group>"; };
+		4E230CEB1C1F7A7B0079B81F /* invert-binary-tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "invert-binary-tree.h"; sourceTree = "<group>"; };
 		4EC4C2B01C0DE56D001CE3BA /* add-two-numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
 		4EC4C2B11C0DE56D001CE3BA /* add-two-numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "add-two-numbers.h"; sourceTree = "<group>"; };
 		4ED5B49E1C172A0200787711 /* median-of-two-sorted-arrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "median-of-two-sorted-arrays.c"; sourceTree = "<group>"; };
@@ -87,6 +96,10 @@
 				4E230CE21C1F1E1F0079B81F /* nim-game.h */,
 				28748CC61C17F29800B86046 /* longest-substring-without-repeating-characters.c */,
 				28748CC71C17F29800B86046 /* longest-substring-without-repeating-characters.h */,
+				4E230CE41C1F71710079B81F /* move-zeroes.c */,
+				4E230CE51C1F71710079B81F /* move-zeroes.h */,
+				4E230CEA1C1F7A7B0079B81F /* invert-binary-tree.c */,
+				4E230CEB1C1F7A7B0079B81F /* invert-binary-tree.h */,
 			);
 			path = Leetcode;
 			sourceTree = "<group>";
@@ -97,6 +110,8 @@
 				4ED5B4A21C1730D100787711 /* PublicUtilize.h */,
 				4ED5B4A31C1730E500787711 /* NumberArray.c */,
 				4ED5B4A41C1730E500787711 /* NumberArray.h */,
+				4E230CE71C1F78DB0079B81F /* Tree.c */,
+				4E230CE81C1F78DB0079B81F /* Tree.h */,
 			);
 			path = PublicUtilize;
 			sourceTree = "<group>";
@@ -184,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E230CE61C1F71710079B81F /* move-zeroes.c in Sources */,
 				4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */,
 				4ED5B4A01C172A0200787711 /* median-of-two-sorted-arrays.c in Sources */,
 				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
@@ -191,6 +207,8 @@
 				2857A9931C0EA1AE00B5F475 /* two-sum.c in Sources */,
 				28748CC81C17F29800B86046 /* longest-substring-without-repeating-characters.c in Sources */,
 				4EC4C2B21C0DE56D001CE3BA /* add-two-numbers.c in Sources */,
+				4E230CEC1C1F7A7B0079B81F /* invert-binary-tree.c in Sources */,
+				4E230CE91C1F78DB0079B81F /* Tree.c in Sources */,
 				4E230CE31C1F1E1F0079B81F /* nim-game.c in Sources */,
 				28D55A3F1C10000400212D3C /* zigzag-conversion.c in Sources */,
 			);
