@@ -16,24 +16,31 @@
 #include "add-two-numbers.h"
 #include "longest-substring-without-repeating-characters.h"
 
+#include "string.h"
 //#include "median-of-two-sorted-arrays.h"
 #include "move-zeroes.h"
 int main(int argc, const char * argv[]) {
     
-//    linklist_test();
-
+    //    linklist_test();
+    
     
 #pragma mark - Leetcode
-//    testZigzag();
-//    testAddTowNumber();
-//    testTwoSum();
-//    sortedArray(10);
+    //    testZigzag();
+    //    testAddTowNumber();
+    //    testTwoSum();
+    //    sortedArray(10);
     
     
     
     
     
-    moveZeroesTest();
+    //    moveZeroesTest();
+    
+    //    char *s = "anagram";
+    //    char *t = "nagaram";
+    //    char *s = "rat";
+    //    char *t = "car";
+    
     
     return 0;
 }
