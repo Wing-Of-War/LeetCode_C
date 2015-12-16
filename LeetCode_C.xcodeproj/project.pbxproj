@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2894CCCE1C21C0670038C5C4 /* excel-sheet-column-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 2894CCCC1C21C0670038C5C4 /* excel-sheet-column-number.c */; };
+		2894CCD11C21C0A10038C5C4 /* excel-sheet-column-title.c in Sources */ = {isa = PBXBuildFile; fileRef = 2894CCCF1C21C0A10038C5C4 /* excel-sheet-column-title.c */; };
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
-		4E230CE91C1F78DB0079B81F /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE71C1F78DB0079B81F /* Tree.c */; settings = {ASSET_TAGS = (); }; };
+		4E230CE91C1F78DB0079B81F /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE71C1F78DB0079B81F /* Tree.c */; };
 		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2894CCCC1C21C0670038C5C4 /* excel-sheet-column-number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "excel-sheet-column-number.c"; sourceTree = "<group>"; };
+		2894CCCD1C21C0670038C5C4 /* excel-sheet-column-number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "excel-sheet-column-number.h"; sourceTree = "<group>"; };
+		2894CCCF1C21C0A10038C5C4 /* excel-sheet-column-title.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "excel-sheet-column-title.c"; sourceTree = "<group>"; };
+		2894CCD01C21C0A10038C5C4 /* excel-sheet-column-title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "excel-sheet-column-title.h"; sourceTree = "<group>"; };
 		28E980071C0EB3DB00D408F6 /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
 		28E980081C0EB3DB00D408F6 /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4E230CE71C1F78DB0079B81F /* Tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Tree.c; sourceTree = "<group>"; };
@@ -98,6 +104,10 @@
 				4E230D041C1F8E0A0079B81F /* power-of-two.h */,
 				4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */,
 				4E230D061C1F8E0A0079B81F /* zigzag-conversion.h */,
+				2894CCCC1C21C0670038C5C4 /* excel-sheet-column-number.c */,
+				2894CCCD1C21C0670038C5C4 /* excel-sheet-column-number.h */,
+				2894CCCF1C21C0A10038C5C4 /* excel-sheet-column-title.c */,
+				2894CCD01C21C0A10038C5C4 /* excel-sheet-column-title.h */,
 			);
 			path = "Leetcode-Easy";
 			sourceTree = "<group>";
@@ -213,8 +223,10 @@
 			files = (
 				4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */,
 				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
+				2894CCD11C21C0A10038C5C4 /* excel-sheet-column-title.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				4E230CE91C1F78DB0079B81F /* Tree.c in Sources */,
+				2894CCCE1C21C0670038C5C4 /* excel-sheet-column-number.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
