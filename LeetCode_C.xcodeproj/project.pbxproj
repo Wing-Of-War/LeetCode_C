@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4E230CE91C1F78DB0079B81F /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE71C1F78DB0079B81F /* Tree.c */; settings = {ASSET_TAGS = (); }; };
+		4E230D101C1F8E550079B81F /* power-of-two.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D0E1C1F8E550079B81F /* power-of-two.c */; settings = {ASSET_TAGS = (); }; };
+		4E230D131C1F90A30079B81F /* ugly-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D111C1F90A30079B81F /* ugly-number.c */; settings = {ASSET_TAGS = (); }; };
+		4E230D161C1F97E70079B81F /* excel-sheet-column-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */; settings = {ASSET_TAGS = (); }; };
+		4E230D191C1F98130079B81F /* excel-sheet-column-title.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D171C1F98130079B81F /* excel-sheet-column-title.c */; settings = {ASSET_TAGS = (); }; };
 		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
 /* End PBXBuildFile section */
@@ -42,8 +46,6 @@
 		4E230D001C1F8E0A0079B81F /* nim-game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nim-game.h"; sourceTree = "<group>"; };
 		4E230D011C1F8E0A0079B81F /* number-of-1-bits.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "number-of-1-bits.c"; sourceTree = "<group>"; };
 		4E230D021C1F8E0A0079B81F /* number-of-1-bits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "number-of-1-bits.h"; sourceTree = "<group>"; };
-		4E230D031C1F8E0A0079B81F /* power-of-two.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "power-of-two.c"; sourceTree = "<group>"; };
-		4E230D041C1F8E0A0079B81F /* power-of-two.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "power-of-two.h"; sourceTree = "<group>"; };
 		4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "zigzag-conversion.c"; sourceTree = "<group>"; };
 		4E230D061C1F8E0A0079B81F /* zigzag-conversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zigzag-conversion.h"; sourceTree = "<group>"; };
 		4E230D081C1F8E0A0079B81F /* add-two-numbers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 		4E230D0B1C1F8E0A0079B81F /* longest-substring-without-repeating-characters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "longest-substring-without-repeating-characters.h"; sourceTree = "<group>"; };
 		4E230D0C1C1F8E0A0079B81F /* two-sum.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "two-sum.c"; sourceTree = "<group>"; };
 		4E230D0D1C1F8E0A0079B81F /* two-sum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "two-sum.h"; sourceTree = "<group>"; };
+		4E230D0E1C1F8E550079B81F /* power-of-two.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "power-of-two.c"; sourceTree = "<group>"; };
+		4E230D0F1C1F8E550079B81F /* power-of-two.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "power-of-two.h"; sourceTree = "<group>"; };
+		4E230D111C1F90A30079B81F /* ugly-number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ugly-number.c"; sourceTree = "<group>"; };
+		4E230D121C1F90A30079B81F /* ugly-number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ugly-number.h"; sourceTree = "<group>"; };
+		4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "excel-sheet-column-number.c"; sourceTree = "<group>"; };
+		4E230D151C1F97E70079B81F /* excel-sheet-column-number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "excel-sheet-column-number.h"; sourceTree = "<group>"; };
+		4E230D171C1F98130079B81F /* excel-sheet-column-title.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "excel-sheet-column-title.c"; sourceTree = "<group>"; };
+		4E230D181C1F98130079B81F /* excel-sheet-column-title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "excel-sheet-column-title.h"; sourceTree = "<group>"; };
 		4ED5B4A21C1730D100787711 /* PublicUtilize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicUtilize.h; sourceTree = "<group>"; };
 		4ED5B4A31C1730E500787711 /* NumberArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NumberArray.c; sourceTree = "<group>"; };
 		4ED5B4A41C1730E500787711 /* NumberArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberArray.h; sourceTree = "<group>"; };
@@ -94,10 +104,16 @@
 				4E230D001C1F8E0A0079B81F /* nim-game.h */,
 				4E230D011C1F8E0A0079B81F /* number-of-1-bits.c */,
 				4E230D021C1F8E0A0079B81F /* number-of-1-bits.h */,
-				4E230D031C1F8E0A0079B81F /* power-of-two.c */,
-				4E230D041C1F8E0A0079B81F /* power-of-two.h */,
 				4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */,
 				4E230D061C1F8E0A0079B81F /* zigzag-conversion.h */,
+				4E230D0E1C1F8E550079B81F /* power-of-two.c */,
+				4E230D0F1C1F8E550079B81F /* power-of-two.h */,
+				4E230D111C1F90A30079B81F /* ugly-number.c */,
+				4E230D121C1F90A30079B81F /* ugly-number.h */,
+				4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */,
+				4E230D151C1F97E70079B81F /* excel-sheet-column-number.h */,
+				4E230D171C1F98130079B81F /* excel-sheet-column-title.c */,
+				4E230D181C1F98130079B81F /* excel-sheet-column-title.h */,
 			);
 			path = "Leetcode-Easy";
 			sourceTree = "<group>";
@@ -212,8 +228,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */,
+				4E230D131C1F90A30079B81F /* ugly-number.c in Sources */,
 				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
+				4E230D161C1F97E70079B81F /* excel-sheet-column-number.c in Sources */,
+				4E230D191C1F98130079B81F /* excel-sheet-column-title.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
+				4E230D101C1F8E550079B81F /* power-of-two.c in Sources */,
 				4E230CE91C1F78DB0079B81F /* Tree.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
