@@ -20,48 +20,14 @@
 //#include "median-of-two-sorted-arrays.h"
 #include "move-zeroes.h"
 
+#include "valid-anagram.h"
 
-
-bool isAnagram(char* s, char* t) {
-    if (s == NULL && t == NULL ){
-        return true;
-    }
-    
-    size_t l1 = strlen(s);
-    size_t l2 = strlen(t);
-    
-    if (l1 == 0 && l2 == 0) {
-        return true;
-    }
-    if (l1 != l2) {
-        return false;
-    }
-    char result[l1];
-    for (int i = 0 ; i < l1; i++) {
-        for (int j = 0; j < l2; j++) {
-            if (s[i] == t[j]) {
-                result[j] = '1';
-                break;
-            }
-        }
-    }
-    
-    for (int i = 0; i < l2; i++) {
-        if (result[i] != '1') {
-            return false;
-        }
-    }
-    
-    return true;
-}
+#include "compare-version-numbers.h"
 
 int main(int argc, const char * argv[]) {
     
-    //    linklist_test();
-    char *s = "anagram";
-    char *t = "nagaram";
     
-    isAnagram(s, t);
+    
     
 #pragma mark - Leetcode
     //    testZigzag();
@@ -69,7 +35,7 @@ int main(int argc, const char * argv[]) {
     //    testTwoSum();
     //    sortedArray(10);
     
-    
+//    testAnagram();
     
     
     
@@ -79,7 +45,7 @@ int main(int argc, const char * argv[]) {
     //    char *t = "nagaram";
     //    char *s = "rat";
     //    char *t = "car";
-    
+    testCompareVersion();
     
     return 0;
 }
