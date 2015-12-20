@@ -25,6 +25,8 @@
 #include "compare-version-numbers.h"
 
 #include "lowest-common-ancestor-of-a-binary-search-tree.h"
+#include "reverse-linked-list.h"
+
 
 int countPrimes(int n) {
     if (n == 1) {
@@ -64,6 +66,8 @@ int main(int argc, const char * argv[]) {
     //    char *s = "rat";
     //    char *t = "car";
 //    testCompareVersion();
-    testLowestCommonAncestor();
+//    testLowestCommonAncestor();
+    
+    testReverseList();
     return 0;
 }
