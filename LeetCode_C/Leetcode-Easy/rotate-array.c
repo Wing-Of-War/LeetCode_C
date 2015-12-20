@@ -13,8 +13,5 @@ void testRotate(void) {
 }
 
 void rotate(int* nums, int numsSize, int k) {
-    if (k == 0) {
-        return;
-    }
-    int nums2[numsSize] = {0}
+
 }

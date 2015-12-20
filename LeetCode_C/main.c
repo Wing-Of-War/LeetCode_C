@@ -24,6 +24,24 @@
 
 #include "compare-version-numbers.h"
 
+#include "lowest-common-ancestor-of-a-binary-search-tree.h"
+
+int countPrimes(int n) {
+    if (n == 1) {
+        return 0;
+    }
+    if (n <= 3) {
+        return 1;
+    }
+    return 0;
+}
+
+int majorityElement(int* nums, int numsSize) {
+    
+    
+    return 0;
+}
+
 int main(int argc, const char * argv[]) {
     
     
@@ -45,7 +63,7 @@ int main(int argc, const char * argv[]) {
     //    char *t = "nagaram";
     //    char *s = "rat";
     //    char *t = "car";
-    testCompareVersion();
-    
+//    testCompareVersion();
+    testLowestCommonAncestor();
     return 0;
 }
