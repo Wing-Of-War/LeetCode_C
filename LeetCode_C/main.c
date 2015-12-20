@@ -26,7 +26,9 @@
 
 #include "lowest-common-ancestor-of-a-binary-search-tree.h"
 #include "reverse-linked-list.h"
+#include "remove-duplicates-from-sorted-list.h"
 
+#include "climbing-stairs.h"
 
 int countPrimes(int n) {
     if (n == 1) {
@@ -43,6 +45,8 @@ int majorityElement(int* nums, int numsSize) {
     
     return 0;
 }
+
+
 
 int main(int argc, const char * argv[]) {
     
@@ -68,6 +72,8 @@ int main(int argc, const char * argv[]) {
 //    testCompareVersion();
 //    testLowestCommonAncestor();
     
-    testReverseList();
+//    testReverseList();
+//    testDeleteDuplicates();
+
     return 0;
 }
