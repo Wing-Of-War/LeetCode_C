@@ -27,6 +27,7 @@
 #include "lowest-common-ancestor-of-a-binary-search-tree.h"
 #include "reverse-linked-list.h"
 #include "remove-duplicates-from-sorted-list.h"
+#include "merge-two-sorted-lists.h"
 
 #include "climbing-stairs.h"
 
@@ -74,6 +75,7 @@ int main(int argc, const char * argv[]) {
     
 //    testReverseList();
 //    testDeleteDuplicates();
-
+    testMergeTwoLists();
+    
     return 0;
 }

@@ -21,6 +21,7 @@
 		4E9BF4481C2678D8002260D6 /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4461C2678D8002260D6 /* LinkedList.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF44B1C2698DF002260D6 /* remove-duplicates-from-sorted-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4491C2698DF002260D6 /* remove-duplicates-from-sorted-list.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF44F1C26ABE0002260D6 /* climbing-stairs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF44D1C26ABE0002260D6 /* climbing-stairs.c */; settings = {ASSET_TAGS = (); }; };
+		4E9BF4521C26AE00002260D6 /* merge-two-sorted-lists.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */; settings = {ASSET_TAGS = (); }; };
 		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,8 @@
 		4E9BF44A1C2698DF002260D6 /* remove-duplicates-from-sorted-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "remove-duplicates-from-sorted-list.h"; sourceTree = "<group>"; };
 		4E9BF44D1C26ABE0002260D6 /* climbing-stairs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "climbing-stairs.c"; sourceTree = "<group>"; };
 		4E9BF44E1C26ABE0002260D6 /* climbing-stairs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "climbing-stairs.h"; sourceTree = "<group>"; };
+		4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "merge-two-sorted-lists.c"; sourceTree = "<group>"; };
+		4E9BF4511C26AE00002260D6 /* merge-two-sorted-lists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "merge-two-sorted-lists.h"; sourceTree = "<group>"; };
 		4ED5B4A21C1730D100787711 /* PublicUtilize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicUtilize.h; sourceTree = "<group>"; };
 		4ED5B4A31C1730E500787711 /* NumberArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NumberArray.c; sourceTree = "<group>"; };
 		4ED5B4A41C1730E500787711 /* NumberArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberArray.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				4E9BF44A1C2698DF002260D6 /* remove-duplicates-from-sorted-list.h */,
 				4E9BF44D1C26ABE0002260D6 /* climbing-stairs.c */,
 				4E9BF44E1C26ABE0002260D6 /* climbing-stairs.h */,
+				4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */,
+				4E9BF4511C26AE00002260D6 /* merge-two-sorted-lists.h */,
 			);
 			path = "Leetcode-Easy";
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			files = (
 				4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */,
 				4E9BF44B1C2698DF002260D6 /* remove-duplicates-from-sorted-list.c in Sources */,
+				4E9BF4521C26AE00002260D6 /* merge-two-sorted-lists.c in Sources */,
 				4E9BF43F1C26460A002260D6 /* rotate-array.c in Sources */,
 				4E9BF4481C2678D8002260D6 /* LinkedList.c in Sources */,
 				4E230D131C1F90A30079B81F /* ugly-number.c in Sources */,

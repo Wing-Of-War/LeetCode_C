@@ -10,13 +10,16 @@
 #define Tree_h
 
 #include <stdio.h>
+#include <stdbool.h>
 
 struct TreeNode {
     int val;
     struct TreeNode *left;
     struct TreeNode *right;
+    struct TreeNode *parent;
 };
 
 struct TreeNode * convertArrayToBinaryTree(int *input, int size);
+
 
 #endif /* Tree_h */
