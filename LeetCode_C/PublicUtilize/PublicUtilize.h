@@ -10,5 +10,7 @@
 #define PublicUtilize_h
 
 #include "NumberArray.h"
+#include "Tree.h"
+#include "LinkedList.h"
 
 #endif /* PublicUtilize_h */

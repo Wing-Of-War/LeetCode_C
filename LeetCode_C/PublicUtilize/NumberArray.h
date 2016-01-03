@@ -12,7 +12,7 @@
 
 int * sortedArray(int size);
 
-int * randomArray(int size);
+int * randomArray(int size, int factorLimit);
 
 void outputArray(int *, int size);
 

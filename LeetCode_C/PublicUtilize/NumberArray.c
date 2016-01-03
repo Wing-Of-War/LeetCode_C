@@ -27,10 +27,13 @@ int * sortedArray(int size) {
 }
 
 
-int * randomArray(int size) {
+int * randomArray(int size, int factorLimit) {
+    if (factorLimit < 2) {
+        factorLimit = 2;
+    }
     int * result = (int *)malloc(sizeof(int) * size);
     for(int i=0; i<size; i++) {
-        int value = arc4random() % 100;
+        int value = arc4random() % factorLimit;
         result[i] = value;
     }
     return result;

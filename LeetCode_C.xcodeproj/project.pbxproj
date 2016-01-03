@@ -18,6 +18,11 @@
 		4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E85EC471C30B3EF003D35B4 /* Linked List Cycle.c */; settings = {ASSET_TAGS = (); }; };
 		4E85EC4C1C30BA34003D35B4 /* Linked List Cycle II.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E85EC4A1C30BA34003D35B4 /* Linked List Cycle II.c */; settings = {ASSET_TAGS = (); }; };
 		4E94B7871C39725100095EDF /* roman-to-integer.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7851C39725100095EDF /* roman-to-integer.c */; settings = {ASSET_TAGS = (); }; };
+		4E94B78D1C398D8800095EDF /* nim-game.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B78B1C398D8800095EDF /* nim-game.c */; settings = {ASSET_TAGS = (); }; };
+		4E94B7901C398E0000095EDF /* add-digits.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B78E1C398E0000095EDF /* add-digits.c */; settings = {ASSET_TAGS = (); }; };
+		4E94B7931C398E7D00095EDF /* maximum-depth-of-binary-tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7911C398E7D00095EDF /* maximum-depth-of-binary-tree.c */; settings = {ASSET_TAGS = (); }; };
+		4E94B7961C398ECD00095EDF /* delete-node-in-a-linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7941C398ECD00095EDF /* delete-node-in-a-linked-list.c */; settings = {ASSET_TAGS = (); }; };
+		4E94B7991C398FAB00095EDF /* same-tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7971C398FAB00095EDF /* same-tree.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF4391C263535002260D6 /* valid-anagram.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4361C263219002260D6 /* valid-anagram.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF43C1C2638EC002260D6 /* compare-version-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF43A1C2638EC002260D6 /* compare-version-numbers.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF43F1C26460A002260D6 /* rotate-array.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF43D1C26460A002260D6 /* rotate-array.c */; settings = {ASSET_TAGS = (); }; };
@@ -58,8 +63,6 @@
 		4E230CFC1C1F8E0A0079B81F /* median-of-two-sorted-arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "median-of-two-sorted-arrays.h"; sourceTree = "<group>"; };
 		4E230CFD1C1F8E0A0079B81F /* move-zeroes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "move-zeroes.c"; sourceTree = "<group>"; };
 		4E230CFE1C1F8E0A0079B81F /* move-zeroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "move-zeroes.h"; sourceTree = "<group>"; };
-		4E230CFF1C1F8E0A0079B81F /* nim-game.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "nim-game.c"; sourceTree = "<group>"; };
-		4E230D001C1F8E0A0079B81F /* nim-game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nim-game.h"; sourceTree = "<group>"; };
 		4E230D011C1F8E0A0079B81F /* number-of-1-bits.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "number-of-1-bits.c"; sourceTree = "<group>"; };
 		4E230D021C1F8E0A0079B81F /* number-of-1-bits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "number-of-1-bits.h"; sourceTree = "<group>"; };
 		4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "zigzag-conversion.c"; sourceTree = "<group>"; };
@@ -88,6 +91,16 @@
 		4E85EC4B1C30BA34003D35B4 /* Linked List Cycle II.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Linked List Cycle II.h"; sourceTree = "<group>"; };
 		4E94B7851C39725100095EDF /* roman-to-integer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "roman-to-integer.c"; sourceTree = "<group>"; };
 		4E94B7861C39725100095EDF /* roman-to-integer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "roman-to-integer.h"; sourceTree = "<group>"; };
+		4E94B78B1C398D8800095EDF /* nim-game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "nim-game.c"; sourceTree = "<group>"; };
+		4E94B78C1C398D8800095EDF /* nim-game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nim-game.h"; sourceTree = "<group>"; };
+		4E94B78E1C398E0000095EDF /* add-digits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "add-digits.c"; sourceTree = "<group>"; };
+		4E94B78F1C398E0000095EDF /* add-digits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "add-digits.h"; sourceTree = "<group>"; };
+		4E94B7911C398E7D00095EDF /* maximum-depth-of-binary-tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "maximum-depth-of-binary-tree.c"; sourceTree = "<group>"; };
+		4E94B7921C398E7D00095EDF /* maximum-depth-of-binary-tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "maximum-depth-of-binary-tree.h"; sourceTree = "<group>"; };
+		4E94B7941C398ECD00095EDF /* delete-node-in-a-linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "delete-node-in-a-linked-list.c"; sourceTree = "<group>"; };
+		4E94B7951C398ECD00095EDF /* delete-node-in-a-linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "delete-node-in-a-linked-list.h"; sourceTree = "<group>"; };
+		4E94B7971C398FAB00095EDF /* same-tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "same-tree.c"; sourceTree = "<group>"; };
+		4E94B7981C398FAB00095EDF /* same-tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "same-tree.h"; sourceTree = "<group>"; };
 		4E9BF4361C263219002260D6 /* valid-anagram.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "valid-anagram.c"; sourceTree = "<group>"; };
 		4E9BF4371C263219002260D6 /* valid-anagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "valid-anagram.h"; sourceTree = "<group>"; };
 		4E9BF43A1C2638EC002260D6 /* compare-version-numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "compare-version-numbers.c"; sourceTree = "<group>"; };
@@ -148,8 +161,6 @@
 				4E230CFC1C1F8E0A0079B81F /* median-of-two-sorted-arrays.h */,
 				4E230CFD1C1F8E0A0079B81F /* move-zeroes.c */,
 				4E230CFE1C1F8E0A0079B81F /* move-zeroes.h */,
-				4E230CFF1C1F8E0A0079B81F /* nim-game.c */,
-				4E230D001C1F8E0A0079B81F /* nim-game.h */,
 				4E230D011C1F8E0A0079B81F /* number-of-1-bits.c */,
 				4E230D021C1F8E0A0079B81F /* number-of-1-bits.h */,
 				4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */,
@@ -188,6 +199,16 @@
 				4E579AE81C395B1200194C3B /* majority-element.h */,
 				4E94B7851C39725100095EDF /* roman-to-integer.c */,
 				4E94B7861C39725100095EDF /* roman-to-integer.h */,
+				4E94B78B1C398D8800095EDF /* nim-game.c */,
+				4E94B78C1C398D8800095EDF /* nim-game.h */,
+				4E94B78E1C398E0000095EDF /* add-digits.c */,
+				4E94B78F1C398E0000095EDF /* add-digits.h */,
+				4E94B7911C398E7D00095EDF /* maximum-depth-of-binary-tree.c */,
+				4E94B7921C398E7D00095EDF /* maximum-depth-of-binary-tree.h */,
+				4E94B7941C398ECD00095EDF /* delete-node-in-a-linked-list.c */,
+				4E94B7951C398ECD00095EDF /* delete-node-in-a-linked-list.h */,
+				4E94B7971C398FAB00095EDF /* same-tree.c */,
+				4E94B7981C398FAB00095EDF /* same-tree.h */,
 			);
 			path = "Leetcode-Easy";
 			sourceTree = "<group>";
@@ -213,8 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				4ED5B4A21C1730D100787711 /* PublicUtilize.h */,
-				4ED5B4A31C1730E500787711 /* NumberArray.c */,
 				4ED5B4A41C1730E500787711 /* NumberArray.h */,
+				4ED5B4A31C1730E500787711 /* NumberArray.c */,
 				4E230CE71C1F78DB0079B81F /* Tree.c */,
 				4E230CE81C1F78DB0079B81F /* Tree.h */,
 				4E9BF4461C2678D8002260D6 /* LinkedList.c */,
@@ -311,6 +332,7 @@
 				4E9BF44B1C2698DF002260D6 /* remove-duplicates-from-sorted-list.c in Sources */,
 				4E579AE61C3931E700194C3B /* remove-element.c in Sources */,
 				4EBE83921C38EBC1001C1856 /* balanced-binary-tree.c in Sources */,
+				4E94B7931C398E7D00095EDF /* maximum-depth-of-binary-tree.c in Sources */,
 				4E9BF4521C26AE00002260D6 /* merge-two-sorted-lists.c in Sources */,
 				4E9BF43F1C26460A002260D6 /* rotate-array.c in Sources */,
 				4E9BF4481C2678D8002260D6 /* LinkedList.c in Sources */,
@@ -322,6 +344,9 @@
 				4E85EC4C1C30BA34003D35B4 /* Linked List Cycle II.c in Sources */,
 				4E230D191C1F98130079B81F /* excel-sheet-column-title.c in Sources */,
 				4E230D1A1C2312B70079B81F /* excel-sheet-column-number.c in Sources */,
+				4E94B7961C398ECD00095EDF /* delete-node-in-a-linked-list.c in Sources */,
+				4E94B7991C398FAB00095EDF /* same-tree.c in Sources */,
+				4E94B78D1C398D8800095EDF /* nim-game.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */,
 				4E9BF44F1C26ABE0002260D6 /* climbing-stairs.c in Sources */,
@@ -331,6 +356,7 @@
 				4E9BF4391C263535002260D6 /* valid-anagram.c in Sources */,
 				4E9BF43C1C2638EC002260D6 /* compare-version-numbers.c in Sources */,
 				4E9BF4451C2678B1002260D6 /* reverse-linked-list.c in Sources */,
+				4E94B7901C398E0000095EDF /* add-digits.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
