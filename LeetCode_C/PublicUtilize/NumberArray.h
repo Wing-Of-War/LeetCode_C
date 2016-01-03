@@ -9,7 +9,6 @@
 #ifndef NumberArray_h
 #define NumberArray_h
 
-#include <stdio.h>
 
 int * sortedArray(int size);
 

@@ -13,8 +13,11 @@
 		4E230D131C1F90A30079B81F /* ugly-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D111C1F90A30079B81F /* ugly-number.c */; settings = {ASSET_TAGS = (); }; };
 		4E230D191C1F98130079B81F /* excel-sheet-column-title.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D171C1F98130079B81F /* excel-sheet-column-title.c */; settings = {ASSET_TAGS = (); }; };
 		4E230D1A1C2312B70079B81F /* excel-sheet-column-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */; settings = {ASSET_TAGS = (); }; };
+		4E579AE61C3931E700194C3B /* remove-element.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E579AE41C3931E700194C3B /* remove-element.c */; settings = {ASSET_TAGS = (); }; };
+		4E579AE91C395B1200194C3B /* majority-element.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E579AE71C395B1200194C3B /* majority-element.c */; settings = {ASSET_TAGS = (); }; };
 		4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E85EC471C30B3EF003D35B4 /* Linked List Cycle.c */; settings = {ASSET_TAGS = (); }; };
 		4E85EC4C1C30BA34003D35B4 /* Linked List Cycle II.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E85EC4A1C30BA34003D35B4 /* Linked List Cycle II.c */; settings = {ASSET_TAGS = (); }; };
+		4E94B7871C39725100095EDF /* roman-to-integer.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7851C39725100095EDF /* roman-to-integer.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF4391C263535002260D6 /* valid-anagram.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4361C263219002260D6 /* valid-anagram.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF43C1C2638EC002260D6 /* compare-version-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF43A1C2638EC002260D6 /* compare-version-numbers.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF43F1C26460A002260D6 /* rotate-array.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF43D1C26460A002260D6 /* rotate-array.c */; settings = {ASSET_TAGS = (); }; };
@@ -24,6 +27,8 @@
 		4E9BF44B1C2698DF002260D6 /* remove-duplicates-from-sorted-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4491C2698DF002260D6 /* remove-duplicates-from-sorted-list.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF44F1C26ABE0002260D6 /* climbing-stairs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF44D1C26ABE0002260D6 /* climbing-stairs.c */; settings = {ASSET_TAGS = (); }; };
 		4E9BF4521C26AE00002260D6 /* merge-two-sorted-lists.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */; settings = {ASSET_TAGS = (); }; };
+		4EAC84241C3833A100E9AEB4 /* implement-queue-using-stacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC84221C3833A100E9AEB4 /* implement-queue-using-stacks.c */; settings = {ASSET_TAGS = (); }; };
+		4EBE83921C38EBC1001C1856 /* balanced-binary-tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE83901C38EBC1001C1856 /* balanced-binary-tree.c */; settings = {ASSET_TAGS = (); }; };
 		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
 /* End PBXBuildFile section */
@@ -73,10 +78,16 @@
 		4E230D151C1F97E70079B81F /* excel-sheet-column-number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "excel-sheet-column-number.h"; sourceTree = "<group>"; };
 		4E230D171C1F98130079B81F /* excel-sheet-column-title.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "excel-sheet-column-title.c"; sourceTree = "<group>"; };
 		4E230D181C1F98130079B81F /* excel-sheet-column-title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "excel-sheet-column-title.h"; sourceTree = "<group>"; };
+		4E579AE41C3931E700194C3B /* remove-element.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "remove-element.c"; sourceTree = "<group>"; };
+		4E579AE51C3931E700194C3B /* remove-element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "remove-element.h"; sourceTree = "<group>"; };
+		4E579AE71C395B1200194C3B /* majority-element.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "majority-element.c"; sourceTree = "<group>"; };
+		4E579AE81C395B1200194C3B /* majority-element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "majority-element.h"; sourceTree = "<group>"; };
 		4E85EC471C30B3EF003D35B4 /* Linked List Cycle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "Linked List Cycle.c"; sourceTree = "<group>"; };
 		4E85EC481C30B3EF003D35B4 /* Linked List Cycle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Linked List Cycle.h"; sourceTree = "<group>"; };
 		4E85EC4A1C30BA34003D35B4 /* Linked List Cycle II.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "Linked List Cycle II.c"; sourceTree = "<group>"; };
 		4E85EC4B1C30BA34003D35B4 /* Linked List Cycle II.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Linked List Cycle II.h"; sourceTree = "<group>"; };
+		4E94B7851C39725100095EDF /* roman-to-integer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "roman-to-integer.c"; sourceTree = "<group>"; };
+		4E94B7861C39725100095EDF /* roman-to-integer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "roman-to-integer.h"; sourceTree = "<group>"; };
 		4E9BF4361C263219002260D6 /* valid-anagram.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "valid-anagram.c"; sourceTree = "<group>"; };
 		4E9BF4371C263219002260D6 /* valid-anagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "valid-anagram.h"; sourceTree = "<group>"; };
 		4E9BF43A1C2638EC002260D6 /* compare-version-numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "compare-version-numbers.c"; sourceTree = "<group>"; };
@@ -95,6 +106,10 @@
 		4E9BF44E1C26ABE0002260D6 /* climbing-stairs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "climbing-stairs.h"; sourceTree = "<group>"; };
 		4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "merge-two-sorted-lists.c"; sourceTree = "<group>"; };
 		4E9BF4511C26AE00002260D6 /* merge-two-sorted-lists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "merge-two-sorted-lists.h"; sourceTree = "<group>"; };
+		4EAC84221C3833A100E9AEB4 /* implement-queue-using-stacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "implement-queue-using-stacks.c"; sourceTree = "<group>"; };
+		4EAC84231C3833A100E9AEB4 /* implement-queue-using-stacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "implement-queue-using-stacks.h"; sourceTree = "<group>"; };
+		4EBE83901C38EBC1001C1856 /* balanced-binary-tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "balanced-binary-tree.c"; sourceTree = "<group>"; };
+		4EBE83911C38EBC1001C1856 /* balanced-binary-tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "balanced-binary-tree.h"; sourceTree = "<group>"; };
 		4ED5B4A21C1730D100787711 /* PublicUtilize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicUtilize.h; sourceTree = "<group>"; };
 		4ED5B4A31C1730E500787711 /* NumberArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NumberArray.c; sourceTree = "<group>"; };
 		4ED5B4A41C1730E500787711 /* NumberArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberArray.h; sourceTree = "<group>"; };
@@ -163,6 +178,16 @@
 				4E9BF44E1C26ABE0002260D6 /* climbing-stairs.h */,
 				4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */,
 				4E9BF4511C26AE00002260D6 /* merge-two-sorted-lists.h */,
+				4EAC84221C3833A100E9AEB4 /* implement-queue-using-stacks.c */,
+				4EAC84231C3833A100E9AEB4 /* implement-queue-using-stacks.h */,
+				4EBE83901C38EBC1001C1856 /* balanced-binary-tree.c */,
+				4EBE83911C38EBC1001C1856 /* balanced-binary-tree.h */,
+				4E579AE41C3931E700194C3B /* remove-element.c */,
+				4E579AE51C3931E700194C3B /* remove-element.h */,
+				4E579AE71C395B1200194C3B /* majority-element.c */,
+				4E579AE81C395B1200194C3B /* majority-element.h */,
+				4E94B7851C39725100095EDF /* roman-to-integer.c */,
+				4E94B7861C39725100095EDF /* roman-to-integer.h */,
 			);
 			path = "Leetcode-Easy";
 			sourceTree = "<group>";
@@ -284,9 +309,13 @@
 			files = (
 				4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */,
 				4E9BF44B1C2698DF002260D6 /* remove-duplicates-from-sorted-list.c in Sources */,
+				4E579AE61C3931E700194C3B /* remove-element.c in Sources */,
+				4EBE83921C38EBC1001C1856 /* balanced-binary-tree.c in Sources */,
 				4E9BF4521C26AE00002260D6 /* merge-two-sorted-lists.c in Sources */,
 				4E9BF43F1C26460A002260D6 /* rotate-array.c in Sources */,
 				4E9BF4481C2678D8002260D6 /* LinkedList.c in Sources */,
+				4E579AE91C395B1200194C3B /* majority-element.c in Sources */,
+				4EAC84241C3833A100E9AEB4 /* implement-queue-using-stacks.c in Sources */,
 				4E230D131C1F90A30079B81F /* ugly-number.c in Sources */,
 				4E9BF4421C2666CF002260D6 /* lowest-common-ancestor-of-a-binary-search-tree.c in Sources */,
 				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
@@ -297,6 +326,7 @@
 				4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */,
 				4E9BF44F1C26ABE0002260D6 /* climbing-stairs.c in Sources */,
 				4E230D101C1F8E550079B81F /* power-of-two.c in Sources */,
+				4E94B7871C39725100095EDF /* roman-to-integer.c in Sources */,
 				4E230CE91C1F78DB0079B81F /* Tree.c in Sources */,
 				4E9BF4391C263535002260D6 /* valid-anagram.c in Sources */,
 				4E9BF43C1C2638EC002260D6 /* compare-version-numbers.c in Sources */,

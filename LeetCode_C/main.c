@@ -30,6 +30,8 @@
 #include "merge-two-sorted-lists.h"
 
 #include "climbing-stairs.h"
+#include "remove-element.h"
+#include "roman-to-integer.h"
 
 int countPrimes(int n) {
     if (n == 1) {
@@ -40,14 +42,6 @@ int countPrimes(int n) {
     }
     return 0;
 }
-
-int majorityElement(int* nums, int numsSize) {
-    
-    
-    return 0;
-}
-
-
 
 int main(int argc, const char * argv[]) {
     
@@ -75,7 +69,8 @@ int main(int argc, const char * argv[]) {
     
 //    testReverseList();
 //    testDeleteDuplicates();
-    testMergeTwoLists();
-    
+//    testMergeTwoLists();
+//    testRemoveElement();
+    testRomanToInt();
     return 0;
 }

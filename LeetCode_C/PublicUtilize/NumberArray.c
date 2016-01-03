@@ -8,6 +8,7 @@
 
 #include "NumberArray.h"
 #include "stdlib.h"
+#include <stdio.h>
 
 
 int * sortedArray(int size) {
