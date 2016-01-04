@@ -36,6 +36,8 @@
 		4EBE83921C38EBC1001C1856 /* balanced-binary-tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE83901C38EBC1001C1856 /* balanced-binary-tree.c */; settings = {ASSET_TAGS = (); }; };
 		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
+		4EEBE7A21C3A9E7C00F68B6C /* house-robber.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EEBE7A01C3A9E7C00F68B6C /* house-robber.c */; settings = {ASSET_TAGS = (); }; };
+		4EEBE7A51C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EEBE7A31C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -128,6 +130,10 @@
 		4ED5B4A41C1730E500787711 /* NumberArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberArray.h; sourceTree = "<group>"; };
 		4EE440FD1C097D8700F9088E /* LeetCode_C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode_C; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE441001C097D8700F9088E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		4EEBE7A01C3A9E7C00F68B6C /* house-robber.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "house-robber.c"; sourceTree = "<group>"; };
+		4EEBE7A11C3A9E7C00F68B6C /* house-robber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "house-robber.h"; sourceTree = "<group>"; };
+		4EEBE7A31C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "remove-duplicates-from-sorted-array.c"; sourceTree = "<group>"; };
+		4EEBE7A41C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "remove-duplicates-from-sorted-array.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,10 @@
 				4E94B7951C398ECD00095EDF /* delete-node-in-a-linked-list.h */,
 				4E94B7971C398FAB00095EDF /* same-tree.c */,
 				4E94B7981C398FAB00095EDF /* same-tree.h */,
+				4EEBE7A01C3A9E7C00F68B6C /* house-robber.c */,
+				4EEBE7A11C3A9E7C00F68B6C /* house-robber.h */,
+				4EEBE7A31C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c */,
+				4EEBE7A41C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.h */,
 			);
 			path = "Leetcode-Easy";
 			sourceTree = "<group>";
@@ -346,11 +356,13 @@
 				4E230D1A1C2312B70079B81F /* excel-sheet-column-number.c in Sources */,
 				4E94B7961C398ECD00095EDF /* delete-node-in-a-linked-list.c in Sources */,
 				4E94B7991C398FAB00095EDF /* same-tree.c in Sources */,
+				4EEBE7A21C3A9E7C00F68B6C /* house-robber.c in Sources */,
 				4E94B78D1C398D8800095EDF /* nim-game.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */,
 				4E9BF44F1C26ABE0002260D6 /* climbing-stairs.c in Sources */,
 				4E230D101C1F8E550079B81F /* power-of-two.c in Sources */,
+				4EEBE7A51C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c in Sources */,
 				4E94B7871C39725100095EDF /* roman-to-integer.c in Sources */,
 				4E230CE91C1F78DB0079B81F /* Tree.c in Sources */,
 				4E9BF4391C263535002260D6 /* valid-anagram.c in Sources */,

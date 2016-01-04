@@ -32,6 +32,8 @@
 #include "climbing-stairs.h"
 #include "remove-element.h"
 #include "roman-to-integer.h"
+#include "house-robber.h"
+#include "remove-duplicates-from-sorted-array.h"
 
 int countPrimes(int n) {
     if (n == 1) {
@@ -71,6 +73,8 @@ int main(int argc, const char * argv[]) {
 //    testDeleteDuplicates();
 //    testMergeTwoLists();
 //    testRemoveElement();
-    testRomanToInt();
+//    testRomanToInt();
+//    testHouseRobber();
+    testRemoveDuplicatesFromSortedArray();
     return 0;
 }
