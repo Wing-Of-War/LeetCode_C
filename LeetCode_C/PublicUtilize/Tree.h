@@ -16,10 +16,9 @@ struct TreeNode {
     int val;
     struct TreeNode *left;
     struct TreeNode *right;
-    struct TreeNode *parent;
+//    struct TreeNode *parent;
 };
-
-struct TreeNode * convertArrayToBinaryTree(int *input, int size);
-
-
+struct TreeNode *creatTree(int *input, int size) ;
+struct TreeNode * createTreeNode(int value) ;
+void printOfTree(struct TreeNode *tree);
 #endif /* Tree_h */
