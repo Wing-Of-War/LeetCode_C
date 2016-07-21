@@ -22,11 +22,15 @@ struct TreeNode * createTreeNode(int value) {
 
 
 //1. not clean the cache
+//2. can't deal with elements with 0 
 struct TreeNode *creatTree(int *input, int size) {
     if (input == NULL || size == 0) {
         return NULL;
     }
     struct TreeNode *cache[size];
+    for (int i = 0; i < size; i++) {
+        cache[i] = NULL;
+    }
     struct TreeNode *root = createTreeNode(input[0]);
     cache[0] = root;
     struct TreeNode *parent = root;
@@ -37,7 +41,7 @@ struct TreeNode *creatTree(int *input, int size) {
             parent->left = left;
             cache[i] = left;
         }
-        if ( (i + 1 < size)&& input[i+1]) {
+        if ((i + 1 < size)&& input[i+1]) {
             struct TreeNode *right = createTreeNode(input[i+1]);
             parent->right = right;
             cache[i+1] = right;
@@ -45,6 +49,9 @@ struct TreeNode *creatTree(int *input, int size) {
         cacheIndex++;
         while (! cache[cacheIndex]) {
             cacheIndex++;
+        }
+        if (cacheIndex > size) {
+            break;
         }
         parent = cache[cacheIndex];
     }
@@ -58,9 +65,81 @@ struct TreeNode *creatTree(int *input, int size) {
     return root;
 }
 
+
+
+struct ValueNode {
+    bool isNull;
+    int value;
+    struct ValueNode *next;
+};
+
+struct ValueNode *convertStringToValues(char *input) {
+    struct ValueNode *head;
+    
+    return head;
+}
+
+int sizeOfNodes(struct ValueNode *head) {
+    if (head == NULL) {
+        return 0;
+    }
+    int result = 0;
+    struct ValueNode *temp = head;
+    while (temp) {
+        result ++;
+        temp = temp->next;
+    }
+    return result;
+}
+
+struct TreeNode *creatTreeByString(char *input) {
+    if (input == NULL) {
+        return NULL;
+    }
+    
+    struct ValueNode *valueNodes = convertStringToValues(input);
+    int size = sizeOfNodes(valueNodes);
+    struct TreeNode *cache[size];
+    for (int i = 0; i < size; i++) {
+        cache[i] = NULL;
+    }
+    struct TreeNode *root = createTreeNode(valueNodes->value);
+    struct TreeNode *parent = root;
+    cache[0] = root;
+    int cacheIndex = 0;
+//    for (int i = 1; i < size; i += 2) {
+//        if (input[i]) {
+//            struct TreeNode *left = createTreeNode(input[i]);
+//            parent->left = left;
+//            cache[i] = left;
+//        }
+//        if ((i + 1 < size)&& input[i+1]) {
+//            struct TreeNode *right = createTreeNode(input[i+1]);
+//            parent->right = right;
+//            cache[i+1] = right;
+//        }
+//        cacheIndex++;
+//        while (! cache[cacheIndex]) {
+//            cacheIndex++;
+//        }
+//        if (cacheIndex > size) {
+//            break;
+//        }
+//        parent = cache[cacheIndex];
+//    }
+    //    for (int i = 0; i < size; i++) {
+    //        if (cache[i]) {
+    //            printf("cache %d keep %d\n",i , (*cache[i]).val);
+    //        } else {
+    //            printf("cache %d empty\n", i);
+    //        }
+    //    }
+    return NULL;
+}
+
+
 void printOfTree(struct TreeNode *tree) {
     if (tree == NULL) {
-//        printf(" #");
         return;
     }
     printOfTree(tree->left);

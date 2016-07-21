@@ -42,53 +42,9 @@
 #include "Tree.h"
 
 int main(int argc, const char * argv[]) {
-    
-    
-    //Given binary tree [3,9,20,null,null,15,7],
-//    struct TreeNode * convertArrayToBinaryTree(int *input, int size) ;
-//[1,2,2,3,4,4,3]
-    int input[] = {1,2,3,4,5,6,7};
-//    convertArrayToBinaryTree(input, 7);
-
-    struct TreeNode* node =  creatTree(input, 7);
-    printOfTree(node);
-//    int input[] = {12,31,3,4};
-//    int *p = input;
-//    for (int i = 0 ; i < 4; i++) {
-//        printf("length %d \n", *p);
-//        p++;
-//    }
-    
-    
-//    testTree123();
-    
     runEasyPart();
     
-#pragma mark - Leetcode
-    //    testZigzag();
-    //    testAddTowNumber();
-    //    testTwoSum();
-    //    sortedArray(10);
-    
-//    testAnagram();
-    
-    
-    
-    //    moveZeroesTest();
-    
-    //    char *s = "anagram";
-    //    char *t = "nagaram";
-    //    char *s = "rat";
-    //    char *t = "car";
-//    testCompareVersion();
-//    testLowestCommonAncestor();
-    
-//    testReverseList();
-//    testDeleteDuplicates();
-//    testMergeTwoLists();
-//    testRemoveElement();
-//    testRomanToInt();
-//    testHouseRobber();
-//    testRemoveDuplicatesFromSortedArray();
+    char *input = "[3,9,20,null,null,15,7]";
+    creatTreeByString(input);
     return 0;
 }

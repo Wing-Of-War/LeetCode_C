@@ -18,7 +18,9 @@ struct TreeNode {
     struct TreeNode *right;
 //    struct TreeNode *parent;
 };
+
+struct TreeNode *creatTreeByString(char *input);
 struct TreeNode *creatTree(int *input, int size) ;
-struct TreeNode * createTreeNode(int value) ;
+//struct TreeNode * createTreeNode(int value) ;
 void printOfTree(struct TreeNode *tree);
 #endif /* Tree_h */
