@@ -12,9 +12,9 @@ void testRemoveDuplicatesFromSortedArray(void) {
 //    int *nums = sortedArray(10);
     const int size = 10;
     int nums[size] = {1,1,1,2,2,2,3,3,3,3};
-    outputArray(nums, size);
+    printArray(nums, size);
     int length = removeDuplicates(nums, size);
-    outputArray(nums, length);
+    printArray(nums, length);
 }
 
 

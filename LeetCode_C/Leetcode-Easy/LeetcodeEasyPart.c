@@ -18,8 +18,226 @@
 #include "NumberArray.h"
 #include "Tree.h"
 
+
+#pragma mark - 225. Implement Stack using Queues
+//https://leetcode.com/problems/implement-stack-using-queues/
+
+typedef struct {
+    int size;
+    int currentSize;
+    int *content;
+} Stack;
+
+/* Create a stack */
+void stackCreate(Stack *stack, int maxSize) {
+    stack = (Stack *)malloc(sizeof(Stack));
+    stack->size = maxSize;
+    stack->currentSize = 0;
+    stack->content = (int *)calloc(maxSize, sizeof(int));
+}
+
+/* Push element x onto stack */
+void stackPush(Stack *stack, int element) {
+    if (stack->size == stack->currentSize) {
+        return;
+    }
+    (stack->content)[stack->currentSize] = element;
+    stack->currentSize++;
+}
+
+/* Removes the element on top of the stack */
+void stackPop(Stack *stack) {
+    if (!stack->currentSize) {
+        return;
+    }
+    stack->currentSize--;
+}
+
+/* Get the top element */
+int stackTop(Stack *stack) {
+    return (stack->content)[stack->currentSize];
+}
+
+/* Return whether the stack is empty */
+bool stackEmpty(Stack *stack) {
+    return stack->currentSize;
+}
+
+/* Destroy the stack */
+void stackDestroy(Stack *stack) {
+    free(stack->content);
+    free(stack);
+}
+
+void run225() {
+    Stack *s = NULL;
+    stackCreate((Stack*)&s, 10);
+    stackPush((Stack*)&s, 44);
+    stackPush((Stack*)&s, 45);
+    stackPop((Stack*)&s);
+    printf("\n%d", stackTop((Stack*)&s));
+    stackDestroy((Stack*)&s);
+}
+
+#pragma mark - 205. Isomorphic Strings
+//https://leetcode.com/problems/isomorphic-strings/
+
+bool isIsomorphic(char* s, char* t) {
+    char *mapA = calloc(256, sizeof(char));
+    char *mapB = calloc(256, sizeof(char));
+    size_t length = strlen(s);
+    bool isSame = true;
+    for (int i = 0; i< length; i++) {
+        char a = s[i];
+        char b = t[i];
+        if (mapA[a]==0) {
+            mapA[a] = b;
+        }
+        if (mapB[b]==0) {
+            mapB[b] = a;
+        }
+        if (mapA[a] != b || mapB[b] != a) {
+            isSame = false;
+            break;
+        }
+    }
+    return isSame;
+}
+
+void run205() {
+    char *s = "ab";
+    char *t = "aa";
+    isIsomorphic(s, t);
+}
+
+#pragma mark - 9. Palindrome Number
+//https://leetcode.com/problems/palindrome-number/
+
+bool isPalindrome9(int x) {
+    if (x < 0) {
+        return false;
+    }
+    int t = x;
+    int r = 0;
+    while(t){
+        r *= 10;
+        r+= t %10;
+        t /=10;
+    }
+    return r==x;
+}
+
+void run9() {
+    isPalindrome9(-231);
+    isPalindrome9(110);
+}
+
 #pragma mark - 107. Binary Tree Level Order Traversal II
 //https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+
+struct CountNode {
+    int level;
+    int count;
+    struct CountNode *next;
+};
+
+
+int countTree(struct TreeNode* root, struct CountNode* countNode, int level) {
+    if(root == NULL) {
+        return 0;
+    }
+    countNode->count += 1;
+    
+    struct CountNode *nextCountNode = NULL;
+    if (root->left || root->right) {
+        if (countNode->next != NULL) {
+            nextCountNode = countNode->next;
+        } else {
+            nextCountNode = (void *)malloc(sizeof(struct CountNode));
+            nextCountNode ->level = level + 1;
+            nextCountNode ->count = 0;
+            nextCountNode ->next = 0;
+            countNode->next = nextCountNode;
+        }
+    }
+    int left = countTree(root->left, nextCountNode, level+1);
+    int right = countTree(root->right, nextCountNode, level+1);
+    return left > right ? left+1 :right+1;
+}
+
+void travelTree(struct TreeNode *root, int level, int **result, int *records) {
+    if (root == NULL) {
+        return ;
+    }
+    int *array = result[level];
+    int index = records[level];
+    array[index] = root->val;
+    index++;
+    records[level] = index;
+    travelTree(root->left, level+1, result, records);
+    travelTree(root->right, level+1, result, records);
+}
+
+int** levelOrderBottom(struct TreeNode* root, int** columnSizes, int* returnSize) {
+    if (root == 0) {
+        *columnSizes = 0;
+        *returnSize = 0;
+        return NULL;
+    }
+    struct CountNode *count = (struct CountNode *)malloc(sizeof(struct CountNode));
+    struct CountNode *temp = count;
+    count ->count = 0;
+    count ->level = 0;
+    count ->next = NULL;
+    int depth = countTree(root, count, 0);
+    *returnSize = depth;
+    
+    int *records = (int *)malloc(sizeof(int) * depth);
+    
+    *columnSizes = (int *)malloc(sizeof(int) * depth);
+    int **result = (int **)malloc(sizeof(int *) * depth);
+    int index = 0;
+    while (temp) {
+        (*columnSizes)[index] = temp->count;
+        int *array = (int *)calloc(temp->count, sizeof(int));
+        result[index] = array;
+        records[index]= 0;
+        index ++;
+        temp = temp->next;
+    }
+    travelTree(root, 0, result, records);
+    for (int i = 0; i < depth /2 ; i++) {
+        int value = (*columnSizes)[i];
+        (*columnSizes)[i] = (*columnSizes)[depth-i-1];
+        (*columnSizes)[depth-i-1] = value;
+        
+        int *array = result[i];
+        result[i] = result[depth-i-1];
+        result[depth-i-1] = array;
+    }
+    return result;
+}
+
+void run107() {
+    char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
+    //    char *input = "[1]";
+    struct TreeNode* root = creatTreeByString(input);
+    int returnSize = 0;
+    int *columnSizes;
+    int **result = levelOrderBottom(root, &columnSizes, &returnSize);
+    for (int i = 0; i < returnSize; i++) {
+        printf("Line: %d\n", i);
+        int *array = result[i];
+        for (int j = 0; j < columnSizes[i]; j++) {
+            printf(" %d", array[j]);
+        }
+        printf("\n");
+    }
+    
+}
+
+#pragma mark - 102. Binary Tree Level Order Traversal
+//https://leetcode.com/problems/binary-tree-level-order-traversal/
 
 /**
  * Definition for a binary tree node.
@@ -35,91 +253,54 @@
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 
-int maxDepth(struct TreeNode* root) {
+
+
+int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {
+    if (root == 0) {
+        *columnSizes = 0;
+        *returnSize = 0;
+        return NULL;
+    }
+    struct CountNode *count = (struct CountNode *)malloc(sizeof(struct CountNode));
+    struct CountNode *temp = count;
+    count ->count = 0;
+    count ->level = 0;
+    count ->next = NULL;
+    int depth = countTree(root, count, 0);
+    *returnSize = depth;
     
-    if(root == NULL) {
-        return 0;
-    }
+    int *records = (int *)malloc(sizeof(int) * depth);
     
-    int left = maxDepth(root->left);
-    int right = maxDepth(root->right);
-    return left > right ? left+1 :right+1;
-}
-
-int power(int input, int times) {
-    if (times == 0) {
-        return 1;
-    }
-    int result = input;
-    while (times > 0) {
-        result *= input;
-    }
-    return result;
-}
-
-void saveTree(struct TreeNode *root,int **saveTable, int level) {
-    if (root == NULL || saveTable == NULL) {
-        return;
-    }
-    int *array = saveTable[level];
-    if (array == NULL) {
-        array = (int *)malloc(sizeof(int) * power(2, level));
-        saveTable[level] = array;
-    }
-}
-
-
-
-int** levelOrderBottom(struct TreeNode* root, int** columnSizes, int* returnSize) {
-    int depth = maxDepth(root);
-    //    if (depth == 0) {
-    //        *columnSizes = NULL;
-    //        *returnSize = 0;
-    //        return NULL;
-    //    }
-    //    *returnSize = depth;
-    int *arraySize = (int *)malloc(sizeof(int) * depth);
-    returnSize = arraySize;
-    for (int i = 0; i < depth; i++) {
-        printf(" %d", arraySize[i]);
-    }
+    *columnSizes = (int *)malloc(sizeof(int) * depth);
     int **result = (int **)malloc(sizeof(int *) * depth);
-    //    saveTree(root, result, 0);
-    
-    
-    
+    int index = 0;
+    while (temp) {
+        (*columnSizes)[index] = temp->count;
+        int *array = (int *)calloc(temp->count, sizeof(int));
+        result[index] = array;
+        records[index]= 0;
+        index ++;
+        temp = temp->next;
+    }
+    travelTree(root, 0, result, records);
     return result;
 }
 
-void run107() {
-//    Given binary tree [3,9,20,null,null,15,7],
-    struct TreeNode *node1 = (struct TreeNode *)malloc(sizeof(struct TreeNode));
-    struct TreeNode *node2 = (struct TreeNode *)malloc(sizeof(struct TreeNode));
-    struct TreeNode *node3 = (struct TreeNode *)malloc(sizeof(struct TreeNode));
-    node1->val = 1;
-    node1->left = NULL;
-    node1->right = NULL;
-    node2->val = 2;
-    node3->val = 3;
-    node3->left = NULL;
-    node3->right = NULL;
-    node2->left = node1;
-    node2->right = node3;
-    
-    
-    int *columnSize;
-    int returnSize;
-    int **result;
-    result = levelOrderBottom(node2, &columnSize, &returnSize);
-    
-    //    for (int i = 0 ; i < returnSize; i ++) {
-    //        int col = columnSize[i];
-    //        printf("level %d", i);
-    //        for (int j = 0 ; j < col; j++) {
-    //            printf("%d", result[i][j]);
-    //        }
-    //        printf("\n");
-    //    }
+void run102() {
+    char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
+    //    char *input = "[1]";
+    struct TreeNode* root = creatTreeByString(input);
+    int returnSize = 0;
+    int *columnSizes;
+    int **result = levelOrder(root, &columnSizes, &returnSize);
+    for (int i = 0; i < returnSize; i++) {
+        printf("Line: %d\n", i);
+        int *array = result[i];
+        for (int j = 0; j < columnSizes[i]; j++) {
+            printf(" %d", array[j]);
+        }
+        printf("\n");
+    }
 }
 
 #pragma mark - 14. Longest Common Prefix
@@ -927,4 +1108,6 @@ void runEasyPart() {
 //    run119();
 //    run14();
 //    run107();
+//    run225();
+    run205();
 }

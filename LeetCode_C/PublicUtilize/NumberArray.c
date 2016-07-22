@@ -42,8 +42,10 @@ int * randomArray(int size, int factorLimit) {
 
 
 
-void outputArray(int *input, int size) {
+void printArray(int *input, int size) {
     putchar('\n');
     for(int i=0;i<size;i++)
         printf("%d ",input[i]);
+    
+    printf("\n");
 }

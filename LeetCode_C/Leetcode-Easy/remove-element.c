@@ -13,7 +13,7 @@ void testRemoveElement(void) {
     int nums[] = {1,2,3,4,5,6,6,7};
     int size = sizeof(nums) / sizeof(int);
     int length = removeElement(nums, size, 6);
-    outputArray(nums, size);
+    printArray(nums, size);
     printf("length %d", length);
 }
 
