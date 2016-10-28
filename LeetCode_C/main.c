@@ -44,7 +44,7 @@
 int main(int argc, const char * argv[]) {
     runEasyPart();
     
-    char *input = "[3,9,20,null,null,15,7]";
-    creatTreeByString(input);
+//    char *input = "[3,9,20,null,null,15,7]";
+//    creatTreeByString(input);
     return 0;
 }
