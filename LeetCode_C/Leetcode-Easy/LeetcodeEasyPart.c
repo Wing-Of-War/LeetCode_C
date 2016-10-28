@@ -18,6 +18,224 @@
 #include "NumberArray.h"
 #include "Tree.h"
 
+
+#pragma mark - 225. Implement Stack using Queues
+//https://leetcode.com/problems/implement-stack-using-queues/
+
+typedef struct {
+    int size;
+    int currentSize;
+    int *content;
+} Stack;
+
+/* Create a stack */
+void stackCreate(Stack *stack, int maxSize) {
+    stack = (Stack *)malloc(sizeof(Stack));
+    stack->size = maxSize;
+    stack->currentSize = 0;
+    stack->content = (int *)calloc(maxSize, sizeof(int));
+}
+
+/* Push element x onto stack */
+void stackPush(Stack *stack, int element) {
+    if (stack->size == stack->currentSize) {
+        return;
+    }
+    (stack->content)[stack->currentSize] = element;
+    stack->currentSize++;
+}
+
+/* Removes the element on top of the stack */
+void stackPop(Stack *stack) {
+    if (!stack->currentSize) {
+        return;
+    }
+    stack->currentSize--;
+}
+
+/* Get the top element */
+int stackTop(Stack *stack) {
+    return (stack->content)[stack->currentSize];
+}
+
+/* Return whether the stack is empty */
+bool stackEmpty(Stack *stack) {
+    return stack->currentSize;
+}
+
+/* Destroy the stack */
+void stackDestroy(Stack *stack) {
+    free(stack->content);
+    free(stack);
+}
+
+void run225() {
+    Stack *s = NULL;
+    stackCreate((Stack*)&s, 10);
+    stackPush((Stack*)&s, 44);
+    stackPush((Stack*)&s, 45);
+    stackPop((Stack*)&s);
+    printf("\n%d", stackTop((Stack*)&s));
+    stackDestroy((Stack*)&s);
+}
+
+#pragma mark - 205. Isomorphic Strings
+//https://leetcode.com/problems/isomorphic-strings/
+
+bool isIsomorphic(char* s, char* t) {
+    char *mapA = calloc(256, sizeof(char));
+    char *mapB = calloc(256, sizeof(char));
+    size_t length = strlen(s);
+    bool isSame = true;
+    for (int i = 0; i< length; i++) {
+        char a = s[i];
+        char b = t[i];
+        if (mapA[a]==0) {
+            mapA[a] = b;
+        }
+        if (mapB[b]==0) {
+            mapB[b] = a;
+        }
+        if (mapA[a] != b || mapB[b] != a) {
+            isSame = false;
+            break;
+        }
+    }
+    return isSame;
+}
+
+void run205() {
+    char *s = "ab";
+    char *t = "aa";
+    isIsomorphic(s, t);
+}
+
+#pragma mark - 9. Palindrome Number
+//https://leetcode.com/problems/palindrome-number/
+
+bool isPalindrome9(int x) {
+    if (x < 0) {
+        return false;
+    }
+    int t = x;
+    int r = 0;
+    while(t){
+        r *= 10;
+        r+= t %10;
+        t /=10;
+    }
+    return r==x;
+}
+
+void run9() {
+    isPalindrome9(-231);
+    isPalindrome9(110);
+}
+
+#pragma mark - 107. Binary Tree Level Order Traversal II
+//https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+
+struct CountNode {
+    int level;
+    int count;
+    struct CountNode *next;
+};
+
+
+int countTree(struct TreeNode* root, struct CountNode* countNode, int level) {
+    if(root == NULL) {
+        return 0;
+    }
+    countNode->count += 1;
+    
+    struct CountNode *nextCountNode = NULL;
+    if (root->left || root->right) {
+        if (countNode->next != NULL) {
+            nextCountNode = countNode->next;
+        } else {
+            nextCountNode = (void *)malloc(sizeof(struct CountNode));
+            nextCountNode ->level = level + 1;
+            nextCountNode ->count = 0;
+            nextCountNode ->next = 0;
+            countNode->next = nextCountNode;
+        }
+    }
+    int left = countTree(root->left, nextCountNode, level+1);
+    int right = countTree(root->right, nextCountNode, level+1);
+    return left > right ? left+1 :right+1;
+}
+
+void travelTree(struct TreeNode *root, int level, int **result, int *records) {
+    if (root == NULL) {
+        return ;
+    }
+    int *array = result[level];
+    int index = records[level];
+    array[index] = root->val;
+    index++;
+    records[level] = index;
+    travelTree(root->left, level+1, result, records);
+    travelTree(root->right, level+1, result, records);
+}
+
+int** levelOrderBottom(struct TreeNode* root, int** columnSizes, int* returnSize) {
+    if (root == 0) {
+        *columnSizes = 0;
+        *returnSize = 0;
+        return NULL;
+    }
+    struct CountNode *count = (struct CountNode *)malloc(sizeof(struct CountNode));
+    struct CountNode *temp = count;
+    count ->count = 0;
+    count ->level = 0;
+    count ->next = NULL;
+    int depth = countTree(root, count, 0);
+    *returnSize = depth;
+    
+    int *records = (int *)malloc(sizeof(int) * depth);
+    
+    *columnSizes = (int *)malloc(sizeof(int) * depth);
+    int **result = (int **)malloc(sizeof(int *) * depth);
+    int index = 0;
+    while (temp) {
+        (*columnSizes)[index] = temp->count;
+        int *array = (int *)calloc(temp->count, sizeof(int));
+        result[index] = array;
+        records[index]= 0;
+        index ++;
+        temp = temp->next;
+    }
+    travelTree(root, 0, result, records);
+    for (int i = 0; i < depth /2 ; i++) {
+        int value = (*columnSizes)[i];
+        (*columnSizes)[i] = (*columnSizes)[depth-i-1];
+        (*columnSizes)[depth-i-1] = value;
+        
+        int *array = result[i];
+        result[i] = result[depth-i-1];
+        result[depth-i-1] = array;
+    }
+    return result;
+}
+
+void run107() {
+    char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
+    //    char *input = "[1]";
+    struct TreeNode* root = creatTreeByString(input);
+    int returnSize = 0;
+    int *columnSizes;
+    int **result = levelOrderBottom(root, &columnSizes, &returnSize);
+    for (int i = 0; i < returnSize; i++) {
+        printf("Line: %d\n", i);
+        int *array = result[i];
+        for (int j = 0; j < columnSizes[i]; j++) {
+            printf(" %d", array[j]);
+        }
+        printf("\n");
+    }
+    
+}
+
 #pragma mark - 102. Binary Tree Level Order Traversal
 //https://leetcode.com/problems/binary-tree-level-order-traversal/
 
@@ -35,94 +253,43 @@
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 
-struct CountNode {
-    int level;
-    int count;
-    struct CountNode *next;
-};
 
-int countTree(struct TreeNode* root, struct CountNode* countNode, int level) {
-    if(root == 0) {
-        return 0;
-    }
-    struct CountNode *nextCountNode = 0;
-    if (root->left || root->right) {
-        if (countNode->next != 0) {
-            nextCountNode = countNode->next;
-        } else {
-            nextCountNode = (void *)malloc(sizeof(struct CountNode));
-            nextCountNode ->level = level + 1;
-            nextCountNode ->count = 0;
-            nextCountNode ->next = 0;
-            countNode->next = nextCountNode;
-        }
-    }
-    
-    countNode->count += 1;
-
-
-    int left = countTree(root->left, nextCountNode, level+1);
-    int right = countTree(root->right, nextCountNode, level+1);
-    return left > right ? left+1 :right+1;
-}
-
-void travelTree(struct TreeNode *root,int level, int **result) {
-    if (root == 0) {
-        return ;
-    }
-    int *array = result[level];
-    int i = 0;
-    while (array[i]) {
-        i++;
-    }
-    array[i] = root->val;
-    travelTree(root->left, level+1, result);
-    travelTree(root->right, level+1, result);
-}
 
 int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {
     if (root == 0) {
         *columnSizes = 0;
         *returnSize = 0;
-        return 0;
+        return NULL;
     }
     struct CountNode *count = (struct CountNode *)malloc(sizeof(struct CountNode));
     struct CountNode *temp = count;
     count ->count = 0;
     count ->level = 0;
-    count ->next = 0;
+    count ->next = NULL;
     int depth = countTree(root, count, 0);
     *returnSize = depth;
     
+    int *records = (int *)malloc(sizeof(int) * depth);
+    
     *columnSizes = (int *)malloc(sizeof(int) * depth);
     int **result = (int **)malloc(sizeof(int *) * depth);
-    for (int i = 0; i < depth; i++) {
-        (*columnSizes)[i] = temp->count;
+    int index = 0;
+    while (temp) {
+        (*columnSizes)[index] = temp->count;
         int *array = (int *)calloc(temp->count, sizeof(int));
+        result[index] = array;
+        records[index]= 0;
+        index ++;
         temp = temp->next;
-        result[i] = array;
-//        printf(" %d", (*columnSizes)[i]);
     }
-    
-    travelTree(root, 0, result);
+    travelTree(root, 0, result, records);
     return result;
 }
 
-void run107() {
-//    int size = 10;
-//    int *input = sortedArray(size);
-    
-    int input[] = {69,73,68,18,20,18,39,7,-3,13,-1,42,5,93,70,63,17,0,91,-4,30,0,-1,64,-4,16,49,48,78,51,43,92,45,0,53,9,36,80,-6,58,78,0,0,41,81,89,67,71,0,25,0,82,54,28,14,61,57,35,5,83,9,18,0,-9,-9,50,92,93,0,0,80,62,1,28,29,27,89,21,0,85,-9,0,56,56,-9,0,0,43,0,29,97,-7,0,35,25,90,67,53,18,61,7,23,81,37,19,26,2,0,19,0,0,77,37,-2,0,49,39,28,1,37,11,87,83,68,55,53,33,-2,22,7,52,0,14,0,18,50,97,-8,-7,0,21,59,72,27,0,64,0,0,47,0,0,38,46,0,0,99,0,0,48,13,85,78,7,64,43,59,71,11,37,12,37,50,2,0,0,89,87,0,78,97,0,31,86,37,96,34,38,6,36,0,0,99,63,0,12,0,82,0,81,70,19,0,81,32,0,0,0,0,79,10,0,91,48,-3,94,65,0,20,26,96,21,92,91,0,89,9,74,0,0,96,0,64,67,50,96,0,0,0,0,0,0,40,78,0,27,3,17,0,0,2,45,0,0,0,0,0,13,0,0,17,45,69,30,0,0,43,0,4,13,-6,66,6,0,16,48,55,98,69,57,0,5,9,65,-9,55,2,0,0,0,0,0,0,68,0,0,0,5,61,51,0,0,32,43,0,35,20,0,-7,38,30,1,80,0,0,42,86,42,0,0,0,0,47,0,0,0,62,29,-9,83,60,71,48,0,24,0,76,6,65,18,95,29,11,0,38,0,0,0,0,21,3,6,23,36,0,45,0,34,0,0,0,0,0,0,41,0,57,13,18,92,43,83,0,0,0,0,0,0,0,2,-4,97,0,93,0,62,0,0,48,18,71,92,53,89,0,0,0,95,0,16,0,0,0,83,87,5,0,0,3,-8,-4,65,0,0,0,22,0,31,0,0,0,63,0,0,62,0,57,12,85,45,23,55,0,0,0,81,83,23,0,3,0,83,0,-4,0,0,0,0,0,64,0,15,50,57,0,0,0,4,0,0,0,29,0,0,87,0,22,92,0,0,67,90,0,93,47,46,0,0,0,28,72,18,59,25,3,74,0,0,0,-5,28,-1,61,15,0,0,0,0,79,0,16,0,0,59,47,-7,98,31,50,0,0,0,0,19,0,93,0,22,0,0,-5,40,0,0,0,75,30,0,7,53,76,0,0,0,0,0,68,19,0,63,41,91,0,43,0,49,0,0,0,0,0,46,0,0,87,74,49,1,21,62,6,34,77,0,0,0,0,0,0,-9,61,0,0,0,7,0,45,0,0,63,0,0,7,0,0,16,86,0,0,63,0,61,72,0,13,0,24,91,0,0,59,0,0,48,14,77,0,0,0,0,92,0,0,0,0,0,0,84,0,0,76,82,63,84,84,94,0,0,0,0,0,47,40,0,0,0,0,75,20,0,0,0,-9,0,0,24,74,0,51,0,0,91,0,83,17,0,0,0,42,49,88,57,85,1,0,94,0,28,36,78,0,53,0,27,25,46,97,58,0,0,0,0,0,0,0,0,12,33,0,0,6,0,0,0,87,0,0,0,0,0,0,0,9,0,83,0,0,0,90,11,0,61,0,89,0,46,0,86,81,0,0,0,0,0,0,0,53,0,0,59,0,0,0,0,0,0,0,29,0,47,97,0,0,0,0,0,9,0,17,0,91,45,9,61,21,0,0,64,0,69,0,44,0,0,0,0,12,0,2,-8,88,0,0,0,0,0,-8,0,93,0,0,0,86,0,0,97,0,0,0,0,72,0,0,0,0,0,50,0,0,0,0,0,47,70,0,62,0,-3,-5,59,15,0,-3,37,0,0,0,0,20,-2,0,8,90,0,0,0,61,0,0,0,0,0,0,0,15,12,95,0,0,73,11,76,76,49,0,0,51,0,0,0,0,0,0,0,0,0,0,0,0,0,42,0,0,-9,0,0,0,0,0,0,0,0,80,0,0,70,31,78,98,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,57,0,0,0,0,-3,0,0,-7,0,31,42,0,0,0,0,62,17,7,0,0,63,0,0,0,0,83,51,0,76,77,0,0,40,0,0,95,0,27,55,61,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,95,0,93,19,0,37,0,73,0,0,0,0,0,75,0,0,0,0,0,22,0,0,0,0,0,-7,99,0,0,0,0,0,94,63,0,0,0,0,0,0,0,39,77,0,-2,15,0,69,33,9,0,0,0,0,0,0,0,0,0,42,0,0,0,69,35,0,36,0,11,0,0,0,52,0,0,0,0,0,0,0,51,50,0,0,0,0,0,0,30,0,0,0,0,0,63,0,0,0,0,0,0,56,28};
-    
-    
-    int size = sizeof(input)/sizeof(int);
-//    int input[] = {3,9,20,0,0,15,7};
-    
-    
-//    [-2,0,-1,null,3,0,null,6,null,5,-5]
-
-    struct TreeNode* root = creatTree(input, size);
-//    outputArray(input, size);
+void run102() {
+    char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
+    //    char *input = "[1]";
+    struct TreeNode* root = creatTreeByString(input);
     int returnSize = 0;
     int *columnSizes;
     int **result = levelOrder(root, &columnSizes, &returnSize);
@@ -445,7 +612,7 @@ void run204() {
  * };
  */
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
-    if (head == 0 || n == 0) {
+    if (head == NULL || n == 0) {
         return head;
     }
     
@@ -458,7 +625,7 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
         }
         tailNode = tailNode->next;
     }
-    if (tailNode == 0) {
+    if (tailNode == NULL) {
         return head->next;
     }
     
@@ -481,7 +648,7 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
     if (target) {
         pre->next = target->next;
     } else {
-        pre->next = 0;
+        pre->next = NULL;
     }
     
     return head;
@@ -940,5 +1107,7 @@ void runEasyPart() {
 //    run299();
 //    run119();
 //    run14();
-    run107();
+//    run107();
+//    run225();
+    run205();
 }

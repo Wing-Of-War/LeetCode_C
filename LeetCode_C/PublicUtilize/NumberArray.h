@@ -14,6 +14,6 @@ int * sortedArray(int size);
 
 int * randomArray(int size, int factorLimit);
 
-void outputArray(int *, int size);
+void printArray(int *, int size);
 
 #endif /* NumberArray_h */
