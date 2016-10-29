@@ -18,6 +18,91 @@
 #include "NumberArray.h"
 #include "Tree.h"
 
+
+#pragma mark - 387. First Unique Character in a String
+
+int firstUniqChar(char* s) {
+    int length = (int)strlen(s);
+    int index = 0;
+    
+    int count[26] ={0};
+
+
+    for (; index < length; index++) {
+        char c = s[index];
+        int i = c - 'a';
+        count[i]++;
+    }
+    int position = -1;
+    for (index = 0; index < length; index++) {
+        char c = s[index];
+        int i = c - 'a';
+        if(count[i] == 1) {
+            position = index;
+            break;
+        }
+    }
+    return position;
+}
+
+void run387() {
+//    char *s = "z";
+        char *s = "leetcode";
+//        char *s = "loveleetcode";
+    int pos = firstUniqChar(s);
+    printf("%d", pos);
+//    firstUniqChar(s);
+//    return 0.
+//    
+//    s = "loveleetcode",
+//    return 2.
+//    size_t pos[26] = {-1};
+//    for (int i = 0; i < 26; i++) {
+//        printf("%ld", pos[i]);
+//    }
+}
+
+
+#pragma mark - 383. Ransom Note
+
+bool canConstruct(char* ransomNote, char* magazine) {
+    char *p1 = ransomNote;
+    char *p2 = magazine;
+    int sc[26] = {0};
+    int tc[26] = {0};
+    
+    
+    while (*p1) {
+        sc[*p1-'a'] ++;
+        p1++;
+    }
+    
+    
+    while (*p2) {
+        tc[*p2-'a'] ++;
+        p2++;
+    }
+    
+    bool result = true;
+    for (int index; index < 26; index++) {
+        if (sc[index] > tc[index]) {
+            result = false;
+            break;
+        }
+    }
+    
+    return result;
+}
+
+void run383() {
+    char *s= "ymbgaraibkfmvocpizdydugvalagaivdbfsfbepeyccqfepzvtpyxtbadkhmwmoswrcxnargtlswqemafandgkmydtimuzvjwxvlfwlhvkrgcsithaqlcvrihrwqkpjdhgfgreqoxzfvhjzojhghfwbvpfzectwwhexthbsndovxejsntmjihchaotbgcysfdaojkjldprwyrnischrgmtvjcorypvopfmegizfkvudubnejzfqffvgdoxohuinkyygbdzmshvyqyhsozwvlhevfepdvafgkqpkmcsikfyxczcovrmwqxxbnhfzcjjcpgzjjfateajnnvlbwhyppdleahgaypxidkpwmfqwqyofwdqgxhjaxvyrzupfwesmxbjszolgwqvfiozofncbohduqgiswuiyddmwlwubetyaummenkdfptjczxemryuotrrymrfdxtrebpbjtpnuhsbnovhectpjhfhahbqrfbyxggobsweefcwxpqsspyssrmdhuelkkvyjxswjwofngpwfxvknkjviiavorwyfzlnktmfwxkvwkrwdcxjfzikdyswsuxegmhtnxjraqrdchaauazfhtklxsksbhwgjphgbasfnlwqwukprgvihntsyymdrfovaszjywuqygpvjtvlsvvqbvzsmgweiayhlubnbsitvfxawhfmfiatxvqrcwjshvovxknnxnyyfexqycrlyksderlqarqhkxyaqwlwoqcribumrqjtelhwdvaiysgjlvksrfvjlcaiwrirtkkxbwgicyhvakxgdjwnwmubkiazdjkfmotglclqndqjxethoutvjchjbkoasnnfbgrnycucfpeovruguzumgmgddqwjgdvaujhyqsqtoexmnfuluaqbxoofvotvfoiexbnprrxptchmlctzgqtkivsilwgwgvpidpvasurraqfkcmxhdapjrlrnkbklwkrvoaziznlpor";
+    
+    char *t = "qhxepbshlrhoecdaodgpousbzfcqjxulatciapuftffahhlmxbufgjuxstfjvljybfxnenlacmjqoymvamphpxnolwijwcecgwbcjhgdybfffwoygikvoecdggplfohemfypxfsvdrseyhmvkoovxhdvoavsqqbrsqrkqhbtmgwaurgisloqjixfwfvwtszcxwktkwesaxsmhsvlitegrlzkvfqoiiwxbzskzoewbkxtphapavbyvhzvgrrfriddnsrftfowhdanvhjvurhljmpxvpddxmzfgwwpkjrfgqptrmumoemhfpojnxzwlrxkcafvbhlwrapubhveattfifsmiounhqusvhywnxhwrgamgnesxmzliyzisqrwvkiyderyotxhwspqrrkeczjysfujvovsfcfouykcqyjoobfdgnlswfzjmyucaxuaslzwfnetekymrwbvponiaojdqnbmboldvvitamntwnyaeppjaohwkrisrlrgwcjqqgxeqerjrbapfzurcwxhcwzugcgnirkkrxdthtbmdqgvqxilllrsbwjhwqszrjtzyetwubdrlyakzxcveufvhqugyawvkivwonvmrgnchkzdysngqdibhkyboyftxcvvjoggecjsajbuqkjjxfvynrjsnvtfvgpgveycxidhhfauvjovmnbqgoxsafknluyimkczykwdgvqwlvvgdmufxdypwnajkncoynqticfetcdafvtqszuwfmrdggifokwmkgzuxnhncmnsstffqpqbplypapctctfhqpihavligbrutxmmygiyaklqtakdidvnvrjfteazeqmbgklrgrorudayokxptswwkcircwuhcavhdparjfkjypkyxhbgwxbkvpvrtzjaetahmxevmkhdfyidhrdeejapfbafwmdqjqszwnwzgclitdhlnkaiyldwkwwzvhyorgbysyjbxsspnjdewjxbhpsvj";
+    
+    bool r = canConstruct(s, t);
+    printf(" %d ", r);
+}
+
 #pragma mark - 404. Sum of Left Leaves
 //https://leetcode.com/problems/sum-of-left-leaves/
 
@@ -1210,5 +1295,7 @@ void runEasyPart() {
 //    run205();
 //    run412();
 //    run389();
-    run404();
+//    run404();
+//    run383();
+    run387();
 }
