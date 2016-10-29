@@ -19,8 +19,177 @@
 #include "Tree.h"
 
 
+#pragma mark - 401. Binary Watch
+//https://leetcode.com/problems/binary-watch/
+//
+//char* convertPositionToString(int position[]) {
+//    int value[10] = {8,4,2,1,32,16,8,4,2,1};
+//    int min = 0;
+//    int hour = 0;
+//    
+//    for (int i = 0; i < 10; i++) {
+//        if (position[i]) {
+//            if (i < 4) {
+//                hour = hour + value[i];
+//            } else {
+//                min = min + value[i];
+//            }
+//        }
+//    }
+//    if (hour > 12 || min > 60) {
+//        printf("ERROR\n");
+//        return NULL;
+//    }
+//    
+//    char *result = (char *)malloc(sizeof(char ) * 6);
+//    result[0] = '\0';
+//    if (min < 10) {
+//        sprintf(result, "%d:0%d\n", hour, min);
+//    } else {
+//        sprintf(result, "%d:%d\n", hour, min);
+//    }
+//    printf("%s", result);
+//    return result;
+//}
+//
+//void travelTime(int count,int start, int *position, int **result) {
+//    if (count == 0) {
+////        for(int i = 0; i < 10; i++) {
+////            printf("%d", position[i]);
+////        }
+////        printf("\n");
+////        char *s = convertPositionToString(position);
+//        int *temp = *result;
+//        while (temp) {
+//            temp ++;
+//        }
+//        temp = position;
+//        return;
+//    }
+//    for (int i = start ; i < 10; i++) {
+//        if (position[i] == 0) {
+//            int *newPos = (int *)malloc(sizeof(int) * 10);
+//            for (int i = 0 ; i < 10; i++) {
+//                newPos[i] = position[i];
+//            }
+//            newPos[i] = 1;
+//            travelTime(count-1, i+1, newPos,result);
+//        }
+//    }
+//}
+//
+//int getSizeByC10(int num) {
+//    int result = 1;
+//    if (num == 0) {
+//        return 1;
+//    }
+//    int n = 0;
+//    int factor = 10;
+//    while (n < num) {
+//        result *= factor;
+//        factor--;
+//        n ++;
+//        result /= n;
+//    }
+//    return result;
+//}
+//
+//char** readBinaryWatch(int num, int* returnSize) {
+//    int pos[10] = {0};
+//    int size = getSizeByC10(num);
+//    int **positions = (int **)malloc((sizeof(int *) * size));
+//                                     
+//    travelTime(num, 0, pos, positions);
+//    
+//    for(int i = 0; i < size; i++) {
+//        int *position = positions[i];
+//        for (int j = 0 ; j < 10; j++) {
+//            printf("%d", position[i]);
+//        }
+//    }
+//    printf("\n");
+////    char *s = convertPositionToString(position);
+//
+////    char **result = 
+//    return NULL;
+//}
+
+char** readBinaryWatch(int num, int* returnSize) {
+
+    int hourc[4] = {
+        1,4,5,2
+    };
+    int hours[4][6] = {
+        {0},
+        {1,2,4,8},
+        {3,5,6,9,10},
+        {7,11}
+    };
+    int minc[6] = {
+        1,6,15,20,14,4
+    };
+    int mins[6][20] = {
+        {0},
+        {1,2,4,8,16,32},
+        {3,5,6,9,10,12,17,18,20,24,33,34,36,40,48},
+        {7,11,13,14,19,21,22,25,26,28,35,37,38,41,42,44,49,50,52,56},
+        {15,23,27,29,30,39,43,45,46,51,53,54,57,58},
+        {31,47,55,59}
+    };
+    
+    int count = 0;
+    for (int i = 0; i < 4 && i <= num; i++) {
+        if (num - i <= 5) {
+            int hourcc = hourc[i];
+            int mincc = minc[num-i];
+            count += (mincc * hourcc);
+        }
+    }
+    char **result = (char **)malloc(sizeof(char *) * count);
+    int index = 0;
+    for (int i = 0; i < 4 && i <= num; i++) {
+        if (num - i <= 5) {
+            int* hourca = hours[i];
+            int* minca = mins[num-i];
+            int hourcc = hourc[i];
+            int mincc = minc[num-i];
+            for (int h = 0 ; h < hourcc; h++) {
+                int hour = hourca[h];
+                for (int m = 0; m < mincc; m++) {
+                    int min = minca[m];
+                    char *input = (char *)malloc(6);
+                    input[0] = '\0';
+                    if(min < 10) {
+                        sprintf(input, "%d:0%d", hour, min);
+                    } else {
+                        sprintf(input, "%d:%d", hour, min);
+                    }
+//                    printf("%s", input);
+//                    printf("\n");
+                    result[index] = input;
+                    index++;
+                }
+            }
+        }
+    }
+    *returnSize = count;
+    return result;
+}
+
+void run401() {
+    int size;
+    char **result = readBinaryWatch(3, &size);
+
+    for (int i = 0; i < size; i ++) {
+        char *str = result[i];
+        printf("%s\n", str);
+    }
+//    long result = getSizeByC10(6);
+//    printf("%ld", result);
+}
 
 #pragma mark - 409. Longest Palindrome
+//https://leetcode.com/problems/longest-palindrome/
 
 int longestPalindrome(char* s) {
     int count[52] = {0};
@@ -1326,5 +1495,6 @@ void runEasyPart() {
 //    run404();
 //    run383();
 //    run387();
-    run409();
+//    run409();
+    run401();
 }
