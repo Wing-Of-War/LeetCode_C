@@ -18,6 +18,31 @@
 #include "NumberArray.h"
 #include "Tree.h"
 
+#pragma mark - 404. Sum of Left Leaves
+//https://leetcode.com/problems/sum-of-left-leaves/
+
+int sumOfLeftLeaves(struct TreeNode* root) {
+
+    
+    if (root == NULL) {
+        return 0;
+    }
+    int sum = 0;
+    if (root->left && root->left->left == NULL && root->left->right == NULL) {
+        sum += root->left->val;
+    }
+    sum += sumOfLeftLeaves(root->left);
+    sum += sumOfLeftLeaves(root->right);
+    
+    return sum;
+}
+
+void run404() {
+    struct TreeNode *root = creatTreeByString("[0,2,4,1,null,3,-1,5,1,null,6,null,8]");
+    int sum = sumOfLeftLeaves(root);
+    printf("%d", sum);
+}
+
 #pragma mark - 389. Find the Difference
 
 char findTheDifference(char* s, char* t) {
@@ -1184,5 +1209,6 @@ void runEasyPart() {
 //    run225();
 //    run205();
 //    run412();
-    run389();
+//    run389();
+    run404();
 }
