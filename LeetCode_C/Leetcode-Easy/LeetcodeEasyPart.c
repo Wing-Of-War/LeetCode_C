@@ -19,6 +19,42 @@
 #include "Tree.h"
 
 
+
+#pragma mark - 409. Longest Palindrome
+
+int longestPalindrome(char* s) {
+    int count[52] = {0};
+    int length = (int)strlen(s);
+    for (int i = 0; i < length; i++) {
+        char c = s[i];
+        if (c >= 'a') {
+            count[c-'a' + 26]++;
+        } else {
+            count[c-'A']++;
+        }
+    }
+    int maxL = 0;
+    bool haveOdd = false;
+    for (int i = 0; i < 52; i++) {
+        if (count[i]%2 == 1) {
+            maxL += (count[i] -1);
+            haveOdd = true;
+        } else {
+            maxL += count[i];
+        }
+    }
+    if (haveOdd) {
+        maxL += 1;
+    }
+    return maxL;
+}
+
+void run409() {
+    char *s= "ymbgaraibkfmvocpizdydugvalagaivdbfsfbepeyccqfepzvtpyxtbadkhmwmoswrcxnargtlswqemafandgkmydtimuzvjwxvlfwlhvkrgcsithaqlcvrihrwqkpjdhgfgreqoxzfvhjzojhghfwbvpfzectwwhexthbsndovxejsntmjihchaotbgcysfdaojkjldprwyrnischrgmtvjcorypvopfmegizfkvudubnejzfqffvgdoxohuinkyygbdzmshvyqyhsozwvlhevfepdvafgkqpkmcsikfyxczcovrmwqxxbnhfzcjjcpgzjjfateajnnvlbwhyppdleahgaypxidkpwmfqwqyofwdqgxhjaxvyrzupfwesmxbjszolgwqvfiozofncbohduqgiswuiyddmwlwubetyaummenkdfptjczxemryuotrrymrfdxtrebpbjtpnuhsbnovhectpjhfhahbqrfbyxggobsweefcwxpqsspyssrmdhuelkkvyjxswjwofngpwfxvknkjviiavorwyfzlnktmfwxkvwkrwdcxjfzikdyswsuxegmhtnxjraqrdchaauazfhtklxsksbhwgjphgbasfnlwqwukprgvihntsyymdrfovaszjywuqygpvjtvlsvvqbvzsmgweiayhlubnbsitvfxawhfmfiatxvqrcwjshvovxknnxnyyfexqycrlyksderlqarqhkxyaqwlwoqcribumrqjtelhwdvaiysgjlvksrfvjlcaiwrirtkkxbwgicyhvakxgdjwnwmubkiazdjkfmotglclqndqjxethoutvjchjbkoasnnfbgrnycucfpeovruguzumgmgddqwjgdvaujhyqsqtoexmnfuluaqbxoofvotvfoiexbnprrxptchmlctzgqtkivsilwgwgvpidpvasurraqfkcmxhdapjrlrnkbklwkrvoaziznlpor";
+    int length = longestPalindrome(s);
+    printf("%d\n", length);
+}
+
 #pragma mark - 387. First Unique Character in a String
 
 int firstUniqChar(char* s) {
@@ -51,15 +87,7 @@ void run387() {
 //        char *s = "loveleetcode";
     int pos = firstUniqChar(s);
     printf("%d", pos);
-//    firstUniqChar(s);
-//    return 0.
-//    
-//    s = "loveleetcode",
-//    return 2.
-//    size_t pos[26] = {-1};
-//    for (int i = 0; i < 26; i++) {
-//        printf("%ld", pos[i]);
-//    }
+
 }
 
 
@@ -1297,5 +1325,6 @@ void runEasyPart() {
 //    run389();
 //    run404();
 //    run383();
-    run387();
+//    run387();
+    run409();
 }
