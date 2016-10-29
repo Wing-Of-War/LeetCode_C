@@ -20,55 +20,36 @@
 
 #pragma mark - 412. Fizz Buzz
 
-
-
-
-//int* getRow(int rowIndex, int* returnSize) {
-//    *returnSize = rowIndex + 1;
-//    int **result = (int **)malloc(sizeof(int *) * (*returnSize));
-//    int *sizes = (int *)malloc(sizeof(int *) * (*returnSize));
-//    for (int i = 0 ; i < (*returnSize); i++) {
-//        int *array = (int *)malloc(sizeof(int) * (*returnSize));
-//        for (int j = 0 ; j < i + 1; j ++ ) {
-//            if (j == 0 || j == i) {
-//                array[j] = 1;
-//            } else {
-//                array[j] = result[i-1][j-1] + result[i-1][j];
-//            }
-//        }
-//        result[i] = array;
-//        sizes[i] = i + 1;
-//    }
-//    return result[rowIndex];
-//}
-
-//int *array = (int *)calloc(temp->count, sizeof(int));
-//result[index] = array;
-
-
 char** fizzBuzz(int n, int* returnSize) {
     int i = 1;
     *returnSize = n;
     char **result = (char **)malloc(sizeof(char *) * n);
     while (i < n+1) {
         char *buffer = (char *)malloc(sizeof(char) * 10);
-//        char buffer[10];
-        sprintf(buffer, "%d", i);
-        i++;
+        if (i%5==0 && i%3==0) {
+            sprintf(buffer, "%s", "FizzBuzz");
+        } else if (i%3==0) {
+            sprintf(buffer, "%s", "Fizz");
+        } else if (i%5==0) {
+            sprintf(buffer, "%s", "Buzz");
+        } else {
+            sprintf(buffer, "%d", i);
+        }
         result[i-1] = buffer;
+        i++;
     }
     return result;
 }
 
 void run412() {
-    int size;
-    char **result = fizzBuzz(10, &size);
-    for (int i = 0; i < 10; i++) {
+    int size = 30;
+    char **result = fizzBuzz(size, &size);
+    printf("\n");
+    for (int i = 0; i < size; i++) {
         char *value = result[i];
         printf("%s \n", value);
     }
 }
-
 
 #pragma mark - 225. Implement Stack using Queues
 //https://leetcode.com/problems/implement-stack-using-queues/
