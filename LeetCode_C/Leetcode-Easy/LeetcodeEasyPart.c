@@ -19,6 +19,52 @@
 #include "Tree.h"
 
 
+#pragma mark - 415. Add Strings
+
+char* addStrings(char* num1, char* num2) {
+    int l1 = (int)strlen(num1);
+    int l2 = (int)strlen(num2);
+    int length = l1>l2 ? l1 : l2;
+    char *result = (char *)malloc(length + 2);
+    result[length + 1] = '\0';
+    int step = 0;
+    for (int i = 0; i < length; i++) {
+        int v1 = 0;
+        int v2 = 0;
+        if(l1) {
+            v1 = num1[--l1] - '0';
+        }
+        if(l2) {
+            v2 = num2[--l2] - '0';
+        }
+        int v3 = v1 + v2 + step;
+        if(v3>=10) {
+            v3 = v3 % 10;
+            step = 1;
+        } else {
+            step = 0;
+        }
+        int pos = length - i;
+        result[pos] = v3 + '0';
+    }
+    if (step) {
+        result[0] = 1 + '0';
+    } else {
+        result ++;
+    }
+    return result;
+}
+
+void run415() {
+//    "6913259244"
+//    "71103343"
+
+//    char *result = addStrings("2312", "12");
+//    char *result = addStrings("6913259244", "71103343");
+    char *result = addStrings("1", "9");
+    printf("%s",result);
+}
+
 #pragma mark - 401. Binary Watch
 //https://leetcode.com/problems/binary-watch/
 //
@@ -1496,5 +1542,6 @@ void runEasyPart() {
 //    run383();
 //    run387();
 //    run409();
-    run401();
+//    run401();
+    run415();
 }
