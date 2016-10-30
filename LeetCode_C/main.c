@@ -17,8 +17,6 @@
 #include "longest-substring-without-repeating-characters.h"
 
 #include "string.h"
-//#include "median-of-two-sorted-arrays.h"
-#include "move-zeroes.h"
 
 #include "valid-anagram.h"
 

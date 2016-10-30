@@ -17,6 +17,118 @@
 #include "LinkedList.h"
 #include "NumberArray.h"
 #include "Tree.h"
+#include "PublicUtilize.h"
+
+
+
+#pragma mark - 191. Number of 1 Bits
+//https://leetcode.com/problems/number-of-1-bits/
+
+int hammingWeight(uint32_t n) {
+    int result = 0;
+    while (n > 0) {
+        int temp = n % 2;
+        if (temp == 1) {
+            result ++;
+        }
+        n = n/2;
+    }
+    return result;
+}
+
+void run191() {
+//    00000000000000000000000000001011
+}
+
+#pragma mark - 283. Move Zeroes
+//https://leetcode.com/problems/move-zeroes/
+
+void moveZeroes(int* nums, int numsSize) {
+    int currentZeroCount = 0;
+    int currentIndex = 0;
+    while (currentIndex < numsSize) {
+        if (nums[currentIndex]) {
+            nums[currentIndex-currentZeroCount] = nums[currentIndex];
+        } else {
+            currentZeroCount ++;
+        }
+        currentIndex++;
+    }
+    currentIndex = numsSize - currentZeroCount;
+    while (currentIndex < numsSize) {
+        nums[currentIndex]=0;
+        currentIndex++;
+    }
+}
+
+void run283() {
+    int arraySize = 10;
+    int *input = randomArray(arraySize, 10);
+    
+    input[1] = 0;
+    input[5] = 0;
+//    outputArray(input, arraySize);
+    moveZeroes(input, arraySize);
+//    outputArray(input, arraySize);
+}
+
+#pragma mark - 226. Invert Binary Tree
+//https://leetcode.com/problems/invert-binary-tree/
+
+struct TreeNode* invertTree(struct TreeNode* root) {
+    if(root==NULL) {
+        return NULL;
+    }
+    struct TreeNode *temp = root->left;
+    root->left = root->right;
+    root->right = temp;
+    if(root->right) {
+        invertTree(root->right);
+    }
+    if(root->left) {
+        invertTree(root->left);
+    }
+    return root;
+}
+
+#pragma mark - 217. Contains Duplicate
+//https://leetcode.com/problems/contains-duplicate/
+
+
+int cmpfunc(const void *a, const void *b) {
+    return (*(int *)a - *(int*)b);  //I can't figure out.
+}
+
+bool containsDuplicate(int* nums, int numsSize) {
+    //Slow way.
+//    int currentIndex = 0;
+//    while(currentIndex < numsSize) {
+//        for(int i = 0; i < currentIndex; i++) {
+//            if (nums[i] == nums[currentIndex]) {
+//                return true;
+//            }
+//        }
+//        currentIndex ++;
+//    }
+    
+    qsort(nums, numsSize, sizeof(int), cmpfunc);
+    
+    for (int i = 0; i< numsSize-1; i++) {
+        if (nums[i] == nums[i+1]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void run217() {
+//    int size = 100;
+//    int *array = randomArray(size,size);
+    int array[2] = {3,3};
+    int size = 2;
+    bool result = containsDuplicate(array, size);
+    printf("%d", result);
+}
 
 #pragma mark - 257. Binary Tree Paths
 
@@ -1632,5 +1744,6 @@ void runEasyPart() {
 //    run409();
 //    run401();
 //    run415();
-    run257();
+//    run257();
+    run217();
 }

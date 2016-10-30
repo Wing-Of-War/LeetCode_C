@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28A1A5661DC6619900091846 /* LeetcodeHardPart.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A1A5641DC6619900091846 /* LeetcodeHardPart.c */; };
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4E230CE91C1F78DB0079B81F /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE71C1F78DB0079B81F /* Tree.c */; };
 		4E230D101C1F8E550079B81F /* power-of-two.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D0E1C1F8E550079B81F /* power-of-two.c */; };
@@ -53,20 +54,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28A1A5641DC6619900091846 /* LeetcodeHardPart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LeetcodeHardPart.c; sourceTree = "<group>"; };
+		28A1A5651DC6619900091846 /* LeetcodeHardPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeetcodeHardPart.h; sourceTree = "<group>"; };
 		28E980071C0EB3DB00D408F6 /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
 		28E980081C0EB3DB00D408F6 /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4E230CE71C1F78DB0079B81F /* Tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Tree.c; sourceTree = "<group>"; };
 		4E230CE81C1F78DB0079B81F /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
-		4E230CF71C1F8E0A0079B81F /* contains-duplicate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "contains-duplicate.c"; sourceTree = "<group>"; };
-		4E230CF81C1F8E0A0079B81F /* contains-duplicate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "contains-duplicate.h"; sourceTree = "<group>"; };
-		4E230CF91C1F8E0A0079B81F /* invert-binary-tree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "invert-binary-tree.c"; sourceTree = "<group>"; };
-		4E230CFA1C1F8E0A0079B81F /* invert-binary-tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "invert-binary-tree.h"; sourceTree = "<group>"; };
-		4E230CFB1C1F8E0A0079B81F /* median-of-two-sorted-arrays.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "median-of-two-sorted-arrays.c"; sourceTree = "<group>"; };
-		4E230CFC1C1F8E0A0079B81F /* median-of-two-sorted-arrays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "median-of-two-sorted-arrays.h"; sourceTree = "<group>"; };
-		4E230CFD1C1F8E0A0079B81F /* move-zeroes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "move-zeroes.c"; sourceTree = "<group>"; };
-		4E230CFE1C1F8E0A0079B81F /* move-zeroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "move-zeroes.h"; sourceTree = "<group>"; };
-		4E230D011C1F8E0A0079B81F /* number-of-1-bits.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "number-of-1-bits.c"; sourceTree = "<group>"; };
-		4E230D021C1F8E0A0079B81F /* number-of-1-bits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "number-of-1-bits.h"; sourceTree = "<group>"; };
 		4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "zigzag-conversion.c"; sourceTree = "<group>"; };
 		4E230D061C1F8E0A0079B81F /* zigzag-conversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zigzag-conversion.h"; sourceTree = "<group>"; };
 		4E230D081C1F8E0A0079B81F /* add-two-numbers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
@@ -159,16 +152,6 @@
 		4E230CF61C1F8E0A0079B81F /* Leetcode-Easy */ = {
 			isa = PBXGroup;
 			children = (
-				4E230CF71C1F8E0A0079B81F /* contains-duplicate.c */,
-				4E230CF81C1F8E0A0079B81F /* contains-duplicate.h */,
-				4E230CF91C1F8E0A0079B81F /* invert-binary-tree.c */,
-				4E230CFA1C1F8E0A0079B81F /* invert-binary-tree.h */,
-				4E230CFB1C1F8E0A0079B81F /* median-of-two-sorted-arrays.c */,
-				4E230CFC1C1F8E0A0079B81F /* median-of-two-sorted-arrays.h */,
-				4E230CFD1C1F8E0A0079B81F /* move-zeroes.c */,
-				4E230CFE1C1F8E0A0079B81F /* move-zeroes.h */,
-				4E230D011C1F8E0A0079B81F /* number-of-1-bits.c */,
-				4E230D021C1F8E0A0079B81F /* number-of-1-bits.h */,
 				4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */,
 				4E230D061C1F8E0A0079B81F /* zigzag-conversion.h */,
 				4E230D0E1C1F8E550079B81F /* power-of-two.c */,
@@ -217,6 +200,8 @@
 				4EEBE7A41C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.h */,
 				4E509D111D2C05DD0075FA2B /* LeetcodeEasyPart.c */,
 				4E509D121D2C05DD0075FA2B /* LeetcodeEasyPart.h */,
+				28A1A5641DC6619900091846 /* LeetcodeHardPart.c */,
+				28A1A5651DC6619900091846 /* LeetcodeHardPart.h */,
 			);
 			path = "Leetcode-Easy";
 			sourceTree = "<group>";
@@ -308,7 +293,7 @@
 		4EE440F51C097D8700F9088E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "JUE DUKE";
 				TargetAttributes = {
 					4EE440FC1C097D8700F9088E = {
@@ -368,6 +353,7 @@
 				4E9BF43C1C2638EC002260D6 /* compare-version-numbers.c in Sources */,
 				4E509D131D2C05DD0075FA2B /* LeetcodeEasyPart.c in Sources */,
 				4E9BF4451C2678B1002260D6 /* reverse-linked-list.c in Sources */,
+				28A1A5661DC6619900091846 /* LeetcodeHardPart.c in Sources */,
 				4E94B7901C398E0000095EDF /* add-digits.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,8 +374,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -430,8 +418,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
