@@ -18,6 +18,94 @@
 #include "NumberArray.h"
 #include "Tree.h"
 
+#pragma mark - 257. Binary Tree Paths
+
+typedef struct StringNode{
+    char *content;
+    struct StringNode *nextNode;
+}Snode;
+
+Snode *newSnode() {
+    Snode *node = (Snode *)malloc(sizeof(Snode *));
+    node->content = NULL;
+    node->nextNode = NULL;
+    return node;
+}
+
+void nextTreeNode(struct TreeNode *root, char *inputString, Snode *head) {
+    char str[15];
+    if (root->left == NULL && root->right == NULL) {
+        sprintf(str, "%d", root->val);
+    } else {
+        sprintf(str, "%d->", root->val);
+    }
+    char * new_str;
+    if((new_str = malloc(strlen(inputString)+strlen(str)+1)) != NULL){
+        new_str[0] = '\0';   // ensures the memory is an empty string
+        strcat(new_str,inputString);
+        strcat(new_str,str);
+    }
+    if (root->left || root->right) {
+        if (root->left) {
+            nextTreeNode(root->left, new_str, head);
+        }
+        if (root->right) {
+            nextTreeNode(root->right, new_str, head);
+        }
+    } else {
+        if (head->content == NULL) {
+            head->content = new_str;
+        } else {
+            Snode *t = head;
+            while (t->nextNode) {
+                t = t->nextNode;
+            }
+            Snode *node = newSnode();
+            node->content = new_str;
+            t->nextNode = node;
+        }
+    }
+}
+
+char** binaryTreePaths(struct TreeNode* root, int* returnSize) {
+    if (root==NULL) {
+        return NULL;
+    }
+    char *temp = "";
+    Snode *node = newSnode();
+    nextTreeNode(root, temp, node);
+    Snode *t = node;
+    //    int size = 0;
+    //    while (t) {
+    //        t = t->nextNode;
+    //        size++;
+    //    }
+    char **result = (char **)malloc(sizeof(char *) * 1000);
+    int index = 0;
+    t = node;
+    while (t) {
+        result[index] = t->content;
+        t = t->nextNode;
+        index++;
+    }
+    *returnSize = index;
+    return result;
+}
+
+
+
+void run257() {
+//    struct TreeNode *node = createTreeByString("[1,2,3,4,5]");
+//    struct TreeNode *node = createTreeByString("[1,2,3,null,5]");
+//    struct TreeNode *node = createTreeByString("[]");
+    struct TreeNode *node = createTreeByString("[1,null,2]");
+    int returnSize = 0;
+    char **result = binaryTreePaths(node, &returnSize);
+    for (int i = 0 ; i< returnSize; i++) {
+        printf("%s\n", result[i]);
+    }
+}
+
 
 #pragma mark - 415. Add Strings
 
@@ -366,7 +454,7 @@ int sumOfLeftLeaves(struct TreeNode* root) {
 }
 
 void run404() {
-    struct TreeNode *root = creatTreeByString("[0,2,4,1,null,3,-1,5,1,null,6,null,8]");
+    struct TreeNode *root = createTreeByString("[0,2,4,1,null,3,-1,5,1,null,6,null,8]");
     int sum = sumOfLeftLeaves(root);
     printf("%d", sum);
 }
@@ -647,7 +735,7 @@ int** levelOrderBottom(struct TreeNode* root, int** columnSizes, int* returnSize
 void run107() {
     char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
     //    char *input = "[1]";
-    struct TreeNode* root = creatTreeByString(input);
+    struct TreeNode* root = createTreeByString(input);
     int returnSize = 0;
     int *columnSizes;
     int **result = levelOrderBottom(root, &columnSizes, &returnSize);
@@ -715,7 +803,7 @@ int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {
 void run102() {
     char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
     //    char *input = "[1]";
-    struct TreeNode* root = creatTreeByString(input);
+    struct TreeNode* root = createTreeByString(input);
     int returnSize = 0;
     int *columnSizes;
     int **result = levelOrder(root, &columnSizes, &returnSize);
@@ -1543,5 +1631,6 @@ void runEasyPart() {
 //    run387();
 //    run409();
 //    run401();
-    run415();
+//    run415();
+    run257();
 }

@@ -8,7 +8,7 @@
 
 #include "Tree.h"
 #include <stdlib.h>
-
+#include <string.h>
 
 
 
@@ -107,12 +107,16 @@ struct TreeNode * createTreeNode(int value) {
 }
 
 
-struct TreeNode *creatTreeByString(char *input) {
+struct TreeNode *createTreeByString(char *input) {
     
-    //    char *input = "[3,9,20,null,null,15,7]";
-    //    char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
+//    input = "[]";
+//    char *input = "[3,9,20,null,null,15,7]";
+//    char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
     
     if (input == NULL) {
+        return NULL;
+    }
+    if (strcmp( input , "[]")==1){
         return NULL;
     }
     struct ValueNode *valueNodes = convertStringToValues(input);
