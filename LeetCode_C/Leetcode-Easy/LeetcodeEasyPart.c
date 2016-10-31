@@ -19,6 +19,46 @@
 #include "Tree.h"
 #include "PublicUtilize.h"
 
+#pragma mark - 405. Convert a Number to Hexadecimal
+//https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+
+char* toHex(int num) {
+    if (num==0) {
+        return "0";
+    }
+    
+    int size = 0;
+    unsigned int t = num;
+    while (t > 0) {
+        size ++;
+        t /= 16;
+    }
+    t = num;
+    char *result = (char *)malloc(size);
+    result[size] = '\0';
+    while (t > 0) {
+        char value = t % 16;
+        if (value < 10) {
+            result[--size] = value + '0';
+        } else {
+            result[--size] = value + 'a' - 10;
+        }
+        t /= 16;
+    }
+    return result;
+}
+
+void run405(){
+    for (int i = -16; i > -100; i--) {
+        printf("input: %d -> %s\n",i, toHex(i));
+    }
+    
+//    unsigned int i = -2;
+//    printf("%x", i);
+//    int j = -2;
+//    printf("%x", j);
+}
+
 #pragma mark - 83. Remove Duplicates from Sorted List
 //https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
@@ -2496,5 +2536,6 @@ void runEasyPart() {
 //    run401();
 //    run415();
 //    run257();
-    run441();
+//    run441();
+    run405();
 }

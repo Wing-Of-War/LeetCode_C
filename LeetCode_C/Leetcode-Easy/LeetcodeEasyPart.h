@@ -12,6 +12,8 @@
 #include <stdio.h>
 
 
+char* reverseString(char* s);   //344, 405
+
 void runEasyPart();
 
 #endif /* LeetcodeEasyPart_h */
