@@ -20,6 +20,142 @@
 #include "PublicUtilize.h"
 
 
+#pragma mark - 326. Power of Three
+//https://leetcode.com/problems/power-of-four/
+
+//Slow.
+
+bool isPowerOfThree(int n) {
+//    0: true true 1
+//    1: true true 3
+//    2: true false 9
+//    3: true false 27
+//    4: true false 81
+//    5: false true 243
+//    6: true false 729
+//    7: true false 2187
+//    8: true false 6561
+//    9: true false 19683
+//    10: false true 59049
+//    11: true false 177147
+//    12: true false 531441
+//    13: false false 1594323
+//    14: true false 4782969
+//    15: false false 14348907
+//    16: true false 43046721
+//    17: false true 129140163
+//    18: true false 387420489
+//    19: true false 1162261467
+    
+    //Fastest. 	46 ms, beat all commit in C.
+    int threes[] = {1,3,9,27,81,243,729,2187,6561,19683,59049,177147,531441,1594323,4782969,14348907,43046721,129140163,387420489,1162261467};
+    for (int i = 0; i < 20; i++) {
+        if (threes[i] == n) {
+            return true;
+        }
+    }
+    return false;
+    
+    //Slow.  112 ms
+    double result =  log(n)/log(3.0);
+    double rest = result -  round(result) ;
+    if (fabs(rest) < 1e-13) {
+        return true;
+    }
+    return false;
+}
+
+#pragma mark - 342. Power of Four
+//https://leetcode.com/problems/power-of-four/
+
+bool isPowerOfFour(int num) {
+    double result = log(num)/ log (4);
+    double rest = result - round(result);
+    if (fabs(rest) < 1e-13) {
+        return true;
+    }
+    return false;
+    
+}
+#pragma mark - 231. Power of Two
+//https://leetcode.com/problems/power-of-two/
+
+bool isPowerOfTwo(int n) {
+    
+//    double result = log(n)/ log (2);
+//    double rest = result - round(result);
+//    if (fabs(rest) < 1e-13) {
+//        return true;
+//    }
+//    return false;
+
+    if(n==0 || n < 0) {
+        return false;
+    }
+    if(n==1 || n==2) {
+        return true;
+    }
+    int t = n;
+    while(t>2) {
+        int rest = t % 2;
+        if (rest) {
+            return false;
+        }
+        t=t/2;
+    }
+    return true;
+}
+
+#pragma mark - 6. ZigZag Conversion
+//https://leetcode.com/problems/zigzag-conversion/
+
+char* convert(char* s, int numRows) {
+    long length = strlen(s);
+    char * r = (char *)malloc(sizeof(char) * length);
+    int space = (numRows -1) * 2;
+    if (space == 0) {
+        space = 1;
+    }
+    long resIndex = 0;
+    long oriIndex = 0;
+    int row = 0;
+    int restSpace = space - (row * 2);
+    while (resIndex <= length) {
+        r[resIndex] = s[oriIndex];
+        resIndex++;
+        if (restSpace == 0) {
+            restSpace = space;
+        }
+        oriIndex += restSpace;
+        if (oriIndex > length-1) {
+            row ++;
+            oriIndex = row;
+            restSpace = space - (row * 2);
+            continue;
+        }
+        restSpace = space - restSpace;
+    }
+    r[length] = '\0';
+    
+    return r;
+}
+
+void run6(void) {
+    //    "glzamzp"
+    //    5
+    char * inputString = "glzamzp";
+    char * sp = inputString;
+    while (*sp !='\0') {
+        putchar(*sp);
+        sp++;
+    }
+    
+    putchar('\n');
+    char * r = convert(inputString,  5);
+    puts(r);
+    
+}
+
 #pragma mark - 441. Arranging Coins
 //https://leetcode.com/problems/arranging-coins/
 

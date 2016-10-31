@@ -10,7 +10,6 @@
 		28A1A5661DC6619900091846 /* LeetcodeHardPart.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A1A5641DC6619900091846 /* LeetcodeHardPart.c */; };
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4E230CE91C1F78DB0079B81F /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE71C1F78DB0079B81F /* Tree.c */; };
-		4E230D101C1F8E550079B81F /* power-of-two.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D0E1C1F8E550079B81F /* power-of-two.c */; };
 		4E230D131C1F90A30079B81F /* ugly-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D111C1F90A30079B81F /* ugly-number.c */; };
 		4E230D191C1F98130079B81F /* excel-sheet-column-title.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D171C1F98130079B81F /* excel-sheet-column-title.c */; };
 		4E230D1A1C2312B70079B81F /* excel-sheet-column-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */; };
@@ -54,22 +53,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		28A1A5641DC6619900091846 /* LeetcodeHardPart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LeetcodeHardPart.c; sourceTree = "<group>"; };
-		28A1A5651DC6619900091846 /* LeetcodeHardPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeetcodeHardPart.h; sourceTree = "<group>"; };
+		28A1A5641DC6619900091846 /* LeetcodeHardPart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = LeetcodeHardPart.c; path = "../../Leetcode-Easy/LeetcodeHardPart.c"; sourceTree = "<group>"; };
+		28A1A5651DC6619900091846 /* LeetcodeHardPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeetcodeHardPart.h; path = "../../Leetcode-Easy/LeetcodeHardPart.h"; sourceTree = "<group>"; };
 		28E980071C0EB3DB00D408F6 /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
 		28E980081C0EB3DB00D408F6 /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4E230CE71C1F78DB0079B81F /* Tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Tree.c; sourceTree = "<group>"; };
 		4E230CE81C1F78DB0079B81F /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
-		4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "zigzag-conversion.c"; sourceTree = "<group>"; };
-		4E230D061C1F8E0A0079B81F /* zigzag-conversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zigzag-conversion.h"; sourceTree = "<group>"; };
 		4E230D081C1F8E0A0079B81F /* add-two-numbers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
 		4E230D091C1F8E0A0079B81F /* add-two-numbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "add-two-numbers.h"; sourceTree = "<group>"; };
 		4E230D0A1C1F8E0A0079B81F /* longest-substring-without-repeating-characters.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "longest-substring-without-repeating-characters.c"; sourceTree = "<group>"; };
 		4E230D0B1C1F8E0A0079B81F /* longest-substring-without-repeating-characters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "longest-substring-without-repeating-characters.h"; sourceTree = "<group>"; };
 		4E230D0C1C1F8E0A0079B81F /* two-sum.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "two-sum.c"; sourceTree = "<group>"; };
 		4E230D0D1C1F8E0A0079B81F /* two-sum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "two-sum.h"; sourceTree = "<group>"; };
-		4E230D0E1C1F8E550079B81F /* power-of-two.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "power-of-two.c"; sourceTree = "<group>"; };
-		4E230D0F1C1F8E550079B81F /* power-of-two.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "power-of-two.h"; sourceTree = "<group>"; };
 		4E230D111C1F90A30079B81F /* ugly-number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ugly-number.c"; sourceTree = "<group>"; };
 		4E230D121C1F90A30079B81F /* ugly-number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ugly-number.h"; sourceTree = "<group>"; };
 		4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "excel-sheet-column-number.c"; sourceTree = "<group>"; };
@@ -140,6 +135,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28D5CFCC1DC718B900B176F2 /* Leetcode-Hard */ = {
+			isa = PBXGroup;
+			children = (
+				28A1A5641DC6619900091846 /* LeetcodeHardPart.c */,
+				28A1A5651DC6619900091846 /* LeetcodeHardPart.h */,
+			);
+			name = "Leetcode-Hard";
+			path = "Leetcode-Medium/Leetcode-Hard";
+			sourceTree = "<group>";
+		};
 		28E980061C0EB3DB00D408F6 /* Classic Algorithm */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +157,6 @@
 		4E230CF61C1F8E0A0079B81F /* Leetcode-Easy */ = {
 			isa = PBXGroup;
 			children = (
-				4E230D051C1F8E0A0079B81F /* zigzag-conversion.c */,
-				4E230D061C1F8E0A0079B81F /* zigzag-conversion.h */,
-				4E230D0E1C1F8E550079B81F /* power-of-two.c */,
-				4E230D0F1C1F8E550079B81F /* power-of-two.h */,
 				4E230D111C1F90A30079B81F /* ugly-number.c */,
 				4E230D121C1F90A30079B81F /* ugly-number.h */,
 				4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */,
@@ -200,8 +201,6 @@
 				4EEBE7A41C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.h */,
 				4E509D111D2C05DD0075FA2B /* LeetcodeEasyPart.c */,
 				4E509D121D2C05DD0075FA2B /* LeetcodeEasyPart.h */,
-				28A1A5641DC6619900091846 /* LeetcodeHardPart.c */,
-				28A1A5651DC6619900091846 /* LeetcodeHardPart.h */,
 			);
 			path = "Leetcode-Easy";
 			sourceTree = "<group>";
@@ -262,6 +261,7 @@
 				28E980061C0EB3DB00D408F6 /* Classic Algorithm */,
 				4E230CF61C1F8E0A0079B81F /* Leetcode-Easy */,
 				4E230D071C1F8E0A0079B81F /* Leetcode-Medium */,
+				28D5CFCC1DC718B900B176F2 /* Leetcode-Hard */,
 				4EE441001C097D8700F9088E /* main.c */,
 			);
 			path = LeetCode_C;
@@ -345,7 +345,6 @@
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */,
 				4E9BF44F1C26ABE0002260D6 /* climbing-stairs.c in Sources */,
-				4E230D101C1F8E550079B81F /* power-of-two.c in Sources */,
 				4EEBE7A51C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c in Sources */,
 				4E94B7871C39725100095EDF /* roman-to-integer.c in Sources */,
 				4E230CE91C1F78DB0079B81F /* Tree.c in Sources */,
