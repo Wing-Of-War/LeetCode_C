@@ -57,12 +57,12 @@ bool isPowerOfThree(int n) {
     return false;
     
     //Slow.  112 ms
-    double result =  log(n)/log(3.0);
-    double rest = result -  round(result) ;
-    if (fabs(rest) < 1e-13) {
-        return true;
-    }
-    return false;
+//    double result =  log(n)/log(3.0);
+//    double rest = result -  round(result) ;
+//    if (fabs(rest) < 1e-13) {
+//        return true;
+//    }
+//    return false;
 }
 
 #pragma mark - 342. Power of Four
@@ -1621,23 +1621,6 @@ void run125(){
     //    printf("125. result %d", result);
     bool result = isPalindrome("0P");
     printf("125. result %d", result);
-}
-
-#pragma mark - 342. Power of Four
-//https://leetcode.com/problems/power-of-four/
-
-bool isPowerOfFour(int num) {
-    
-    double result = log(num)/ log (4);
-    double rest = result - round(result);
-    if (fabs(rest) < 1e-13) {
-        return true;
-    }
-    return false;
-}
-
-void run342() {
-    isPowerOfFour(16);
 }
 
 #pragma mark - 345. Reverse Vowels of a String
