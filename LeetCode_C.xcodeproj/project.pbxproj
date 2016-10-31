@@ -10,34 +10,13 @@
 		28A1A5661DC6619900091846 /* LeetcodeHardPart.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A1A5641DC6619900091846 /* LeetcodeHardPart.c */; };
 		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4E230CE91C1F78DB0079B81F /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE71C1F78DB0079B81F /* Tree.c */; };
-		4E230D131C1F90A30079B81F /* ugly-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D111C1F90A30079B81F /* ugly-number.c */; };
-		4E230D191C1F98130079B81F /* excel-sheet-column-title.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D171C1F98130079B81F /* excel-sheet-column-title.c */; };
-		4E230D1A1C2312B70079B81F /* excel-sheet-column-number.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */; };
 		4E509D131D2C05DD0075FA2B /* LeetcodeEasyPart.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E509D111D2C05DD0075FA2B /* LeetcodeEasyPart.c */; };
-		4E579AE61C3931E700194C3B /* remove-element.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E579AE41C3931E700194C3B /* remove-element.c */; };
-		4E579AE91C395B1200194C3B /* majority-element.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E579AE71C395B1200194C3B /* majority-element.c */; };
 		4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E85EC471C30B3EF003D35B4 /* Linked List Cycle.c */; };
 		4E85EC4C1C30BA34003D35B4 /* Linked List Cycle II.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E85EC4A1C30BA34003D35B4 /* Linked List Cycle II.c */; };
-		4E94B7871C39725100095EDF /* roman-to-integer.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7851C39725100095EDF /* roman-to-integer.c */; };
-		4E94B78D1C398D8800095EDF /* nim-game.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B78B1C398D8800095EDF /* nim-game.c */; };
-		4E94B7901C398E0000095EDF /* add-digits.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B78E1C398E0000095EDF /* add-digits.c */; };
-		4E94B7961C398ECD00095EDF /* delete-node-in-a-linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7941C398ECD00095EDF /* delete-node-in-a-linked-list.c */; };
-		4E94B7991C398FAB00095EDF /* same-tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B7971C398FAB00095EDF /* same-tree.c */; };
-		4E9BF4391C263535002260D6 /* valid-anagram.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4361C263219002260D6 /* valid-anagram.c */; };
-		4E9BF43C1C2638EC002260D6 /* compare-version-numbers.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF43A1C2638EC002260D6 /* compare-version-numbers.c */; };
-		4E9BF4421C2666CF002260D6 /* lowest-common-ancestor-of-a-binary-search-tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4401C2666CF002260D6 /* lowest-common-ancestor-of-a-binary-search-tree.c */; };
-		4E9BF4451C2678B1002260D6 /* reverse-linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4431C2678B1002260D6 /* reverse-linked-list.c */; };
 		4E9BF4481C2678D8002260D6 /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4461C2678D8002260D6 /* LinkedList.c */; };
-		4E9BF44B1C2698DF002260D6 /* remove-duplicates-from-sorted-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4491C2698DF002260D6 /* remove-duplicates-from-sorted-list.c */; };
-		4E9BF44F1C26ABE0002260D6 /* climbing-stairs.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF44D1C26ABE0002260D6 /* climbing-stairs.c */; };
-		4E9BF4521C26AE00002260D6 /* merge-two-sorted-lists.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */; };
-		4EAC84241C3833A100E9AEB4 /* implement-queue-using-stacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EAC84221C3833A100E9AEB4 /* implement-queue-using-stacks.c */; };
-		4EBE83921C38EBC1001C1856 /* balanced-binary-tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE83901C38EBC1001C1856 /* balanced-binary-tree.c */; };
 		4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5B4A31C1730E500787711 /* NumberArray.c */; };
 		4EDDABE01D3BAE6E00627EF6 /* LeetcodeMediumPart.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EDDABDE1D3BAE6E00627EF6 /* LeetcodeMediumPart.c */; };
 		4EE441011C097D8700F9088E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EE441001C097D8700F9088E /* main.c */; };
-		4EEBE7A21C3A9E7C00F68B6C /* house-robber.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EEBE7A01C3A9E7C00F68B6C /* house-robber.c */; };
-		4EEBE7A51C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EEBE7A31C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,52 +44,14 @@
 		4E230D0B1C1F8E0A0079B81F /* longest-substring-without-repeating-characters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "longest-substring-without-repeating-characters.h"; sourceTree = "<group>"; };
 		4E230D0C1C1F8E0A0079B81F /* two-sum.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "two-sum.c"; sourceTree = "<group>"; };
 		4E230D0D1C1F8E0A0079B81F /* two-sum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "two-sum.h"; sourceTree = "<group>"; };
-		4E230D111C1F90A30079B81F /* ugly-number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ugly-number.c"; sourceTree = "<group>"; };
-		4E230D121C1F90A30079B81F /* ugly-number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ugly-number.h"; sourceTree = "<group>"; };
-		4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "excel-sheet-column-number.c"; sourceTree = "<group>"; };
-		4E230D151C1F97E70079B81F /* excel-sheet-column-number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "excel-sheet-column-number.h"; sourceTree = "<group>"; };
-		4E230D171C1F98130079B81F /* excel-sheet-column-title.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "excel-sheet-column-title.c"; sourceTree = "<group>"; };
-		4E230D181C1F98130079B81F /* excel-sheet-column-title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "excel-sheet-column-title.h"; sourceTree = "<group>"; };
 		4E509D111D2C05DD0075FA2B /* LeetcodeEasyPart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LeetcodeEasyPart.c; sourceTree = "<group>"; };
 		4E509D121D2C05DD0075FA2B /* LeetcodeEasyPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeetcodeEasyPart.h; sourceTree = "<group>"; };
-		4E579AE41C3931E700194C3B /* remove-element.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "remove-element.c"; sourceTree = "<group>"; };
-		4E579AE51C3931E700194C3B /* remove-element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "remove-element.h"; sourceTree = "<group>"; };
-		4E579AE71C395B1200194C3B /* majority-element.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "majority-element.c"; sourceTree = "<group>"; };
-		4E579AE81C395B1200194C3B /* majority-element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "majority-element.h"; sourceTree = "<group>"; };
 		4E85EC471C30B3EF003D35B4 /* Linked List Cycle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "Linked List Cycle.c"; sourceTree = "<group>"; };
 		4E85EC481C30B3EF003D35B4 /* Linked List Cycle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Linked List Cycle.h"; sourceTree = "<group>"; };
 		4E85EC4A1C30BA34003D35B4 /* Linked List Cycle II.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "Linked List Cycle II.c"; sourceTree = "<group>"; };
 		4E85EC4B1C30BA34003D35B4 /* Linked List Cycle II.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Linked List Cycle II.h"; sourceTree = "<group>"; };
-		4E94B7851C39725100095EDF /* roman-to-integer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "roman-to-integer.c"; sourceTree = "<group>"; };
-		4E94B7861C39725100095EDF /* roman-to-integer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "roman-to-integer.h"; sourceTree = "<group>"; };
-		4E94B78B1C398D8800095EDF /* nim-game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "nim-game.c"; sourceTree = "<group>"; };
-		4E94B78C1C398D8800095EDF /* nim-game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nim-game.h"; sourceTree = "<group>"; };
-		4E94B78E1C398E0000095EDF /* add-digits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "add-digits.c"; sourceTree = "<group>"; };
-		4E94B78F1C398E0000095EDF /* add-digits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "add-digits.h"; sourceTree = "<group>"; };
-		4E94B7941C398ECD00095EDF /* delete-node-in-a-linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "delete-node-in-a-linked-list.c"; sourceTree = "<group>"; };
-		4E94B7951C398ECD00095EDF /* delete-node-in-a-linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "delete-node-in-a-linked-list.h"; sourceTree = "<group>"; };
-		4E94B7971C398FAB00095EDF /* same-tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "same-tree.c"; sourceTree = "<group>"; };
-		4E94B7981C398FAB00095EDF /* same-tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "same-tree.h"; sourceTree = "<group>"; };
-		4E9BF4361C263219002260D6 /* valid-anagram.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "valid-anagram.c"; sourceTree = "<group>"; };
-		4E9BF4371C263219002260D6 /* valid-anagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "valid-anagram.h"; sourceTree = "<group>"; };
-		4E9BF43A1C2638EC002260D6 /* compare-version-numbers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "compare-version-numbers.c"; sourceTree = "<group>"; };
-		4E9BF43B1C2638EC002260D6 /* compare-version-numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "compare-version-numbers.h"; sourceTree = "<group>"; };
-		4E9BF4401C2666CF002260D6 /* lowest-common-ancestor-of-a-binary-search-tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "lowest-common-ancestor-of-a-binary-search-tree.c"; sourceTree = "<group>"; };
-		4E9BF4411C2666CF002260D6 /* lowest-common-ancestor-of-a-binary-search-tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lowest-common-ancestor-of-a-binary-search-tree.h"; sourceTree = "<group>"; };
-		4E9BF4431C2678B1002260D6 /* reverse-linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "reverse-linked-list.c"; sourceTree = "<group>"; };
-		4E9BF4441C2678B1002260D6 /* reverse-linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "reverse-linked-list.h"; sourceTree = "<group>"; };
 		4E9BF4461C2678D8002260D6 /* LinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkedList.c; sourceTree = "<group>"; };
 		4E9BF4471C2678D8002260D6 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
-		4E9BF4491C2698DF002260D6 /* remove-duplicates-from-sorted-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "remove-duplicates-from-sorted-list.c"; sourceTree = "<group>"; };
-		4E9BF44A1C2698DF002260D6 /* remove-duplicates-from-sorted-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "remove-duplicates-from-sorted-list.h"; sourceTree = "<group>"; };
-		4E9BF44D1C26ABE0002260D6 /* climbing-stairs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "climbing-stairs.c"; sourceTree = "<group>"; };
-		4E9BF44E1C26ABE0002260D6 /* climbing-stairs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "climbing-stairs.h"; sourceTree = "<group>"; };
-		4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "merge-two-sorted-lists.c"; sourceTree = "<group>"; };
-		4E9BF4511C26AE00002260D6 /* merge-two-sorted-lists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "merge-two-sorted-lists.h"; sourceTree = "<group>"; };
-		4EAC84221C3833A100E9AEB4 /* implement-queue-using-stacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "implement-queue-using-stacks.c"; sourceTree = "<group>"; };
-		4EAC84231C3833A100E9AEB4 /* implement-queue-using-stacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "implement-queue-using-stacks.h"; sourceTree = "<group>"; };
-		4EBE83901C38EBC1001C1856 /* balanced-binary-tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "balanced-binary-tree.c"; sourceTree = "<group>"; };
-		4EBE83911C38EBC1001C1856 /* balanced-binary-tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "balanced-binary-tree.h"; sourceTree = "<group>"; };
 		4ED5B4A21C1730D100787711 /* PublicUtilize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicUtilize.h; sourceTree = "<group>"; };
 		4ED5B4A31C1730E500787711 /* NumberArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NumberArray.c; sourceTree = "<group>"; };
 		4ED5B4A41C1730E500787711 /* NumberArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberArray.h; sourceTree = "<group>"; };
@@ -118,10 +59,6 @@
 		4EDDABDF1D3BAE6E00627EF6 /* LeetcodeMediumPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeetcodeMediumPart.h; sourceTree = "<group>"; };
 		4EE440FD1C097D8700F9088E /* LeetCode_C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode_C; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE441001C097D8700F9088E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		4EEBE7A01C3A9E7C00F68B6C /* house-robber.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "house-robber.c"; sourceTree = "<group>"; };
-		4EEBE7A11C3A9E7C00F68B6C /* house-robber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "house-robber.h"; sourceTree = "<group>"; };
-		4EEBE7A31C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "remove-duplicates-from-sorted-array.c"; sourceTree = "<group>"; };
-		4EEBE7A41C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "remove-duplicates-from-sorted-array.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,48 +94,6 @@
 		4E230CF61C1F8E0A0079B81F /* Leetcode-Easy */ = {
 			isa = PBXGroup;
 			children = (
-				4E230D111C1F90A30079B81F /* ugly-number.c */,
-				4E230D121C1F90A30079B81F /* ugly-number.h */,
-				4E230D141C1F97E70079B81F /* excel-sheet-column-number.c */,
-				4E230D151C1F97E70079B81F /* excel-sheet-column-number.h */,
-				4E230D171C1F98130079B81F /* excel-sheet-column-title.c */,
-				4E230D181C1F98130079B81F /* excel-sheet-column-title.h */,
-				4E9BF4361C263219002260D6 /* valid-anagram.c */,
-				4E9BF4371C263219002260D6 /* valid-anagram.h */,
-				4E9BF43A1C2638EC002260D6 /* compare-version-numbers.c */,
-				4E9BF43B1C2638EC002260D6 /* compare-version-numbers.h */,
-				4E9BF4401C2666CF002260D6 /* lowest-common-ancestor-of-a-binary-search-tree.c */,
-				4E9BF4411C2666CF002260D6 /* lowest-common-ancestor-of-a-binary-search-tree.h */,
-				4E9BF4431C2678B1002260D6 /* reverse-linked-list.c */,
-				4E9BF4441C2678B1002260D6 /* reverse-linked-list.h */,
-				4E9BF4491C2698DF002260D6 /* remove-duplicates-from-sorted-list.c */,
-				4E9BF44A1C2698DF002260D6 /* remove-duplicates-from-sorted-list.h */,
-				4E9BF44D1C26ABE0002260D6 /* climbing-stairs.c */,
-				4E9BF44E1C26ABE0002260D6 /* climbing-stairs.h */,
-				4E9BF4501C26AE00002260D6 /* merge-two-sorted-lists.c */,
-				4E9BF4511C26AE00002260D6 /* merge-two-sorted-lists.h */,
-				4EAC84221C3833A100E9AEB4 /* implement-queue-using-stacks.c */,
-				4EAC84231C3833A100E9AEB4 /* implement-queue-using-stacks.h */,
-				4EBE83901C38EBC1001C1856 /* balanced-binary-tree.c */,
-				4EBE83911C38EBC1001C1856 /* balanced-binary-tree.h */,
-				4E579AE41C3931E700194C3B /* remove-element.c */,
-				4E579AE51C3931E700194C3B /* remove-element.h */,
-				4E579AE71C395B1200194C3B /* majority-element.c */,
-				4E579AE81C395B1200194C3B /* majority-element.h */,
-				4E94B7851C39725100095EDF /* roman-to-integer.c */,
-				4E94B7861C39725100095EDF /* roman-to-integer.h */,
-				4E94B78B1C398D8800095EDF /* nim-game.c */,
-				4E94B78C1C398D8800095EDF /* nim-game.h */,
-				4E94B78E1C398E0000095EDF /* add-digits.c */,
-				4E94B78F1C398E0000095EDF /* add-digits.h */,
-				4E94B7941C398ECD00095EDF /* delete-node-in-a-linked-list.c */,
-				4E94B7951C398ECD00095EDF /* delete-node-in-a-linked-list.h */,
-				4E94B7971C398FAB00095EDF /* same-tree.c */,
-				4E94B7981C398FAB00095EDF /* same-tree.h */,
-				4EEBE7A01C3A9E7C00F68B6C /* house-robber.c */,
-				4EEBE7A11C3A9E7C00F68B6C /* house-robber.h */,
-				4EEBE7A31C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c */,
-				4EEBE7A41C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.h */,
 				4E509D111D2C05DD0075FA2B /* LeetcodeEasyPart.c */,
 				4E509D121D2C05DD0075FA2B /* LeetcodeEasyPart.h */,
 			);
@@ -324,36 +219,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */,
-				4E9BF44B1C2698DF002260D6 /* remove-duplicates-from-sorted-list.c in Sources */,
-				4E579AE61C3931E700194C3B /* remove-element.c in Sources */,
-				4EBE83921C38EBC1001C1856 /* balanced-binary-tree.c in Sources */,
-				4E9BF4521C26AE00002260D6 /* merge-two-sorted-lists.c in Sources */,
 				4E9BF4481C2678D8002260D6 /* LinkedList.c in Sources */,
-				4E579AE91C395B1200194C3B /* majority-element.c in Sources */,
-				4EAC84241C3833A100E9AEB4 /* implement-queue-using-stacks.c in Sources */,
-				4E230D131C1F90A30079B81F /* ugly-number.c in Sources */,
-				4E9BF4421C2666CF002260D6 /* lowest-common-ancestor-of-a-binary-search-tree.c in Sources */,
 				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
 				4E85EC4C1C30BA34003D35B4 /* Linked List Cycle II.c in Sources */,
-				4E230D191C1F98130079B81F /* excel-sheet-column-title.c in Sources */,
-				4E230D1A1C2312B70079B81F /* excel-sheet-column-number.c in Sources */,
-				4E94B7961C398ECD00095EDF /* delete-node-in-a-linked-list.c in Sources */,
 				4EDDABE01D3BAE6E00627EF6 /* LeetcodeMediumPart.c in Sources */,
-				4E94B7991C398FAB00095EDF /* same-tree.c in Sources */,
-				4EEBE7A21C3A9E7C00F68B6C /* house-robber.c in Sources */,
-				4E94B78D1C398D8800095EDF /* nim-game.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
 				4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */,
-				4E9BF44F1C26ABE0002260D6 /* climbing-stairs.c in Sources */,
-				4EEBE7A51C3AC86A00F68B6C /* remove-duplicates-from-sorted-array.c in Sources */,
-				4E94B7871C39725100095EDF /* roman-to-integer.c in Sources */,
 				4E230CE91C1F78DB0079B81F /* Tree.c in Sources */,
-				4E9BF4391C263535002260D6 /* valid-anagram.c in Sources */,
-				4E9BF43C1C2638EC002260D6 /* compare-version-numbers.c in Sources */,
 				4E509D131D2C05DD0075FA2B /* LeetcodeEasyPart.c in Sources */,
-				4E9BF4451C2678B1002260D6 /* reverse-linked-list.c in Sources */,
 				28A1A5661DC6619900091846 /* LeetcodeHardPart.c in Sources */,
-				4E94B7901C398E0000095EDF /* add-digits.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

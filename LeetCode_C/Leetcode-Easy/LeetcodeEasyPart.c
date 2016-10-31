@@ -19,6 +19,609 @@
 #include "Tree.h"
 #include "PublicUtilize.h"
 
+#pragma mark - 83. Remove Duplicates from Sorted List
+//https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+
+int removeDuplicates(int* nums, int numsSize) {
+    if (numsSize <= 1) {
+        return numsSize;
+    }
+    
+    int duplicateCount = 0;
+    int lastNum = nums[0];
+    //    for (int i = 1 ; i < numsSize; i++) {
+    //        if(nums[i] == lastNum) {
+    //            duplicateCount++;
+    //            continue;
+    //        }
+    //        nums[i-duplicateCount] = nums[i];
+    //        lastNum = nums[i];
+    //    }
+    
+    //Faster than continue.
+    for (int i = 1 ; i < numsSize; i++) {
+        if(nums[i] == lastNum) {
+            duplicateCount++;
+        } else {
+            nums[i-duplicateCount] = nums[i];
+            lastNum = nums[i];
+        }
+    }
+    return numsSize - duplicateCount;
+}
+
+
+void testRemoveDuplicatesFromSortedArray(void) {
+    //    int *nums = sortedArray(10);
+    const int size = 10;
+    int nums[size] = {1,1,1,2,2,2,3,3,3,3};
+    printArray(nums, size);
+    int length = removeDuplicates(nums, size);
+    printArray(nums, length);
+}
+
+
+
+
+#pragma mark - 198. House Robber
+//https://leetcode.com/problems/house-robber
+
+
+
+int rob(int* nums, int numsSize) {
+    int odd = 0,even = 0;
+    for (int i = 0 ; i < numsSize ; i++) {
+        if (i%2) {
+            int value = odd + nums[i];
+            odd = value > even ? value : even;
+        } else {
+            int value = even + nums[i];
+            even = value > odd ? value : odd;
+        }
+    }
+    return odd>even?odd:even;
+}
+
+
+void run198(void) {
+    int nums[100] = {226,174,214,16,218,48,153,131,128,17,157,142,88,43,37,157,43,221,191,68,206,23,225,82,54,118,111,46,80,49,245,63,25,194,72,80,143,55,209,18,55,122,65,66,177,101,63,201,172,130,103,225,142,46,86,185,62,138,212,192,125,77,223,188,99,228,90,25,193,211,84,239,119,234,85,83,123,120,131,203,219,10,82,35,120,180,249,106,37,169,225,54,103,55,166,124};
+    
+    int size = 0;
+    while (1) {
+        if (nums[size] == 124) {
+            break;
+        }
+        size ++;
+    }
+    
+    //    int size = sizeof(nums)/sizeof(int);
+    int result = rob(nums, size);
+    printf("result %d", result);
+}
+
+#pragma mark - 100. Same Tree
+//https://leetcode.com/problems/same-tree/
+
+bool isSameTree(struct TreeNode* p, struct TreeNode* q) {
+    
+    if (p==NULL && q==NULL) {
+        return true;
+    }
+    if ((p==NULL && q!=NULL) || (p !=NULL && q==NULL)) {
+        return false;
+    }
+    
+    if (p-> val == q->val) {
+        return isSameTree(p->left,q->left) && isSameTree(p->right, q->right);
+    } else {
+        return false;
+    }
+}
+
+#pragma mark - 237. Delete Node in a Linked List
+//https://leetcode.com/problems/delete-node-in-a-linked-list/
+
+void deleteNode(struct ListNode* node) {
+    struct ListNode* nextNode = node->next;
+    node->val = nextNode->val;
+    node->next = nextNode->next;
+    free(nextNode);
+}
+
+#pragma mark - 258. Add Digits
+//https://leetcode.com/problems/add-digits/
+
+int addDigits(int num) {
+    
+    if (num) {
+        int result = num % 9;
+        return result ? result : 9;
+    }
+    return 0;
+}
+
+#pragma mark - 292. Nim Game
+//https://leetcode.com/problems/nim-game
+
+bool canWinNim(int n) {
+    return n%4;
+}
+
+#pragma mark - 13. Roman to Integer
+//https://leetcode.com/problems/roman-to-integer
+
+int convertRomanCharToInt(char romanChar) {
+    switch (romanChar) {
+        case 'I':
+            return 1;
+            break;
+        case 'V':
+            return 5;
+        case 'X':
+            return 10;
+        case 'L':
+            return 50;
+        case 'C':
+            return 100;
+        case 'D':
+            return 500;
+        case 'M':
+            return 1000;
+        default:
+            return 0;
+            break;
+    }
+}
+
+int romanToInt(char* s) {
+    int result = 0;
+    int groupSum = 0;
+    int lastValue = 0;
+    char *t = s;
+    while (*t != '\0') {
+        char romanValue = *t;
+        t++;
+        int value = convertRomanCharToInt(romanValue);
+        if (lastValue == 0) {
+            lastValue = value;
+            groupSum = value;
+            continue;
+        }
+        if (value == lastValue) {
+            groupSum += value;
+        }
+        if (value > lastValue) {
+            result = result - groupSum + value;
+            groupSum = 0;
+        }
+        
+        if (value < lastValue) {
+            result += groupSum;
+            groupSum = value;
+        }
+        lastValue = value;
+    }
+    result += groupSum;
+    
+    return result;
+}
+
+void run13(void) {
+    //    char *s = "MCD";
+    //    char *s = "LXXX";
+    //    char *s = "MDCCCLXXXIV";
+    char *s = "CMLII";
+    int value = romanToInt(s);
+    printf("Roman Value: %d", value);
+    
+}
+
+#pragma mark - 169. Majority Element
+//https://leetcode.com/problems/majority-element/
+
+int majorityElement(int* nums, int numsSize) {
+    int result = 0;
+    int count = 0;
+    for(int i = 0; i<numsSize; i++) {
+        if(count == 0) {
+            result = nums[i];
+            count ++;
+        } else {
+            int number = nums[i];
+            if (number == result) {
+                count ++;
+            } else {
+                count --;
+            }
+        }
+    }
+    return result;
+}
+
+#pragma mark - 27. Remove Element
+//https://leetcode.com/problems/remove-element/
+
+int removeElement(int* nums, int numsSize, int val) {
+    int duplicateCount = 0;
+    for (int i = 0 ; i < numsSize - duplicateCount;) {
+        if (nums[i] != val) {
+            i++;
+            continue;
+        }
+        for (int j = i; j < numsSize - duplicateCount - 1; j++) {
+            nums[j] = nums[j+1];
+        }
+        duplicateCount++;
+    }
+    return numsSize - duplicateCount;
+}
+
+
+void run27(void) {
+    int nums[] = {1,2,3,4,5,6,6,7};
+    int size = sizeof(nums) / sizeof(int);
+    int length = removeElement(nums, size, 6);
+    printArray(nums, size);
+    printf("length %d", length);
+}
+
+#pragma mark - 110. Balanced Binary Tree
+//https://leetcode.com/problems/balanced-binary-tree/
+
+int deep(struct TreeNode* root) {
+    if (root == NULL) {
+        return 0;
+    }
+    int L = deep(root->left);
+    int R = deep(root->right);
+    int deep = L > R ? L : R;
+    return 1 + deep;
+}
+
+bool isBalanced(struct TreeNode* root) {
+    if (root == NULL) {
+        return true;
+    }
+    int l = deep(root->left);
+    int r = deep(root->right);
+    if (abs(l - r) > 1) {
+        return false;
+    }
+    return isBalanced(root->left) && isBalanced(root->right);
+    
+}
+
+
+
+
+
+#pragma mark - 21. Merge Two Sorted Lists
+//https://leetcode.com/problems/merge-two-sorted-lists/
+
+
+
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
+    struct ListNode *p1 = l1;
+    struct ListNode *p2 = l2;
+    
+    if (l1 == NULL) {
+        return l2;
+    }
+    if (l2 == NULL) {
+        return l1;
+    }
+    struct ListNode *result = NULL;
+    struct ListNode *head = NULL;
+    
+    while (p1 && p2) {
+        int value1 = p1->val;
+        int value2 = p2->val;
+        struct ListNode *t =  value1 > value2 ? p2 : p1;
+        if (value1 > value2) {
+            p2 = p2->next;
+        } else {
+            p1 = p1->next;
+        }
+        
+        if (result) {
+            result->next = t;
+            result = result->next;
+        } else {
+            result = t;
+            head = t;
+        }
+        
+    }
+    if (p1 == NULL) {
+        result->next = p2;
+    } else {
+        result->next = p1;
+    }
+    
+    return head;
+}
+
+void run21() {
+    int *nums1 = sortedArray(4);
+    int *nums2 = sortedArray(6);
+    struct ListNode *node1 = createLinkList(nums1, 4);
+    struct ListNode *node2 = createLinkList(nums2, 6);
+    struct ListNode *node3 = mergeTwoLists(node1, node2);
+    showLinkList(node3);
+}
+
+
+#pragma mark - 70. Climbing Stairs
+//https://leetcode.com/problems/climbing-stairs/
+
+int climbStairs(int n) {
+    if (n<3) {
+        return n;
+    }
+    
+    int *keep = (int *)malloc(sizeof(int) * n);
+    keep[0] = 1;
+    keep[1] = 2;
+    
+    int i = 2;
+    int sum = 0;
+    while (i < n) {
+        sum = keep[i-1] + keep[i-2];
+        keep[i] = sum;
+        i++;
+    }
+    return sum;
+}
+
+void run70() {
+    for (int i = 1 ; i < 45; i++) {
+        int result = climbStairs(i);
+        printf("input %d result %d \n", i, result);
+    }
+}
+
+#pragma mark - 83. Remove Duplicates from Sorted List
+//https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+
+struct ListNode* deleteDuplicates(struct ListNode* head) {
+    struct ListNode *temp = head;
+    if (temp == NULL) {
+        return NULL;
+    }
+    while (temp->next) {
+        struct ListNode *t = NULL;
+        if (temp->val == temp->next->val) {
+            t = temp->next;
+            temp->next = t->next;
+        } else {
+            temp = temp->next;
+        }
+        
+        
+        //with free 8.00ms. without 4.00ms
+        if (t) {
+            free(t);
+        }
+    }
+    
+    return head;
+}
+
+
+void run83() {
+    
+    int nums[] = {1,1,2,3,3};
+    struct ListNode *list = createLinkList(nums, 5);
+    showLinkList(deleteDuplicates(list));
+    
+    //    int nums[] = {1};
+    //    struct ListNode *list = createLinkList(nums, 1);
+    //    showLinkList(deleteDuplicates(list));
+    
+    //    int nums[] = {};
+    //    struct ListNode *list = createLinkList(nums, 0);
+    //    showLinkList(deleteDuplicates(list));
+    
+    //    int nums[] = {1,1,1,1,1};
+    //    struct ListNode *list = createLinkList(nums, 5);
+    //    showLinkList(deleteDuplicates(list));
+    
+}
+
+
+#pragma mark - 206. Reverse Linked List
+//https://leetcode.com/problems/reverse-linked-list/
+
+
+
+struct ListNode* reverseList(struct ListNode* head) {
+    struct ListNode * result = NULL;
+    struct ListNode * temp = head;
+    while (temp) {
+        struct ListNode *tt = temp->next;
+        temp->next = result;
+        result = temp;
+        temp = tt;
+    }
+    return result;
+}
+
+void run206(void) {
+    const int size = 6;
+    int input[size] = {1,2,3,4,5,6};
+    struct ListNode *node = createLinkList(input, size);
+    showLinkList(reverseList(node));
+}
+
+
+#pragma mark - 235. Lowest Common Ancestor of a Binary Search Tree
+//https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+
+struct TreeNode* lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p, struct TreeNode* q) {
+    if (p->val > q->val) {
+        struct TreeNode *temp = p;
+        p = q;
+        q = temp;
+    }
+    
+    if ((root->val < q->val) && (root->val > p->val)) {
+        return root;
+    }
+    
+    if (root->val == p->val || root->val == q->val) {
+        return root;
+    }
+    if (root->val > q->val) {
+        return lowestCommonAncestor(root->left, p, q);
+    } else {
+        return lowestCommonAncestor(root->right, p, q);
+    }
+}
+
+void run235(void) {
+    struct TreeNode *node1 = (struct TreeNode *)malloc(sizeof(struct TreeNode));
+    struct TreeNode *node2 = (struct TreeNode *)malloc(sizeof(struct TreeNode));
+    struct TreeNode *node3 = (struct TreeNode *)malloc(sizeof(struct TreeNode));
+    node1->val = 1;
+    node2->val = 2;
+    node3->val = 3;
+    node2->left = node1;
+    node2->right = node3;
+    
+    struct TreeNode *node4 = lowestCommonAncestor(node2, node3, node1);
+    printf("reulst %d", node4->val);
+}
+
+#pragma mark - 165. Compare Version Numbers
+//https://leetcode.com/problems/compare-version-numbers/
+
+int compareVersion(char* version1, char* version2) {
+    int value1 = 0;
+    int value2 = 0;
+    
+    char *p1 = version1;
+    while (*p1 != '.' && *p1 != '\0') {
+        value1 = value1 * 10 + *p1 - '0';
+        p1++;
+    }
+    
+    char *p2 = version2;
+    while (*p2 != '.' && *p2 !='\0') {
+        value2 = value2 * 10 + *p2 - '0';
+        p2++;
+    }
+    
+    if (value1 == value2) {
+        if (*p1 =='\0' && *p2 == '\0') {
+            return 0;
+        } else {
+            if (*p1 == '.') {
+                p1++;
+            }
+            if (*p2 == '.') {
+                p2++;
+            }
+            return compareVersion(p1, p2);
+        }
+    } else if (value1 > value2) {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
+
+
+
+void run165(void) {
+    
+    //    int result = compareVersion("0.1.1", "0.2.1");
+    //    printf("result %d", result);
+    
+    //    int result = compareVersion("1", "1.1");
+    //    printf("result %d", result);
+    
+    //    int result = compareVersion("01", "1");
+    //    printf("result %d", result);
+    
+    int result = compareVersion("1.0", "1");
+    printf("result %d", result);
+    
+}
+
+#pragma mark - 242. Valid Anagram
+//https://leetcode.com/problems/valid-anagram/
+
+bool isAnagram(char* s, char* t) {
+    int count1[26] = {0};
+    int count2[26] = {0};
+    
+    char *p = s;
+    while (*p != '\0') {
+        count1[*p - 'a']++;
+        p++;
+    }
+    p = t;
+    while (*p != '\0') {
+        count2[*p - 'a']++;
+        p++;
+    }
+    for (int i = 0 ; i < 26 ; i++) {
+        if (count1[i] != count2[i]) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+void run242(void) {
+    
+    //    char *s = "anagram";
+    //    char *t = "nagaram";
+    
+    char *s = "";
+    char *t = "";
+    bool result = isAnagram(s, t);
+    printf("result %d", result);
+}
+
+#pragma mark - 171. Excel Sheet Column Number
+//https://leetcode.com/problems/excel-sheet-column-number/
+
+int titleToNumber(char* s) {
+    int result = 0;
+    while(*s != '\0') {
+        int value = *s - 'A' + 1;
+        result = result * 26 + value;
+        s++;
+    }
+    return result;
+}
+
+#pragma mark - 263. Ugly Number
+//https://leetcode.com/problems/ugly-number
+
+bool isUgly(int num) {
+    if (num <= 0) {
+        return false;
+    }
+    
+    if (num % 2 == 0) {
+        return isUgly(num/2);
+    }
+    if (num % 3 == 0) {
+        return isUgly(num/3);
+    }
+    if (num % 5 == 0) {
+        return isUgly(num/5);
+    }
+    if (num == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 #pragma mark - 326. Power of Three
 //https://leetcode.com/problems/power-of-four/
