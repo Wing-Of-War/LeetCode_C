@@ -20,6 +20,35 @@
 #include "PublicUtilize.h"
 
 
+#pragma mark - 441. Arranging Coins
+//https://leetcode.com/problems/arranging-coins/
+
+int arrangeCoins(int n) {
+    
+//    x|2 + x - 2n = 0;
+    
+    //Slow 9ms & need use double.
+//    unsigned long delt = 1.0 + 8.0 * (unsigned long)n;
+//    double stdDelt = sqrtl(delt);
+//    double x1 = (stdDelt - 1 ) / 2;
+//    int result = (int)x1;
+//    printf("input:%d,  %d\n",n, result);
+    
+    //Faster 6ms & clear.
+    int result = (int)(sqrt(2.0 * n + 0.25)-0.5);
+    printf("input:%d,  %d\n",n, result);
+    return result;
+}
+
+void run441() {
+    for (int i = 0 ; i < 100; i ++) {
+        arrangeCoins(i);
+    }
+
+//    arrangeCoins(1804289383);
+    arrangeCoins(2146467959);
+
+}
 
 #pragma mark - 191. Number of 1 Bits
 //https://leetcode.com/problems/number-of-1-bits/
@@ -1745,5 +1774,5 @@ void runEasyPart() {
 //    run401();
 //    run415();
 //    run257();
-    run217();
+    run441();
 }
