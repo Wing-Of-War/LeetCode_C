@@ -19,6 +19,50 @@
 #include "Tree.h"
 #include "PublicUtilize.h"
 
+//#pragma mark - 437. Path Sum III
+//
+//int pathSum(struct TreeNode* root, int sum) {
+//    
+//}
+
+
+#pragma mark - 303. Range Sum Query - Immutable
+//https://leetcode.com/problems/range-sum-query-immutable/
+
+//Very slow.
+
+
+struct NumArray {
+    int val;
+    int *sum;
+};
+
+/** Initialize your data structure here. */
+struct NumArray* NumArrayCreate(int* nums, int numsSize) {
+    struct NumArray *result = (struct NumArray *)malloc(sizeof(struct NumArray));
+    result -> val = numsSize;
+    result -> sum = (int *)malloc(sizeof(int) * numsSize + 1);
+    result -> sum[0] = 0;
+    for (int i = 0; i < numsSize; i++) {
+        result -> sum[i+1] = result ->sum[i] + nums[i];
+    }
+    
+    return result;
+}
+
+int sumRange(struct NumArray* numArray, int i, int j) {
+    if (numArray == NULL) {
+        return 0;
+    }
+    int sum = numArray->sum[j+1] - numArray->sum[i];
+    return sum;
+}
+/** Deallocates memory previously allocated for the data structure. */
+void NumArrayFree(struct NumArray* numArray) {
+    free(numArray->sum);
+    free(numArray);
+}
+
 
 #pragma mark - 438. Find All Anagrams in a String
 //https://leetcode.com/problems/find-all-anagrams-in-a-string/
