@@ -9,6 +9,33 @@
 #include "LeetcodeMediumPart.h"
 #include "Tree.h"
 
+
+
+
+
+
+#pragma mark - 113. Path Sum II
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+/**
+ * Return an array of arrays of size *returnSize.
+ * The sizes of the arrays are returned as *columnSizes array.
+ * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
+ */
+int** pathSum(struct TreeNode* root, int sum, int** columnSizes, int* returnSize) {
+    return NULL;
+}
+
+
+
+#pragma mark -
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

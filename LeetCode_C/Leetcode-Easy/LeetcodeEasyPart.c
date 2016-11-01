@@ -25,7 +25,6 @@
 //    
 //}
 
-
 #pragma mark - 303. Range Sum Query - Immutable
 //https://leetcode.com/problems/range-sum-query-immutable/
 
@@ -62,6 +61,55 @@ void NumArrayFree(struct NumArray* numArray) {
     free(numArray->sum);
     free(numArray);
 }
+
+
+#pragma mark - 38. Count and Say
+//https://leetcode.com/problems/count-and-say/
+
+//If use int to setup array , runtime error. We can't malloc enougth memory.
+char* intArrayToString(char *nums, size_t size) {
+    char *result = (char *)malloc(size);
+    for (int i = 0; i < size; i++) {
+        result[i] = '0' + nums[i];
+    }
+    result[size] = '\0';
+    return result;
+}
+
+char* countAndSay(int n) {
+    if (n == 0) {
+        return NULL;
+    }
+    char *s = "1";
+    int count = n;
+    while (count > 1) {
+        int lastStrLength = (int)strlen(s);
+        char *container = malloc(lastStrLength * 2);
+        int index = 0;
+        int times = 1;
+        for (int i = 0; i < lastStrLength; i++) {
+            if (i + 1 == lastStrLength || s[i] != s[i+1]) {
+                container[index] = times;
+                container[index + 1] = s[i] - '0';
+                index += 2;
+                times = 1;
+            } else {
+                times ++;
+            }
+        }
+        s = intArrayToString(container, index);
+        count --;
+    }
+    return s;
+}
+
+void run38() {
+    for (int i = 0; i < 31; i++) {
+        char *s = countAndSay(i);
+        printf("input %d: %s\n",i, s);
+    }
+}
+
 
 
 #pragma mark - 438. Find All Anagrams in a String
@@ -2673,5 +2721,6 @@ void runEasyPart() {
 //    run257();
 //    run441();
 //    run405();
-    run438();
+//    run438();
+    run38();
 }
