@@ -25,6 +25,13 @@
 //    
 //}
 
+int cmpfunc(const void *a, const void *b) {
+    return (*(int *)a - *(int*)b);  //I can't figure out.
+}
+
+
+
+
 #pragma mark - 303. Range Sum Query - Immutable
 //https://leetcode.com/problems/range-sum-query-immutable/
 
@@ -62,6 +69,49 @@ void NumArrayFree(struct NumArray* numArray) {
     free(numArray);
 }
 
+
+#pragma mark - 414. Third Maximum Number
+//https://leetcode.com/problems/third-maximum-number/
+
+int cmpfunc2(const void *a, const void *b) {
+    if (*(int *)b > *(int *)a) {
+        return 1;
+    } else if (*(int *)b < *(int *)a ) {
+        return -1;
+    }
+    return 0;  //I can't figure out.
+}
+
+int thirdMax(int* nums, int numsSize) {
+
+    qsort(nums, numsSize, sizeof(int32_t), cmpfunc2);
+    int result = nums[0];
+    int index = 0;
+    for (int i = 0; i< numsSize; i++) {
+        if (result != nums[i]) {
+            index ++;
+            result = nums[i];
+            if (index == 2) {
+                break;
+            }
+        }
+    }
+    if (index < 2) {
+        return nums[0];
+    }
+    return result;
+}
+
+void run414()  {
+
+
+    int size =  3;
+//    int *testArray = randomArray(size, size);
+    int testArray[3] = {-2147483648,1,1};
+    int result = thirdMax(testArray, size);
+    printArray(testArray, size);
+    printf("result %d", result);
+}
 
 #pragma mark - 38. Count and Say
 //https://leetcode.com/problems/count-and-say/
@@ -1086,9 +1136,6 @@ struct TreeNode* invertTree(struct TreeNode* root) {
 //https://leetcode.com/problems/contains-duplicate/
 
 
-int cmpfunc(const void *a, const void *b) {
-    return (*(int *)a - *(int*)b);  //I can't figure out.
-}
 
 bool containsDuplicate(int* nums, int numsSize) {
     //Slow way.
@@ -2722,5 +2769,6 @@ void runEasyPart() {
 //    run441();
 //    run405();
 //    run438();
-    run38();
+//    run38();
+    run414();
 }
