@@ -1,4 +1,4 @@
-//
+ //
 //  LeetcodeEasyPart.c
 //  LeetCode_C
 //
@@ -69,6 +69,68 @@ void NumArrayFree(struct NumArray* numArray) {
     free(numArray);
 }
 
+
+#pragma mark - 400. Nth Digit
+
+//int timesWith9x(int n) {
+//    int result = 9;
+//    int times = n;
+//    while (times>1) {
+//        result *= 10;
+//        times --;
+//    }
+//    return result;
+//}
+//
+//int findNthDigit(int n) {
+//    
+//    int length = 1;
+//    
+//    while (n - timesWith9x(length) * length > 0) {
+//        n = n - timesWith9x(length) * length;
+//        length++;
+//    }
+//    int index = n / length;
+//    
+//    
+//    return 0;
+//}
+//
+//void run400() {
+//    
+//}
+
+
+#pragma mark - 160. Intersection of Two Linked Lists
+
+
+
+
+struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *headB) {
+    if (headA ==NULL || headB == NULL) {
+        return NULL;
+    }
+    
+    struct ListNode *pa = headA;
+    struct ListNode *pb = headB;
+    while (pa != pb) {
+        
+        if (pa == NULL) {
+            pa = headB;
+        } else {
+            pa = pa->next;
+        }
+        if (pb == NULL) {
+            pb = headA;
+        } else {
+            pb = pb->next;
+        }
+    }
+    return pa;
+}
+
+void run160() {
+}
 
 #pragma mark - 414. Third Maximum Number
 //https://leetcode.com/problems/third-maximum-number/
@@ -2770,5 +2832,6 @@ void runEasyPart() {
 //    run405();
 //    run438();
 //    run38();
-    run414();
+//    run414();
+//    run400();
 }
