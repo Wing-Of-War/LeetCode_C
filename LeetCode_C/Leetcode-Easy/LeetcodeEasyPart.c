@@ -29,8 +29,53 @@ int cmpfunc(const void *a, const void *b) {
     return (*(int *)a - *(int*)b);  //I can't figure out.
 }
 
+#pragma mark - 453. Minimum Moves to Equal Array Elements   QuestionEditorial Solution
 
 
+int minMoves(int* nums, int numsSize) {
+    
+    int step = 0;
+
+    int max = nums[0];
+    int min = nums[0];
+    int maxIndex = 0;
+    for (int i = 0 ; i < numsSize; i++) {
+        if (nums[i] >= max) {
+            max = nums[i];
+            maxIndex = i;
+        }
+        if (nums[i] <= min) {
+            min = nums[i];
+        }
+    }
+    if (max == min) {
+        return step;
+    }
+    
+    int ori = min;
+    while (max != min) {
+        for (int i = 0 ; i < numsSize; i++) {
+            if (maxIndex != i) {
+                nums[i] ++;
+            }
+            if (nums[i] > max) {
+                maxIndex = i;
+                max = nums[i];
+            }
+        }
+        min++;
+    }
+    
+    return min-ori;
+}
+
+void run453() {
+    int inputs[4] = {1,2,3,4};
+    int moves = minMoves(inputs, 4);
+//    int inputs[2] = {1,2147483647};
+//    int moves = minMoves(inputs, 2);
+    printf("%d", moves);
+}
 
 #pragma mark - 303. Range Sum Query - Immutable
 //https://leetcode.com/problems/range-sum-query-immutable/
@@ -2834,4 +2879,5 @@ void runEasyPart() {
 //    run38();
 //    run414();
 //    run400();
+    run453();
 }
