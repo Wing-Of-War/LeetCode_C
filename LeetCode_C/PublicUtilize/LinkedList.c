@@ -10,6 +10,17 @@
 #include "stdlib.h"
 
 
+struct ListNode* reverseList(struct ListNode* head) {
+    struct ListNode * result = NULL;
+    struct ListNode * temp = head;
+    while (temp) {
+        struct ListNode *tt = temp->next;
+        temp->next = result;
+        result = temp;
+        temp = tt;
+    }
+    return result;
+}
 
 
 struct ListNode *newNode(int value) {

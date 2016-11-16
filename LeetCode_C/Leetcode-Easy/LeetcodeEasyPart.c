@@ -50,6 +50,40 @@
 //
 //}
 
+#pragma mark - 234. Palindrome Linked List 
+//https://leetcode.com/problems/palindrome-linked-list/
+
+bool isPalindrome234(struct ListNode* head) {
+    if (head == NULL || head->next == NULL) {
+        return true;
+    }
+    struct ListNode *fastNode = head;
+    struct ListNode *slowNode = head;
+    while (fastNode->next && fastNode->next->next) {
+        slowNode = slowNode->next;
+        fastNode = fastNode->next->next;
+    }
+    struct ListNode *midNode = slowNode->next;
+    midNode = reverseList(midNode);
+    
+    bool result = true;
+    slowNode = head;
+    fastNode = midNode;
+    while (fastNode != NULL && slowNode != NULL) {
+        if (slowNode == midNode) {
+            break;
+        }
+        if (fastNode->val != slowNode->val) {
+            result = false;
+            break;
+        }
+        fastNode = fastNode->next;
+        slowNode = slowNode->next;
+    }
+    
+    return result;
+}
+
 #pragma mark - 437. Path Sum III
 //https://leetcode.com/problems/path-sum-iii/
 
@@ -838,24 +872,12 @@ void run83() {
 //https://leetcode.com/problems/reverse-linked-list/
 
 
-
-struct ListNode* reverseList(struct ListNode* head) {
-    struct ListNode * result = NULL;
-    struct ListNode * temp = head;
-    while (temp) {
-        struct ListNode *tt = temp->next;
-        temp->next = result;
-        result = temp;
-        temp = tt;
-    }
-    return result;
-}
-
 void run206(void) {
     const int size = 6;
     int input[size] = {1,2,3,4,5,6};
     struct ListNode *node = createLinkList(input, size);
-    showLinkList(reverseList(node));
+    struct ListNode *reversList = reverseList(node);
+    showLinkList(reversList);
 }
 
 
