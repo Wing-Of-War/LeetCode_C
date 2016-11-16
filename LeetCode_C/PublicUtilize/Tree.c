@@ -112,6 +112,7 @@ struct TreeNode *createTreeByString(char *input) {
 //    input = "[]";
 //    char *input = "[3,9,20,null,null,15,7]";
 //    char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
+    input = "[1,-2,-3,1,3,-2,null,-1]";
     
     if (input == NULL) {
         return NULL;
@@ -155,7 +156,7 @@ struct TreeNode *createTreeByString(char *input) {
             break;
         }
         parent = cache[pullIndex];
-        if (pv->next->next) {
+        if (pv->next && pv->next->next) {
             pv = pv->next->next;
         } else {
             pv = NULL;

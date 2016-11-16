@@ -19,15 +19,68 @@
 #include "Tree.h"
 #include "PublicUtilize.h"
 
-//#pragma mark - 437. Path Sum III
+
+#pragma mark - 400. Nth Digit
+
+//int timesWith9x(int n) {
+//    int result = 9;
+//    int times = n;
+//    while (times>1) {
+//        result *= 10;
+//        times --;
+//    }
+//    return result;
+//}
 //
-//int pathSum(struct TreeNode* root, int sum) {
-//    
+//int findNthDigit(int n) {
+//
+//    int length = 1;
+//
+//    while (n - timesWith9x(length) * length > 0) {
+//        n = n - timesWith9x(length) * length;
+//        length++;
+//    }
+//    int index = n / length;
+//
+//
+//    return 0;
+//}
+//
+//void run400() {
+//
 //}
 
-int cmpfunc(const void *a, const void *b) {
-    return (*(int *)a - *(int*)b);  //I can't figure out.
+#pragma mark - 437. Path Sum III
+//https://leetcode.com/problems/path-sum-iii/
+
+int dsfTree(struct TreeNode *root, int sum) {
+    
+    int result = 0;
+    if (root == NULL) {
+        return 0;
+    }
+    if (sum == root->val) {
+        result++ ;
+    }
+    return result + dsfTree(root->left, sum - root->val) + dsfTree(root->right, sum - root->val);
 }
+
+int pathSum(struct TreeNode* root, int sum) {
+    if (root == NULL) {
+        return 0;
+    }
+    
+    return dsfTree(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
+}
+
+void run437() {
+//    char *inputTree = "[8,8,8,8,8]";
+    char *inputTree = "[1,-2,-3,1,3,-2,null,-1]";
+    struct TreeNode *root = createTreeByString(inputTree);
+    int result = pathSum(root, -1);
+    printf("%d ", result);
+}
+
 
 #pragma mark - 453. Minimum Moves to Equal Array Elements   QuestionEditorial Solution
 
@@ -115,35 +168,7 @@ void NumArrayFree(struct NumArray* numArray) {
 }
 
 
-#pragma mark - 400. Nth Digit
 
-//int timesWith9x(int n) {
-//    int result = 9;
-//    int times = n;
-//    while (times>1) {
-//        result *= 10;
-//        times --;
-//    }
-//    return result;
-//}
-//
-//int findNthDigit(int n) {
-//    
-//    int length = 1;
-//    
-//    while (n - timesWith9x(length) * length > 0) {
-//        n = n - timesWith9x(length) * length;
-//        length++;
-//    }
-//    int index = n / length;
-//    
-//    
-//    return 0;
-//}
-//
-//void run400() {
-//    
-//}
 
 
 #pragma mark - 160. Intersection of Two Linked Lists
@@ -1256,7 +1281,7 @@ bool containsDuplicate(int* nums, int numsSize) {
 //        currentIndex ++;
 //    }
     
-    qsort(nums, numsSize, sizeof(int), cmpfunc);
+//    qsort(nums, numsSize, sizeof(int), cmpfunc);
     
     for (int i = 0; i< numsSize-1; i++) {
         if (nums[i] == nums[i+1]) {
@@ -2879,5 +2904,6 @@ void runEasyPart() {
 //    run38();
 //    run414();
 //    run400();
-    run453();
+//    run453();
+    run437();
 }

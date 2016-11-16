@@ -29,9 +29,9 @@
  * The sizes of the arrays are returned as *columnSizes array.
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
-int** pathSum(struct TreeNode* root, int sum, int** columnSizes, int* returnSize) {
-    return NULL;
-}
+//int** pathSum(struct TreeNode* root, int sum, int** columnSizes, int* returnSize) {
+//    return NULL;
+//}
 
 
 
