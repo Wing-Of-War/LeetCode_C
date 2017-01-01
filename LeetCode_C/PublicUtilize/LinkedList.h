@@ -19,5 +19,6 @@ struct ListNode {
 struct ListNode *newNode(int value) ;
 void showLinkList(struct ListNode *head) ;
 struct ListNode *createLinkList(int *nums, int size) ;
+struct ListNode* reverseList(struct ListNode* head);
 
 #endif /* LinkedList_h */

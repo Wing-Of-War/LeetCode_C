@@ -1,4 +1,4 @@
-//
+ //
 //  LeetcodeEasyPart.c
 //  LeetCode_C
 //
@@ -18,7 +18,6 @@
 #include "NumberArray.h"
 #include "Tree.h"
 #include "PublicUtilize.h"
-
 
 #pragma mark - 461. Hamming Distance
 //https://leetcode.com/problems/hamming-distance/
@@ -46,6 +45,312 @@ void run461() {
             int distance = hammingDistance(i, j);
             printf("x %d, y %d, dis %d\n", i , j, distance);
         }
+    }
+}
+
+#pragma mark - 400. Nth Digit
+
+//int timesWith9x(int n) {
+//    int result = 9;
+//    int times = n;
+//    while (times>1) {
+//        result *= 10;
+//        times --;
+//    }
+//    return result;
+//}
+//
+//int findNthDigit(int n) {
+//
+//    int length = 1;
+//
+//    while (n - timesWith9x(length) * length > 0) {
+//        n = n - timesWith9x(length) * length;
+//        length++;
+//    }
+//    int index = n / length;
+//
+//
+//    return 0;
+//}
+//
+//void run400() {
+//
+//}
+
+#pragma mark - 234. Palindrome Linked List 
+//https://leetcode.com/problems/palindrome-linked-list/
+
+bool isPalindrome234(struct ListNode* head) {
+    if (head == NULL || head->next == NULL) {
+        return true;
+    }
+    struct ListNode *fastNode = head;
+    struct ListNode *slowNode = head;
+    while (fastNode->next && fastNode->next->next) {
+        slowNode = slowNode->next;
+        fastNode = fastNode->next->next;
+    }
+    struct ListNode *midNode = slowNode->next;
+    midNode = reverseList(midNode);
+    
+    bool result = true;
+    slowNode = head;
+    fastNode = midNode;
+    while (fastNode != NULL && slowNode != NULL) {
+        if (slowNode == midNode) {
+            break;
+        }
+        if (fastNode->val != slowNode->val) {
+            result = false;
+            break;
+        }
+        fastNode = fastNode->next;
+        slowNode = slowNode->next;
+    }
+    
+    return result;
+}
+
+#pragma mark - 437. Path Sum III
+//https://leetcode.com/problems/path-sum-iii/
+
+int dsfTree(struct TreeNode *root, int sum) {
+    
+    int result = 0;
+    if (root == NULL) {
+        return 0;
+    }
+    if (sum == root->val) {
+        result++ ;
+    }
+    return result + dsfTree(root->left, sum - root->val) + dsfTree(root->right, sum - root->val);
+}
+
+int pathSum(struct TreeNode* root, int sum) {
+    if (root == NULL) {
+        return 0;
+    }
+    
+    return dsfTree(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
+}
+
+void run437() {
+//    char *inputTree = "[8,8,8,8,8]";
+    char *inputTree = "[1,-2,-3,1,3,-2,null,-1]";
+    struct TreeNode *root = createTreeByString(inputTree);
+    int result = pathSum(root, -1);
+    printf("%d ", result);
+}
+
+
+#pragma mark - 453. Minimum Moves to Equal Array Elements   QuestionEditorial Solution
+
+
+int minMoves(int* nums, int numsSize) {
+    
+    int step = 0;
+
+    int max = nums[0];
+    int min = nums[0];
+    int maxIndex = 0;
+    for (int i = 0 ; i < numsSize; i++) {
+        if (nums[i] >= max) {
+            max = nums[i];
+            maxIndex = i;
+        }
+        if (nums[i] <= min) {
+            min = nums[i];
+        }
+    }
+    if (max == min) {
+        return step;
+    }
+    
+    int ori = min;
+    while (max != min) {
+        for (int i = 0 ; i < numsSize; i++) {
+            if (maxIndex != i) {
+                nums[i] ++;
+            }
+            if (nums[i] > max) {
+                maxIndex = i;
+                max = nums[i];
+            }
+        }
+        min++;
+    }
+    
+    return min-ori;
+}
+
+void run453() {
+    int inputs[4] = {1,2,3,4};
+    int moves = minMoves(inputs, 4);
+//    int inputs[2] = {1,2147483647};
+//    int moves = minMoves(inputs, 2);
+    printf("%d", moves);
+}
+
+#pragma mark - 303. Range Sum Query - Immutable
+//https://leetcode.com/problems/range-sum-query-immutable/
+
+//Very slow.
+
+
+struct NumArray {
+    int val;
+    int *sum;
+};
+
+/** Initialize your data structure here. */
+struct NumArray* NumArrayCreate(int* nums, int numsSize) {
+    struct NumArray *result = (struct NumArray *)malloc(sizeof(struct NumArray));
+    result -> val = numsSize;
+    result -> sum = (int *)malloc(sizeof(int) * numsSize + 1);
+    result -> sum[0] = 0;
+    for (int i = 0; i < numsSize; i++) {
+        result -> sum[i+1] = result ->sum[i] + nums[i];
+    }
+    
+    return result;
+}
+
+int sumRange(struct NumArray* numArray, int i, int j) {
+    if (numArray == NULL) {
+        return 0;
+    }
+    int sum = numArray->sum[j+1] - numArray->sum[i];
+    return sum;
+}
+/** Deallocates memory previously allocated for the data structure. */
+void NumArrayFree(struct NumArray* numArray) {
+    free(numArray->sum);
+    free(numArray);
+}
+
+
+
+
+
+#pragma mark - 160. Intersection of Two Linked Lists
+
+
+
+
+struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *headB) {
+    if (headA ==NULL || headB == NULL) {
+        return NULL;
+    }
+    
+    struct ListNode *pa = headA;
+    struct ListNode *pb = headB;
+    while (pa != pb) {
+        
+        if (pa == NULL) {
+            pa = headB;
+        } else {
+            pa = pa->next;
+        }
+        if (pb == NULL) {
+            pb = headA;
+        } else {
+            pb = pb->next;
+        }
+    }
+    return pa;
+}
+
+void run160() {
+}
+
+#pragma mark - 414. Third Maximum Number
+//https://leetcode.com/problems/third-maximum-number/
+
+int cmpfunc2(const void *a, const void *b) {
+    if (*(int *)b > *(int *)a) {
+        return 1;
+    } else if (*(int *)b < *(int *)a ) {
+        return -1;
+    }
+    return 0;  //I can't figure out.
+}
+
+int thirdMax(int* nums, int numsSize) {
+
+    qsort(nums, numsSize, sizeof(int32_t), cmpfunc2);
+    int result = nums[0];
+    int index = 0;
+    for (int i = 0; i< numsSize; i++) {
+        if (result != nums[i]) {
+            index ++;
+            result = nums[i];
+            if (index == 2) {
+                break;
+            }
+        }
+    }
+    if (index < 2) {
+        return nums[0];
+    }
+    return result;
+}
+
+void run414()  {
+
+
+    int size =  3;
+//    int *testArray = randomArray(size, size);
+    int testArray[3] = {-2147483648,1,1};
+    int result = thirdMax(testArray, size);
+    printArray(testArray, size);
+    printf("result %d", result);
+}
+
+#pragma mark - 38. Count and Say
+//https://leetcode.com/problems/count-and-say/
+
+//If use int to setup array , runtime error. We can't malloc enougth memory.
+char* intArrayToString(char *nums, size_t size) {
+    char *result = (char *)malloc(size);
+    for (int i = 0; i < size; i++) {
+        result[i] = '0' + nums[i];
+    }
+    result[size] = '\0';
+    return result;
+}
+
+char* countAndSay(int n) {
+    if (n == 0) {
+        return NULL;
+    }
+    char *s = "1";
+    int count = n;
+    while (count > 1) {
+        int lastStrLength = (int)strlen(s);
+        char *container = malloc(lastStrLength * 2);
+        int index = 0;
+        int times = 1;
+        for (int i = 0; i < lastStrLength; i++) {
+            if (i + 1 == lastStrLength || s[i] != s[i+1]) {
+                container[index] = times;
+                container[index + 1] = s[i] - '0';
+                index += 2;
+                times = 1;
+            } else {
+                times ++;
+            }
+        }
+        s = intArrayToString(container, index);
+        count --;
+    }
+    return s;
+}
+
+void run38() {
+    for (int i = 0; i < 31; i++) {
+        char *s = countAndSay(i);
+        printf("input %d: %s\n",i, s);
     }
 }
 
@@ -593,24 +898,12 @@ void run83() {
 //https://leetcode.com/problems/reverse-linked-list/
 
 
-
-struct ListNode* reverseList(struct ListNode* head) {
-    struct ListNode * result = NULL;
-    struct ListNode * temp = head;
-    while (temp) {
-        struct ListNode *tt = temp->next;
-        temp->next = result;
-        result = temp;
-        temp = tt;
-    }
-    return result;
-}
-
 void run206(void) {
     const int size = 6;
     int input[size] = {1,2,3,4,5,6};
     struct ListNode *node = createLinkList(input, size);
-    showLinkList(reverseList(node));
+    struct ListNode *reversList = reverseList(node);
+    showLinkList(reversList);
 }
 
 
@@ -1023,9 +1316,6 @@ struct TreeNode* invertTree(struct TreeNode* root) {
 //https://leetcode.com/problems/contains-duplicate/
 
 
-int cmpfunc(const void *a, const void *b) {
-    return (*(int *)a - *(int*)b);  //I can't figure out.
-}
 
 bool containsDuplicate(int* nums, int numsSize) {
     //Slow way.
@@ -1039,7 +1329,7 @@ bool containsDuplicate(int* nums, int numsSize) {
 //        currentIndex ++;
 //    }
     
-    qsort(nums, numsSize, sizeof(int), cmpfunc);
+//    qsort(nums, numsSize, sizeof(int), cmpfunc);
     
     for (int i = 0; i< numsSize-1; i++) {
         if (nums[i] == nums[i+1]) {
@@ -2659,5 +2949,11 @@ void runEasyPart() {
 //    run441();
 //    run405();
 //    run438();
+//    run461();
+//    run38();
+//    run414();
+//    run400();
+//    run453();
+//    run437();
     run461();
 }
