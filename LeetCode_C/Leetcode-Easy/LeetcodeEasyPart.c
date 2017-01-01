@@ -20,6 +20,35 @@
 #include "PublicUtilize.h"
 
 
+#pragma mark - 461. Hamming Distance
+//https://leetcode.com/problems/hamming-distance/
+
+int hammingDistance(int x, int y) {
+    int diff = 0;
+    int xx;
+    int yy;
+    while(x>0||y>0) {
+        xx = x%2;
+        yy = y%2;
+        if (xx != yy) {
+            diff ++;
+        }
+        printf("%d, %d\n", xx, yy);
+        x = x/2;
+        y = y/2;
+    }
+    return diff;
+}
+
+void run461() {
+    for (int i = 0; i < 20; i++) {
+        for (int j = 0; j < 20; j++) {
+            int distance = hammingDistance(i, j);
+            printf("x %d, y %d, dis %d\n", i , j, distance);
+        }
+    }
+}
+
 #pragma mark - 438. Find All Anagrams in a String
 //https://leetcode.com/problems/find-all-anagrams-in-a-string/
 
@@ -2629,5 +2658,6 @@ void runEasyPart() {
 //    run257();
 //    run441();
 //    run405();
-    run438();
+//    run438();
+    run461();
 }
