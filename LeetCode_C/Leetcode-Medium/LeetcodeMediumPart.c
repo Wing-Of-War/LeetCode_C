@@ -8,10 +8,41 @@
 
 #include "LeetcodeMediumPart.h"
 #include "Tree.h"
+#include <stdlib.h>
 
+#pragma mark - 442. Find All Duplicates in an Array
 
+/**
+ * Return an array of size *returnSize.
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
 
+int cmpfunc(const void *a, const void *b) {
+    if (*(int *)b > *(int *)a) {
+        return -1;
+    } else if (*(int *)b < *(int *)a ) {
+        return 1;
+    }
+    return 0;  //I can't figure out.
+}
 
+int* findDuplicates(int* nums, int numsSize, int* returnSize) {
+    qsort(nums, numsSize, sizeof(int32_t), cmpfunc);
+    int *result = (int *)malloc(sizeof(int) * numsSize);
+    int size = 0;
+    for (int i =0; i < numsSize-1; i++) {
+        if (nums[i] == nums[i+1]) {
+            result[size] = nums[i];
+            size++;
+        }
+    }
+    *returnSize = size;
+    return result;
+}
+
+void run442() {
+    
+}
 
 
 #pragma mark - 113. Path Sum II
@@ -73,5 +104,5 @@ void flatten(struct TreeNode* root) {
 
 
 void runMediumPart() {
-    
+    run442();
 }

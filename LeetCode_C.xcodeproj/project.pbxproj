@@ -127,8 +127,8 @@
 				4ED5B4A31C1730E500787711 /* NumberArray.c */,
 				4E230CE81C1F78DB0079B81F /* Tree.h */,
 				4E230CE71C1F78DB0079B81F /* Tree.c */,
-				4E9BF4461C2678D8002260D6 /* LinkedList.c */,
 				4E9BF4471C2678D8002260D6 /* LinkedList.h */,
+				4E9BF4461C2678D8002260D6 /* LinkedList.c */,
 			);
 			path = PublicUtilize;
 			sourceTree = "<group>";
