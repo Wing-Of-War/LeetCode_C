@@ -11,7 +11,8 @@
 #include <stdlib.h>
 
 #pragma mark - 442. Find All Duplicates in an Array
-
+//https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+//https://leetcode.com/problems/find-all-duplicates-in-an-array/
 /**
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().

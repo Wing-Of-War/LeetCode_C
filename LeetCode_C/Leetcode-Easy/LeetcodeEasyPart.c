@@ -19,63 +19,72 @@
 #include "Tree.h"
 #include "PublicUtilize.h"
 
-#pragma mark - 448. Find All Numbers Disappeared in an Array
 
+#pragma mark - 463. Island Perimeter
+
+
+int islandPerimeter(int** grid, int gridRowSize, int gridColSize) {
+    int result = 0;
+    for (int r = 0; r < gridRowSize; r++) {
+        for (int c = 0; c < gridColSize; c++) {
+            if (grid[r][c]) {
+                result += 4;
+                if (r > 0 && grid[r-1][c]) {
+                    result--;
+                }
+                if (c > 0 && grid[r][c-1]) {
+                    result--;
+                }
+                if (r < gridRowSize-1 && grid[r+1][c]) {
+                    result--;
+                }
+                if (c <gridColSize-1 && grid[r][c+1]) {
+                    result--;
+                }
+            }
+        }
+    }
+    return result;
+}
+
+void run463() {
+    
+//    int input4[4][4] ={{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
+//    int **input = (int **)malloc(sizeof(int *) * 4);
+//    
+//    for (int i = 0; i < 4; i++) {
+//        input[i] = input4[i];
+//    }
+    
+    
+    int input4[1][2] = {{0,1}};
+    int **input = (int **)malloc(sizeof(int *) * 1);
+    
+    for (int i = 0; i < 1; i++) {
+        input[i] = input4[i];
+    }
+    int size = islandPerimeter(input, 1, 2);
+    printf("%d", size);
+}
+
+
+#pragma mark - 448. Find All Numbers Disappeared in an Array
+//https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+//https://leetcode.com/problems/find-all-duplicates-in-an-array/
 /**
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
-//int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize) {
-//    //76ms, not the fastest.
-//    int *result = (int *)malloc(sizeof(int) * numsSize);
-//    for (int i =0; i < numsSize; i++) {
-//        result[i] = -1;
-//    }
-//    for (int i = 0; i < numsSize; i++) {
-//        result[nums[i]-1] = nums[i];
-//    }
-//    int size = 0;
-//    for (int i = 0; i < numsSize; i++) {
-//        if (result[i] == -1) {
-//            result[size] = i+1;
-//            printArray(result, numsSize);
-//            size++;
-//        }
-//    }
-//    *returnSize = size;
-//    return result;
-//}
-
-int cmpfunc3(const void *a, const void *b) {
-    if (*(int *)b > *(int *)a) {
-        return -1;
-    } else if (*(int *)b < *(int *)a ) {
-        return 1;
-    }
-    return 0;  //I can't figure out.
-}
-
-
-
 int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize) {
     //76ms, not the fastest.
-    
-    qsort(nums, numsSize, sizeof(int32_t), cmpfunc3);
-    printArray(nums, numsSize);
     int *result = (int *)malloc(sizeof(int) * numsSize);
-    int size = 0;
-    int lostNumber = 1;
-    for (int i =0; i < numsSize-1; i++) {
-        if (nums[i] == nums[i+1]) {
-            size++;
-        }else if (nums[i+1]-lostNumber >= 1) {
-            printf("l: %d \n", lostNumber);
-        }
-        lostNumber++;
+    for (int i =0; i < numsSize; i++) {
+        result[i] = -1;
     }
     for (int i = 0; i < numsSize; i++) {
         result[nums[i]-1] = nums[i];
     }
+    int size = 0;
     for (int i = 0; i < numsSize; i++) {
         if (result[i] == -1) {
             result[size] = i+1;
@@ -86,6 +95,16 @@ int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize) {
     *returnSize = size;
     return result;
 }
+
+int cmpfunc3(const void *a, const void *b) {
+    if (*(int *)b > *(int *)a) {
+        return -1;
+    } else if (*(int *)b < *(int *)a ) {
+        return 1;
+    }
+    return 0;  //I can't figure out.
+}
+
 
 
 void run448() {
@@ -3035,5 +3054,6 @@ void runEasyPart() {
 //    run453();
 //    run437();
 //    run461();
-    run448();
+//    run448();
+    run463();
 }
