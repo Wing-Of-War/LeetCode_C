@@ -14,10 +14,21 @@
 #include <stdbool.h>
 #include <math.h>
 
-#include "LinkedList.h"
 #include "NumberArray.h"
 #include "Tree.h"
 #include "PublicUtilize.h"
+
+
+#pragma mark - 476. Number Complement
+
+int findComplement(int num) {
+    return 0;
+}
+
+void run476() {
+    int i = 1;
+    printf("%d", (~i)^(1));
+}
 
 
 #pragma mark - 463. Island Perimeter
@@ -48,18 +59,18 @@ int islandPerimeter(int** grid, int gridRowSize, int gridColSize) {
 }
 
 void run463() {
-    
+
 //    int input4[4][4] ={{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
 //    int **input = (int **)malloc(sizeof(int *) * 4);
-//    
+//
 //    for (int i = 0; i < 4; i++) {
 //        input[i] = input4[i];
 //    }
-    
-    
+
+
     int input4[1][2] = {{0,1}};
     int **input = (int **)malloc(sizeof(int *) * 1);
-    
+
     for (int i = 0; i < 1; i++) {
         input[i] = input4[i];
     }
@@ -108,7 +119,7 @@ int cmpfunc3(const void *a, const void *b) {
 
 
 void run448() {
-    
+
     int input[] = {4,3,2,7,8,2,3,1};
     int returnSize = 0;
     int numSize = 8;
@@ -176,7 +187,7 @@ void run461() {
 //
 //}
 
-#pragma mark - 234. Palindrome Linked List 
+#pragma mark - 234. Palindrome Linked List
 //https://leetcode.com/problems/palindrome-linked-list/
 
 bool isPalindrome234(struct ListNode* head) {
@@ -191,7 +202,7 @@ bool isPalindrome234(struct ListNode* head) {
     }
     struct ListNode *midNode = slowNode->next;
     midNode = reverseList(midNode);
-    
+
     bool result = true;
     slowNode = head;
     fastNode = midNode;
@@ -206,7 +217,7 @@ bool isPalindrome234(struct ListNode* head) {
         fastNode = fastNode->next;
         slowNode = slowNode->next;
     }
-    
+
     return result;
 }
 
@@ -214,7 +225,7 @@ bool isPalindrome234(struct ListNode* head) {
 //https://leetcode.com/problems/path-sum-iii/
 
 int dsfTree(struct TreeNode *root, int sum) {
-    
+
     int result = 0;
     if (root == NULL) {
         return 0;
@@ -229,7 +240,7 @@ int pathSum(struct TreeNode* root, int sum) {
     if (root == NULL) {
         return 0;
     }
-    
+
     return dsfTree(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
 }
 
@@ -246,7 +257,7 @@ void run437() {
 
 
 int minMoves(int* nums, int numsSize) {
-    
+
     int step = 0;
 
     int max = nums[0];
@@ -264,7 +275,7 @@ int minMoves(int* nums, int numsSize) {
     if (max == min) {
         return step;
     }
-    
+
     int ori = min;
     while (max != min) {
         for (int i = 0 ; i < numsSize; i++) {
@@ -278,7 +289,7 @@ int minMoves(int* nums, int numsSize) {
         }
         min++;
     }
-    
+
     return min-ori;
 }
 
@@ -310,7 +321,7 @@ struct NumArray* NumArrayCreate(int* nums, int numsSize) {
     for (int i = 0; i < numsSize; i++) {
         result -> sum[i+1] = result ->sum[i] + nums[i];
     }
-    
+
     return result;
 }
 
@@ -340,11 +351,11 @@ struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *he
     if (headA ==NULL || headB == NULL) {
         return NULL;
     }
-    
+
     struct ListNode *pa = headA;
     struct ListNode *pb = headB;
     while (pa != pb) {
-        
+
         if (pa == NULL) {
             pa = headB;
         } else {
@@ -471,7 +482,7 @@ int* findAnagrams(char* s, char* p, int* returnSize) {
     if (s == NULL) {
         return NULL;
     }
-    
+
     int c[26] = {0};
     char *t = p;
     int lengthP = 0;
@@ -495,21 +506,21 @@ int* findAnagrams(char* s, char* p, int* returnSize) {
     if (lengthS < lengthP) {
         return NULL;
     }
-    
+
     int c2[26] = {0};
     int length = lengthP;
     while (length) {
         c2[s[length-1] - 'a'] ++;
         length--;
     }
-    
+
     int *result = (int *)malloc(sizeof(int) * 20100);
     int size = 0;
     if (compareIntArray(c, c2, pos, type)) {
         result[size] = 0;
         size ++;
     }
-    
+
     char *lastS = s+lengthP;
     char *startS = s;
     int index = 0;
@@ -529,10 +540,10 @@ int* findAnagrams(char* s, char* p, int* returnSize) {
 }
 
 void run438() {
-  
+
     char *s = "cbaebabacd";   char *p = "abc";
 //    char *s = "abab";   char *p ="ab";
-    
+
 //    char *s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";    char *p = "a";
 
     int returnSize = 0;
@@ -549,7 +560,7 @@ char* toHex(int num) {
     if (num==0) {
         return "0";
     }
-    
+
     int size = 0;
     unsigned int t = num;
     while (t > 0) {
@@ -575,7 +586,7 @@ void run405(){
     for (int i = -16; i > -100; i--) {
         printf("input: %d -> %s\n",i, toHex(i));
     }
-    
+
 //    unsigned int i = -2;
 //    printf("%x", i);
 //    int j = -2;
@@ -589,7 +600,7 @@ int removeDuplicates(int* nums, int numsSize) {
     if (numsSize <= 1) {
         return numsSize;
     }
-    
+
     int duplicateCount = 0;
     int lastNum = nums[0];
     //    for (int i = 1 ; i < numsSize; i++) {
@@ -600,7 +611,7 @@ int removeDuplicates(int* nums, int numsSize) {
     //        nums[i-duplicateCount] = nums[i];
     //        lastNum = nums[i];
     //    }
-    
+
     //Faster than continue.
     for (int i = 1 ; i < numsSize; i++) {
         if(nums[i] == lastNum) {
@@ -648,7 +659,7 @@ int rob(int* nums, int numsSize) {
 
 void run198(void) {
     int nums[100] = {226,174,214,16,218,48,153,131,128,17,157,142,88,43,37,157,43,221,191,68,206,23,225,82,54,118,111,46,80,49,245,63,25,194,72,80,143,55,209,18,55,122,65,66,177,101,63,201,172,130,103,225,142,46,86,185,62,138,212,192,125,77,223,188,99,228,90,25,193,211,84,239,119,234,85,83,123,120,131,203,219,10,82,35,120,180,249,106,37,169,225,54,103,55,166,124};
-    
+
     int size = 0;
     while (1) {
         if (nums[size] == 124) {
@@ -656,7 +667,7 @@ void run198(void) {
         }
         size ++;
     }
-    
+
     //    int size = sizeof(nums)/sizeof(int);
     int result = rob(nums, size);
     printf("result %d", result);
@@ -666,14 +677,14 @@ void run198(void) {
 //https://leetcode.com/problems/same-tree/
 
 bool isSameTree(struct TreeNode* p, struct TreeNode* q) {
-    
+
     if (p==NULL && q==NULL) {
         return true;
     }
     if ((p==NULL && q!=NULL) || (p !=NULL && q==NULL)) {
         return false;
     }
-    
+
     if (p-> val == q->val) {
         return isSameTree(p->left,q->left) && isSameTree(p->right, q->right);
     } else {
@@ -695,7 +706,7 @@ void deleteNode(struct ListNode* node) {
 //https://leetcode.com/problems/add-digits/
 
 int addDigits(int num) {
-    
+
     if (num) {
         int result = num % 9;
         return result ? result : 9;
@@ -757,7 +768,7 @@ int romanToInt(char* s) {
             result = result - groupSum + value;
             groupSum = 0;
         }
-        
+
         if (value < lastValue) {
             result += groupSum;
             groupSum = value;
@@ -765,7 +776,7 @@ int romanToInt(char* s) {
         lastValue = value;
     }
     result += groupSum;
-    
+
     return result;
 }
 
@@ -776,7 +787,7 @@ void run13(void) {
     char *s = "CMLII";
     int value = romanToInt(s);
     printf("Roman Value: %d", value);
-    
+
 }
 
 #pragma mark - 169. Majority Element
@@ -851,7 +862,7 @@ bool isBalanced(struct TreeNode* root) {
         return false;
     }
     return isBalanced(root->left) && isBalanced(root->right);
-    
+
 }
 
 
@@ -866,7 +877,7 @@ bool isBalanced(struct TreeNode* root) {
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
     struct ListNode *p1 = l1;
     struct ListNode *p2 = l2;
-    
+
     if (l1 == NULL) {
         return l2;
     }
@@ -875,7 +886,7 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
     }
     struct ListNode *result = NULL;
     struct ListNode *head = NULL;
-    
+
     while (p1 && p2) {
         int value1 = p1->val;
         int value2 = p2->val;
@@ -885,7 +896,7 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
         } else {
             p1 = p1->next;
         }
-        
+
         if (result) {
             result->next = t;
             result = result->next;
@@ -893,14 +904,14 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
             result = t;
             head = t;
         }
-        
+
     }
     if (p1 == NULL) {
         result->next = p2;
     } else {
         result->next = p1;
     }
-    
+
     return head;
 }
 
@@ -921,11 +932,11 @@ int climbStairs(int n) {
     if (n<3) {
         return n;
     }
-    
+
     int *keep = (int *)malloc(sizeof(int) * n);
     keep[0] = 1;
     keep[1] = 2;
-    
+
     int i = 2;
     int sum = 0;
     while (i < n) {
@@ -959,36 +970,36 @@ struct ListNode* deleteDuplicates(struct ListNode* head) {
         } else {
             temp = temp->next;
         }
-        
-        
+
+
         //with free 8.00ms. without 4.00ms
         if (t) {
             free(t);
         }
     }
-    
+
     return head;
 }
 
 
 void run83() {
-    
+
     int nums[] = {1,1,2,3,3};
     struct ListNode *list = createLinkList(nums, 5);
     showLinkList(deleteDuplicates(list));
-    
+
     //    int nums[] = {1};
     //    struct ListNode *list = createLinkList(nums, 1);
     //    showLinkList(deleteDuplicates(list));
-    
+
     //    int nums[] = {};
     //    struct ListNode *list = createLinkList(nums, 0);
     //    showLinkList(deleteDuplicates(list));
-    
+
     //    int nums[] = {1,1,1,1,1};
     //    struct ListNode *list = createLinkList(nums, 5);
     //    showLinkList(deleteDuplicates(list));
-    
+
 }
 
 
@@ -1014,11 +1025,11 @@ struct TreeNode* lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p,
         p = q;
         q = temp;
     }
-    
+
     if ((root->val < q->val) && (root->val > p->val)) {
         return root;
     }
-    
+
     if (root->val == p->val || root->val == q->val) {
         return root;
     }
@@ -1038,7 +1049,7 @@ void run235(void) {
     node3->val = 3;
     node2->left = node1;
     node2->right = node3;
-    
+
     struct TreeNode *node4 = lowestCommonAncestor(node2, node3, node1);
     printf("reulst %d", node4->val);
 }
@@ -1049,19 +1060,19 @@ void run235(void) {
 int compareVersion(char* version1, char* version2) {
     int value1 = 0;
     int value2 = 0;
-    
+
     char *p1 = version1;
     while (*p1 != '.' && *p1 != '\0') {
         value1 = value1 * 10 + *p1 - '0';
         p1++;
     }
-    
+
     char *p2 = version2;
     while (*p2 != '.' && *p2 !='\0') {
         value2 = value2 * 10 + *p2 - '0';
         p2++;
     }
-    
+
     if (value1 == value2) {
         if (*p1 =='\0' && *p2 == '\0') {
             return 0;
@@ -1085,19 +1096,19 @@ int compareVersion(char* version1, char* version2) {
 
 
 void run165(void) {
-    
+
     //    int result = compareVersion("0.1.1", "0.2.1");
     //    printf("result %d", result);
-    
+
     //    int result = compareVersion("1", "1.1");
     //    printf("result %d", result);
-    
+
     //    int result = compareVersion("01", "1");
     //    printf("result %d", result);
-    
+
     int result = compareVersion("1.0", "1");
     printf("result %d", result);
-    
+
 }
 
 #pragma mark - 242. Valid Anagram
@@ -1106,7 +1117,7 @@ void run165(void) {
 bool isAnagram(char* s, char* t) {
     int count1[26] = {0};
     int count2[26] = {0};
-    
+
     char *p = s;
     while (*p != '\0') {
         count1[*p - 'a']++;
@@ -1122,15 +1133,15 @@ bool isAnagram(char* s, char* t) {
             return false;
         }
     }
-    
+
     return true;
 }
 
 void run242(void) {
-    
+
     //    char *s = "anagram";
     //    char *t = "nagaram";
-    
+
     char *s = "";
     char *t = "";
     bool result = isAnagram(s, t);
@@ -1157,7 +1168,7 @@ bool isUgly(int num) {
     if (num <= 0) {
         return false;
     }
-    
+
     if (num % 2 == 0) {
         return isUgly(num/2);
     }
@@ -1200,7 +1211,7 @@ bool isPowerOfThree(int n) {
 //    17: false true 129140163
 //    18: true false 387420489
 //    19: true false 1162261467
-    
+
     //Fastest. 	46 ms, beat all commit in C.
     int threes[] = {1,3,9,27,81,243,729,2187,6561,19683,59049,177147,531441,1594323,4782969,14348907,43046721,129140163,387420489,1162261467};
     for (int i = 0; i < 20; i++) {
@@ -1209,7 +1220,7 @@ bool isPowerOfThree(int n) {
         }
     }
     return false;
-    
+
     //Slow.  112 ms
 //    double result =  log(n)/log(3.0);
 //    double rest = result -  round(result) ;
@@ -1229,13 +1240,13 @@ bool isPowerOfFour(int num) {
         return true;
     }
     return false;
-    
+
 }
 #pragma mark - 231. Power of Two
 //https://leetcode.com/problems/power-of-two/
 
 bool isPowerOfTwo(int n) {
-    
+
 //    double result = log(n)/ log (2);
 //    double rest = result - round(result);
 //    if (fabs(rest) < 1e-13) {
@@ -1290,7 +1301,7 @@ char* convert(char* s, int numRows) {
         restSpace = space - restSpace;
     }
     r[length] = '\0';
-    
+
     return r;
 }
 
@@ -1303,27 +1314,27 @@ void run6(void) {
         putchar(*sp);
         sp++;
     }
-    
+
     putchar('\n');
     char * r = convert(inputString,  5);
     puts(r);
-    
+
 }
 
 #pragma mark - 441. Arranging Coins
 //https://leetcode.com/problems/arranging-coins/
 
 int arrangeCoins(int n) {
-    
+
 //    x|2 + x - 2n = 0;
-    
+
     //Slow 9ms & need use double.
 //    unsigned long delt = 1.0 + 8.0 * (unsigned long)n;
 //    double stdDelt = sqrtl(delt);
 //    double x1 = (stdDelt - 1 ) / 2;
 //    int result = (int)x1;
 //    printf("input:%d,  %d\n",n, result);
-    
+
     //Faster 6ms & clear.
     int result = (int)(sqrt(2.0 * n + 0.25)-0.5);
     printf("input:%d,  %d\n",n, result);
@@ -1383,7 +1394,7 @@ void moveZeroes(int* nums, int numsSize) {
 void run283() {
     int arraySize = 10;
     int *input = randomArray(arraySize, 10);
-    
+
     input[1] = 0;
     input[5] = 0;
 //    outputArray(input, arraySize);
@@ -1426,9 +1437,9 @@ bool containsDuplicate(int* nums, int numsSize) {
 //        }
 //        currentIndex ++;
 //    }
-    
+
 //    qsort(nums, numsSize, sizeof(int), cmpfunc);
-    
+
     for (int i = 0; i< numsSize-1; i++) {
         if (nums[i] == nums[i+1]) {
             return true;
@@ -1588,7 +1599,7 @@ void run415() {
 //    int value[10] = {8,4,2,1,32,16,8,4,2,1};
 //    int min = 0;
 //    int hour = 0;
-//    
+//
 //    for (int i = 0; i < 10; i++) {
 //        if (position[i]) {
 //            if (i < 4) {
@@ -1602,7 +1613,7 @@ void run415() {
 //        printf("ERROR\n");
 //        return NULL;
 //    }
-//    
+//
 //    char *result = (char *)malloc(sizeof(char ) * 6);
 //    result[0] = '\0';
 //    if (min < 10) {
@@ -1660,9 +1671,9 @@ void run415() {
 //    int pos[10] = {0};
 //    int size = getSizeByC10(num);
 //    int **positions = (int **)malloc((sizeof(int *) * size));
-//                                     
+//
 //    travelTime(num, 0, pos, positions);
-//    
+//
 //    for(int i = 0; i < size; i++) {
 //        int *position = positions[i];
 //        for (int j = 0 ; j < 10; j++) {
@@ -1672,7 +1683,7 @@ void run415() {
 //    printf("\n");
 ////    char *s = convertPositionToString(position);
 //
-////    char **result = 
+////    char **result =
 //    return NULL;
 //}
 
@@ -1698,7 +1709,7 @@ char** readBinaryWatch(int num, int* returnSize) {
         {15,23,27,29,30,39,43,45,46,51,53,54,57,58},
         {31,47,55,59}
     };
-    
+
     int count = 0;
     for (int i = 0; i < 4 && i <= num; i++) {
         if (num - i <= 5) {
@@ -1791,7 +1802,7 @@ void run409() {
 int firstUniqChar(char* s) {
     int length = (int)strlen(s);
     int index = 0;
-    
+
     int count[26] ={0};
 
 
@@ -1829,19 +1840,19 @@ bool canConstruct(char* ransomNote, char* magazine) {
     char *p2 = magazine;
     int sc[26] = {0};
     int tc[26] = {0};
-    
-    
+
+
     while (*p1) {
         sc[*p1-'a'] ++;
         p1++;
     }
-    
-    
+
+
     while (*p2) {
         tc[*p2-'a'] ++;
         p2++;
     }
-    
+
     bool result = true;
     for (int index; index < 26; index++) {
         if (sc[index] > tc[index]) {
@@ -1849,15 +1860,15 @@ bool canConstruct(char* ransomNote, char* magazine) {
             break;
         }
     }
-    
+
     return result;
 }
 
 void run383() {
     char *s= "ymbgaraibkfmvocpizdydugvalagaivdbfsfbepeyccqfepzvtpyxtbadkhmwmoswrcxnargtlswqemafandgkmydtimuzvjwxvlfwlhvkrgcsithaqlcvrihrwqkpjdhgfgreqoxzfvhjzojhghfwbvpfzectwwhexthbsndovxejsntmjihchaotbgcysfdaojkjldprwyrnischrgmtvjcorypvopfmegizfkvudubnejzfqffvgdoxohuinkyygbdzmshvyqyhsozwvlhevfepdvafgkqpkmcsikfyxczcovrmwqxxbnhfzcjjcpgzjjfateajnnvlbwhyppdleahgaypxidkpwmfqwqyofwdqgxhjaxvyrzupfwesmxbjszolgwqvfiozofncbohduqgiswuiyddmwlwubetyaummenkdfptjczxemryuotrrymrfdxtrebpbjtpnuhsbnovhectpjhfhahbqrfbyxggobsweefcwxpqsspyssrmdhuelkkvyjxswjwofngpwfxvknkjviiavorwyfzlnktmfwxkvwkrwdcxjfzikdyswsuxegmhtnxjraqrdchaauazfhtklxsksbhwgjphgbasfnlwqwukprgvihntsyymdrfovaszjywuqygpvjtvlsvvqbvzsmgweiayhlubnbsitvfxawhfmfiatxvqrcwjshvovxknnxnyyfexqycrlyksderlqarqhkxyaqwlwoqcribumrqjtelhwdvaiysgjlvksrfvjlcaiwrirtkkxbwgicyhvakxgdjwnwmubkiazdjkfmotglclqndqjxethoutvjchjbkoasnnfbgrnycucfpeovruguzumgmgddqwjgdvaujhyqsqtoexmnfuluaqbxoofvotvfoiexbnprrxptchmlctzgqtkivsilwgwgvpidpvasurraqfkcmxhdapjrlrnkbklwkrvoaziznlpor";
-    
+
     char *t = "qhxepbshlrhoecdaodgpousbzfcqjxulatciapuftffahhlmxbufgjuxstfjvljybfxnenlacmjqoymvamphpxnolwijwcecgwbcjhgdybfffwoygikvoecdggplfohemfypxfsvdrseyhmvkoovxhdvoavsqqbrsqrkqhbtmgwaurgisloqjixfwfvwtszcxwktkwesaxsmhsvlitegrlzkvfqoiiwxbzskzoewbkxtphapavbyvhzvgrrfriddnsrftfowhdanvhjvurhljmpxvpddxmzfgwwpkjrfgqptrmumoemhfpojnxzwlrxkcafvbhlwrapubhveattfifsmiounhqusvhywnxhwrgamgnesxmzliyzisqrwvkiyderyotxhwspqrrkeczjysfujvovsfcfouykcqyjoobfdgnlswfzjmyucaxuaslzwfnetekymrwbvponiaojdqnbmboldvvitamntwnyaeppjaohwkrisrlrgwcjqqgxeqerjrbapfzurcwxhcwzugcgnirkkrxdthtbmdqgvqxilllrsbwjhwqszrjtzyetwubdrlyakzxcveufvhqugyawvkivwonvmrgnchkzdysngqdibhkyboyftxcvvjoggecjsajbuqkjjxfvynrjsnvtfvgpgveycxidhhfauvjovmnbqgoxsafknluyimkczykwdgvqwlvvgdmufxdypwnajkncoynqticfetcdafvtqszuwfmrdggifokwmkgzuxnhncmnsstffqpqbplypapctctfhqpihavligbrutxmmygiyaklqtakdidvnvrjfteazeqmbgklrgrorudayokxptswwkcircwuhcavhdparjfkjypkyxhbgwxbkvpvrtzjaetahmxevmkhdfyidhrdeejapfbafwmdqjqszwnwzgclitdhlnkaiyldwkwwzvhyorgbysyjbxsspnjdewjxbhpsvj";
-    
+
     bool r = canConstruct(s, t);
     printf(" %d ", r);
 }
@@ -1867,7 +1878,7 @@ void run383() {
 
 int sumOfLeftLeaves(struct TreeNode* root) {
 
-    
+
     if (root == NULL) {
         return 0;
     }
@@ -1877,7 +1888,7 @@ int sumOfLeftLeaves(struct TreeNode* root) {
     }
     sum += sumOfLeftLeaves(root->left);
     sum += sumOfLeftLeaves(root->right);
-    
+
     return sum;
 }
 
@@ -1895,33 +1906,33 @@ char findTheDifference(char* s, char* t) {
     int sc[26] = {0};
     int tc[26] = {0};
 
-    
+
     while (*p1) {
         sc[*p1-'a'] ++;
         p1++;
     }
 
-    
+
     while (*p2) {
         tc[*p2-'a'] ++;
         p2++;
     }
-    
+
     int index = 0;
     for (; index < 26; index++) {
         if (sc[index] != tc[index]) {
             break;
         }
     }
-    
+
     return 'a' + index;
 }
 
 void run389() {
     char *s= "ymbgaraibkfmvocpizdydugvalagaivdbfsfbepeyccqfepzvtpyxtbadkhmwmoswrcxnargtlswqemafandgkmydtimuzvjwxvlfwlhvkrgcsithaqlcvrihrwqkpjdhgfgreqoxzfvhjzojhghfwbvpfzectwwhexthbsndovxejsntmjihchaotbgcysfdaojkjldprwyrnischrgmtvjcorypvopfmegizfkvudubnejzfqffvgdoxohuinkyygbdzmshvyqyhsozwvlhevfepdvafgkqpkmcsikfyxczcovrmwqxxbnhfzcjjcpgzjjfateajnnvlbwhyppdleahgaypxidkpwmfqwqyofwdqgxhjaxvyrzupfwesmxbjszolgwqvfiozofncbohduqgiswuiyddmwlwubetyaummenkdfptjczxemryuotrrymrfdxtrebpbjtpnuhsbnovhectpjhfhahbqrfbyxggobsweefcwxpqsspyssrmdhuelkkvyjxswjwofngpwfxvknkjviiavorwyfzlnktmfwxkvwkrwdcxjfzikdyswsuxegmhtnxjraqrdchaauazfhtklxsksbhwgjphgbasfnlwqwukprgvihntsyymdrfovaszjywuqygpvjtvlsvvqbvzsmgweiayhlubnbsitvfxawhfmfiatxvqrcwjshvovxknnxnyyfexqycrlyksderlqarqhkxyaqwlwoqcribumrqjtelhwdvaiysgjlvksrfvjlcaiwrirtkkxbwgicyhvakxgdjwnwmubkiazdjkfmotglclqndqjxethoutvjchjbkoasnnfbgrnycucfpeovruguzumgmgddqwjgdvaujhyqsqtoexmnfuluaqbxoofvotvfoiexbnprrxptchmlctzgqtkivsilwgwgvpidpvasurraqfkcmxhdapjrlrnkbklwkrvoaziznlpor";
-    
+
     char *t = "qhxepbshlrhoecdaodgpousbzfcqjxulatciapuftffahhlmxbufgjuxstfjvljybfxnenlacmjqoymvamphpxnolwijwcecgwbcjhgdybfffwoygikvoecdggplfohemfypxfsvdrseyhmvkoovxhdvoavsqqbrsqrkqhbtmgwaurgisloqjixfwfvwtszcxwktkwesaxsmhsvlitegrlzkvfqoiiwxbzskzoewbkxtphapavbyvhzvgrrfriddnsrftfowhdanvhjvurhljmpxvpddxmzfgwwpkjrfgqptrmumoemhfpojnxzwlrxkcafvbhlwrapubhveattfifsmiounhqusvhywnxhwrgamgnesxmzliyzisqrwvkiyderyotxhwspqrrkeczjysfujvovsfcfouykcqyjoobfdgnlswfzjmyucaxuaslzwfnetekymrwbvponiaojdqnbmboldvvitamntwnyaeppjaohwkrisrlrgwcjqqgxeqerjrbapfzurcwxhcwzugcgnirkkrxdthtbmdqgvqxilllrsbwjhwqszrjtzyetwubdrlyakzxcveufvhqugyawvkivwonvmrgnchkzdysngqdibhkyboyftxcvvjoggecjsajbuqkjjxfvynrjsnvtfvgpgveycxidhhfauvjovmnbqgoxsafknluyimkczykwdgvqwlvvgdmufxdypwnajkncoynqticfetcdafvtqszuwfmrdggifokwmkgzuxnhncmnsstffqpqbplypapctctfhqpihavligbrutxmmygiyaklqtakdidvnvrjfteazeqmbgklrgrorudayokxptswwkcircwuhcavhdparjfkjypkyxhbgwxbkvpvrtzjaetahmxevmkhdfyidhrdeejapfbafwmdqjqszwnwzgclitdhlnkaiyldwkwwzvhyorgbysyjbxsspnjdewjxbhpsvj";
-    
+
 //    char *s = "abcd";
 //    char *t = "sabcd";
     char r = findTheDifference(s, t);
@@ -2089,7 +2100,7 @@ int countTree(struct TreeNode* root, struct CountNode* countNode, int level) {
         return 0;
     }
     countNode->count += 1;
-    
+
     struct CountNode *nextCountNode = NULL;
     if (root->left || root->right) {
         if (countNode->next != NULL) {
@@ -2133,9 +2144,9 @@ int** levelOrderBottom(struct TreeNode* root, int** columnSizes, int* returnSize
     count ->next = NULL;
     int depth = countTree(root, count, 0);
     *returnSize = depth;
-    
+
     int *records = (int *)malloc(sizeof(int) * depth);
-    
+
     *columnSizes = (int *)malloc(sizeof(int) * depth);
     int **result = (int **)malloc(sizeof(int *) * depth);
     int index = 0;
@@ -2152,7 +2163,7 @@ int** levelOrderBottom(struct TreeNode* root, int** columnSizes, int* returnSize
         int value = (*columnSizes)[i];
         (*columnSizes)[i] = (*columnSizes)[depth-i-1];
         (*columnSizes)[depth-i-1] = value;
-        
+
         int *array = result[i];
         result[i] = result[depth-i-1];
         result[depth-i-1] = array;
@@ -2175,7 +2186,7 @@ void run107() {
         }
         printf("\n");
     }
-    
+
 }
 
 #pragma mark - 102. Binary Tree Level Order Traversal
@@ -2210,9 +2221,9 @@ int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {
     count ->next = NULL;
     int depth = countTree(root, count, 0);
     *returnSize = depth;
-    
+
     int *records = (int *)malloc(sizeof(int) * depth);
-    
+
     *columnSizes = (int *)malloc(sizeof(int) * depth);
     int **result = (int **)malloc(sizeof(int *) * depth);
     int index = 0;
@@ -2264,7 +2275,7 @@ char* longestCommonPrefix(char** strs, int strsSize) {
         return "";
     }
     char *result = malloc(maxSize+1);
-    
+
     char temp;
     bool end = false;
     maxSize = 0;
@@ -2290,7 +2301,7 @@ char* longestCommonPrefix(char** strs, int strsSize) {
 void run14() {
     char * input[2] = {"cba",""};
     char *result = longestCommonPrefix(input, 2);
-    
+
     printf("result %s",result);
 }
 
@@ -2361,7 +2372,7 @@ int** generate(int numRows, int** columnSizes, int* returnSize) {
 //https://leetcode.com/problems/bulls-and-cows/
 
 char* getHint(char* secret, char* guess) {
-    
+
     int A = 0;
     int length = (int)strlen(secret);
     int groupA[10] = {0};
@@ -2434,11 +2445,11 @@ void run299() {
 //}
 
 char* addBinary(char* a, char* b) {
-    
+
     int lengthA = (int)strlen(a);
     int lengthB = (int)strlen(b);
     int maxLength = lengthA > lengthB ? lengthA : lengthB;
-    
+
     int step = 0;
     char *result = malloc(maxLength+2);
     result[maxLength + 1] = '\0';
@@ -2498,7 +2509,7 @@ bool isPrimes(int n) {
 //            case 7:
 //            case 9:
 //                break;
-//                
+//
 //            default:
 //                return false;
 //                break;
@@ -2557,7 +2568,7 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
     if (head == NULL || n == 0) {
         return head;
     }
-    
+
     struct ListNode *tailNode = head;
     int index = 0;
     while (tailNode) {
@@ -2570,8 +2581,8 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
     if (tailNode == NULL) {
         return head->next;
     }
-    
-    
+
+
     struct ListNode *pre = head;
     struct ListNode *target = head;
     while (tailNode->next) {
@@ -2586,13 +2597,13 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
     if (pre == target) {
         return pre->next;
     }
-    
+
     if (target) {
         pre->next = target->next;
     } else {
         pre->next = NULL;
     }
-    
+
     return head;
 }
 
@@ -2605,7 +2616,7 @@ void run19() {
     struct ListNode* removeNode = removeNthFromEnd(list, 0);
 
     showLinkList(removeNode);
-    
+
 }
 
 
@@ -2616,11 +2627,11 @@ void run19() {
 int myAtoi(char* str) {
     int n=0; bool negtive=false;
     int tenth=INT_MAX/10;
-    
+
     while (*str==' ') str++;
     if (*str=='+') str++;
     else if (*str=='-') {negtive=true; str++;}
-    
+
     while (*str) {
         if (*str<'0' || *str>'9') break;
         if (n<=tenth) {
@@ -2631,11 +2642,11 @@ int myAtoi(char* str) {
         if (negtive) return INT_MIN;
         return INT_MAX;
     }
-    
+
     if (negtive) n=-n;
     return n;
 
-    
+
 }
 
 void run8() {
@@ -2652,7 +2663,7 @@ int* plusOne(int* digits, int digitsSize, int* returnSize) {
         steps = digits[i] / 10;
         digits[i] = digits[i] % 10;
     }
-    
+
     if (steps) {
         int *digits2 = (int *)malloc(sizeof(int) * (digitsSize+1));
         digits2[0] = steps;
@@ -2691,7 +2702,7 @@ void reverse(int *nums, int size) {
 }
 
 void rotate(int* nums, int numsSize, int k) {
-    
+
     k = k % numsSize;   //what dose the k meaning?
     reverse(nums, numsSize);
     reverse(nums, k);
@@ -2726,13 +2737,13 @@ bool isSameAlphabet(char input1, char input2) {
     } else {
         check1 = input1;
     }
-    
+
     if (input2 >= 'a') {
         check2 = input2 - 'a' + 'A';
     } else {
         check2 = input2;
     }
-    
+
     if (check1 == check2) {
         return true;
     }
@@ -2740,7 +2751,7 @@ bool isSameAlphabet(char input1, char input2) {
 }
 
 bool isPalindrome(char* s) {
-    
+
     int length = (int)strlen(s);
     int left = 0;
     int right = length-1;
@@ -2755,14 +2766,14 @@ bool isPalindrome(char* s) {
             right--;
             continue;
         }
-        
+
         if (isSameAlphabet(leftA, rightA)) {
             left++;
             right--;
         } else {
             return false;
         }
-        
+
     }
     return true;
 }
@@ -2800,14 +2811,14 @@ int isVowels(char letter) {
 }
 
 char* reverseVowels(char* s) {
-    
+
     size_t length = strlen(s);
     if (length == 0) {
         return s;
     }
     int left = 0;
     int right = (int)length - 1;
-    
+
     //size_t -- 不会出现负数 a. 会出现（right = 0-1） > left的情况
     while (left <= right) {
         char leftletter = s[left];
@@ -2832,7 +2843,7 @@ void run345(){
     char str[ ]="a.";
     char* ss = reverseVowels(str);
     printf("reverseVowels: %s\n", ss);
-    
+
 }
 
 #pragma mark - 350. Intersection of Two Arrays II
@@ -2844,14 +2855,14 @@ int cmp(const void *a, const void *b) {
 
 
 int* intersect(int* nums1, int nums1Size, int* nums2, int nums2Size, int* returnSize) {
-    
+
     qsort(nums1, nums1Size, sizeof(nums1[0]), cmp);
     qsort(nums2, nums2Size, sizeof(nums2[0]), cmp);
-    
+
     int minSize = nums1Size > nums2Size ? nums2Size : nums1Size;
     int *result =  (int *)malloc(sizeof(int)*minSize);
     int resultSize = 0;
-    
+
     int i = 0, j = 0;
     while (i < nums1Size && j < nums2Size) {
         int num1 = nums1[i];
@@ -2868,18 +2879,18 @@ int* intersect(int* nums1, int nums1Size, int* nums2, int nums2Size, int* return
         }
     }
     *returnSize = resultSize;
-    
+
     return result;
 }
 
 void run350(){
-    
+
     int input1[10] = {123,3,14,5,1234,156,3,7,1,19};
     int input2[6] = {4,11,2,46,1,1234};
-    
+
     int size = 0;
     int *result = intersect(input1, 10, input2, 6, &size);
-    
+
     for (int i = 0 ; i < size; i++) {
         printf("%d\n", result[i]);
     }
@@ -2936,7 +2947,7 @@ void run349(){
 int getSum(int a, int b) {
     int result = 0;
     int carry = 0;
-    
+
     while (b) {
         result = a ^ b;
         carry = a & b;
@@ -2976,7 +2987,7 @@ void run344() {
 //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 int maxProfit(int* prices, int pricesSize) {
-    
+
 //Version 1.0 Time Limit Exceeded
     int result = 0;
 //    for (int i = 0; i < pricesSize - 1; i++) {
@@ -2987,7 +2998,7 @@ int maxProfit(int* prices, int pricesSize) {
 //            }
 //        }
 //    }
-    
+
 //Version 2.0
     int minValue = INT_MAX;
     for (int i = 0; i < pricesSize; i++) {
@@ -3055,5 +3066,6 @@ void runEasyPart() {
 //    run437();
 //    run461();
 //    run448();
-    run463();
+//    run463();
+    run476();
 }

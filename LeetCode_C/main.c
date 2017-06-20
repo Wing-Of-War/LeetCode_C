@@ -8,19 +8,19 @@
 
 #include <stdio.h>
 
-#pragma mark - Leetcode
+// #pragma mark - Leetcode
 
 
-#include "LeetcodeEasyPart.h"
-#include "LeetcodeHardPart.h"
-#include "LeetcodeMediumPart.h"
+#include "Leetcode-Easy/LeetcodeEasyPart.h"
+// #include "LeetcodeHardPart.h"
+// #include "LeetcodeMediumPart.h"
 
 
-#include "Tree.h"
+// #include "Tree.h"
 
 int main(int argc, const char * argv[]) {
-    runEasyPart();
-    
+     runEasyPart();
+
 //    createTreeByString("");
     return 0;
 }

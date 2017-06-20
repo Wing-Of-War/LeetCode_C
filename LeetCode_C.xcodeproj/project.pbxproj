@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		28A1A5661DC6619900091846 /* LeetcodeHardPart.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A1A5641DC6619900091846 /* LeetcodeHardPart.c */; };
-		28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E980071C0EB3DB00D408F6 /* linked-list.c */; };
 		4E230CE91C1F78DB0079B81F /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E230CE71C1F78DB0079B81F /* Tree.c */; };
 		4E509D131D2C05DD0075FA2B /* LeetcodeEasyPart.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E509D111D2C05DD0075FA2B /* LeetcodeEasyPart.c */; };
 		4E85EC491C30B3EF003D35B4 /* Linked List Cycle.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E85EC471C30B3EF003D35B4 /* Linked List Cycle.c */; };
@@ -34,8 +33,6 @@
 /* Begin PBXFileReference section */
 		28A1A5641DC6619900091846 /* LeetcodeHardPart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = LeetcodeHardPart.c; path = "../../Leetcode-Easy/LeetcodeHardPart.c"; sourceTree = "<group>"; };
 		28A1A5651DC6619900091846 /* LeetcodeHardPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeetcodeHardPart.h; path = "../../Leetcode-Easy/LeetcodeHardPart.h"; sourceTree = "<group>"; };
-		28E980071C0EB3DB00D408F6 /* linked-list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "linked-list.c"; sourceTree = "<group>"; };
-		28E980081C0EB3DB00D408F6 /* linked-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linked-list.h"; sourceTree = "<group>"; };
 		4E230CE71C1F78DB0079B81F /* Tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Tree.c; sourceTree = "<group>"; };
 		4E230CE81C1F78DB0079B81F /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
 		4E230D081C1F8E0A0079B81F /* add-two-numbers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "add-two-numbers.c"; sourceTree = "<group>"; };
@@ -80,15 +77,6 @@
 			);
 			name = "Leetcode-Hard";
 			path = "Leetcode-Medium/Leetcode-Hard";
-			sourceTree = "<group>";
-		};
-		28E980061C0EB3DB00D408F6 /* Classic Algorithm */ = {
-			isa = PBXGroup;
-			children = (
-				28E980071C0EB3DB00D408F6 /* linked-list.c */,
-				28E980081C0EB3DB00D408F6 /* linked-list.h */,
-			);
-			path = "Classic Algorithm";
 			sourceTree = "<group>";
 		};
 		4E230CF61C1F8E0A0079B81F /* Leetcode-Easy */ = {
@@ -153,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				4ED5B4A11C1730BF00787711 /* PublicUtilize */,
-				28E980061C0EB3DB00D408F6 /* Classic Algorithm */,
 				4E230CF61C1F8E0A0079B81F /* Leetcode-Easy */,
 				4E230D071C1F8E0A0079B81F /* Leetcode-Medium */,
 				28D5CFCC1DC718B900B176F2 /* Leetcode-Hard */,
@@ -220,7 +207,6 @@
 			files = (
 				4ED5B4A51C1730E500787711 /* NumberArray.c in Sources */,
 				4E9BF4481C2678D8002260D6 /* LinkedList.c in Sources */,
-				28E980091C0EB3DB00D408F6 /* linked-list.c in Sources */,
 				4E85EC4C1C30BA34003D35B4 /* Linked List Cycle II.c in Sources */,
 				4EDDABE01D3BAE6E00627EF6 /* LeetcodeMediumPart.c in Sources */,
 				4EE441011C097D8700F9088E /* main.c in Sources */,
