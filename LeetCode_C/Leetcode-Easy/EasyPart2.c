@@ -15,6 +15,25 @@
 #include <math.h>
 
 
+
+#pragma mark - 476. Number Complement
+
+
+int findComplement(int num) {
+    int mask = 0;
+    while (mask < num) {
+        mask = (mask << 1) + 1;
+    }
+    return mask ^ num;
+}
+
+void run476() {
+    unsigned result = findComplement(5);
+    printf("\n%u \n", result);
+    unsigned result2 = findComplement(1);
+    printf("\n%u \n", result2);
+}
+
 #pragma mark - 561. Array Partition I
 
 
@@ -84,6 +103,7 @@ void run617() {
 
 void runEasyPart2() {
 //    run617();
-    run561();
+//    run561();
+    run476();
 }
 

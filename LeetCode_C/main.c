@@ -11,7 +11,8 @@
 // #pragma mark - Leetcode
 
 
-#include "Leetcode-Easy/LeetcodeEasyPart.h"
+//#include "Leetcode-Easy/LeetcodeEasyPart.h"
+#include "Leetcode-Easy/EasyPart2.h"
 // #include "LeetcodeHardPart.h"
 // #include "LeetcodeMediumPart.h"
 
@@ -22,5 +23,6 @@ int main(int argc, const char * argv[]) {
 //     runEasyPart();
 
 //    createTreeByString("");
+    runEasyPart2();
     return 0;
 }

@@ -10,18 +10,6 @@
 
 
 
-#pragma mark - 476. Number Complement
-
-int findComplement(int num) {
-    return 0;
-}
-
-void run476() {
-    int i = 1;
-    printf("%d", (~i)^(1));
-}
-
-
 #pragma mark - 463. Island Perimeter
 
 
@@ -3049,5 +3037,4 @@ void runEasyPart() {
 //    run461();
 //    run448();
 //    run463();
-    run476();
 }
