@@ -18,7 +18,22 @@
 #pragma mark - 557. Reverse Words in a String III
 
 
+/*
+ convert input as int, size_t is unsigned long, 0-1 is the largest number..
+ */
+
+void reverseWord(char *s, int front, int back) {
+    while (front <= back) {
+        char t = s[front];
+        s[front] = s[back];
+        s[back] = t;
+        front ++;
+        back --;
+    }
+}
+
 char* reverseWords(char* s) {
+    /* Version 1 with inappropriate input.
     size_t length = strlen(s);
     size_t index_f = 0, index_b, index_s;
     char *result = malloc(sizeof(char) * length);
@@ -55,17 +70,44 @@ char* reverseWords(char* s) {
         if (index_b == index_f) {
             result[index_b] = s[index_b];
         }
+    } */
+    size_t length = strlen(s);
+    size_t index_f = 0;
+    for (int index = 0; index <= length ; index++) {
+        if (s[index] == ' ' || index == length) {
+            reverseWord(s, (int)index_f, index-1);
+            index_f = index+1;
+        }
     }
-    return result;
+    return s;
 }
 
 void run556() {
+    
+/* Not a suitable input test
 //    char *input = "Let's take LeetCode contest";
 //    char *output = reverseWords(input);
 //    printf("%s\n", output);
-    char *input = "";
-    char *output = reverseWords(input);
-    printf("%s\n", output);
+//    char *input = "";
+//    char *output = reverseWords(input);
+//    printf("%s\n", output);
+ */
+    
+//    char input[] = "Let's take LeetCode contest";
+//    input[0] = '1';
+//    reverseWords(input);
+//    printf("%s \n", input);
+    
+    char input[] = "";
+    reverseWords(input);
+    printf("%s \n", input);
+    
+    
+    
+//    char input[] = "I love u";
+//    reverseWords(input);
+//    printf("%s \n", input);
+
 
 }
 
