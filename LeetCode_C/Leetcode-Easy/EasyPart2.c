@@ -15,6 +15,59 @@
 #include <math.h>
 
 
+#pragma mark - 557. Reverse Words in a String III
+
+
+char* reverseWords(char* s) {
+    size_t length = strlen(s);
+    size_t index_f = 0, index_b, index_s;
+    char *result = malloc(sizeof(char) * length);
+    for (int i = 0 ; i < length; i++) {
+        result[i] = ' ';
+    }
+    result[length] = '\0';
+    for (size_t index = 0; index < length; index++) {
+        if (s[index] == ' ') {
+            index_s = index;
+            index_b = index_s -1;
+            while (index_b > index_f) {
+                result[index_f] = s[index_b];
+                result[index_b] = s[index_f];
+                index_f ++;
+                index_b --;
+            }
+            if (index_b == index_f) {
+                result[index_b] = s[index_b];
+            }
+            result[index] = s[index];
+            index_f = index+1;
+        }
+        
+    }
+    if (length != 0) {
+        index_b = length -1;
+        while (index_b > index_f) {
+            result[index_f] = s[index_b];
+            result[index_b] = s[index_f];
+            index_f ++;
+            index_b --;
+        }
+        if (index_b == index_f) {
+            result[index_b] = s[index_b];
+        }
+    }
+    return result;
+}
+
+void run556() {
+//    char *input = "Let's take LeetCode contest";
+//    char *output = reverseWords(input);
+//    printf("%s\n", output);
+    char *input = "";
+    char *output = reverseWords(input);
+    printf("%s\n", output);
+
+}
 
 #pragma mark - 476. Number Complement
 
@@ -104,6 +157,7 @@ void run617() {
 void runEasyPart2() {
 //    run617();
 //    run561();
-    run476();
+//    run476();
+    run556();
 }
 
