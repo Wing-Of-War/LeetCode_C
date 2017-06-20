@@ -10,5 +10,6 @@
 #define LeetcodeHardPart_h
 
 #include <stdio.h>
+#include "Utilize.h"
 
 #endif /* LeetcodeHardPart_h */

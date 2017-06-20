@@ -7,16 +7,7 @@
 //
 
 #include "LeetcodeEasyPart.h"
-#include <string.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
-#include <math.h>
 
-#include "NumberArray.h"
-#include "Tree.h"
-#include "PublicUtilize.h"
 
 
 #pragma mark - 476. Number Complement
@@ -376,18 +367,9 @@ void run160() {
 #pragma mark - 414. Third Maximum Number
 //https://leetcode.com/problems/third-maximum-number/
 
-int cmpfunc2(const void *a, const void *b) {
-    if (*(int *)b > *(int *)a) {
-        return 1;
-    } else if (*(int *)b < *(int *)a ) {
-        return -1;
-    }
-    return 0;  //I can't figure out.
-}
-
 int thirdMax(int* nums, int numsSize) {
 
-    qsort(nums, numsSize, sizeof(int32_t), cmpfunc2);
+    qsort(nums, numsSize, sizeof(int32_t), cmpfunc);
     int result = nums[0];
     int index = 0;
     for (int i = 0; i< numsSize; i++) {
@@ -1854,7 +1836,7 @@ bool canConstruct(char* ransomNote, char* magazine) {
     }
 
     bool result = true;
-    for (int index; index < 26; index++) {
+    for (int index = 0; index < 26; index++) {
         if (sc[index] > tc[index]) {
             result = false;
             break;

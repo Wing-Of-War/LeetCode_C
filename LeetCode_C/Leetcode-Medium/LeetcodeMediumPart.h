@@ -10,7 +10,8 @@
 #define LeetcodeMediumPart_h
 
 #include <stdio.h>
+#include "Utilize.h"
 
-void runMediumPart();
+void runMediumPart(void);
 
 #endif /* LeetcodeMediumPart_h */

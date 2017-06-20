@@ -112,7 +112,7 @@ struct TreeNode *createTreeByString(char *input) {
 //    input = "[]";
 //    char *input = "[3,9,20,null,null,15,7]";
 //    char *input = "[-2,0,-1,null,3,0,null,6,null,5,-5]";
-    input = "[1,-2,-3,1,3,-2,null,-1]";
+//    input = "[1,-2,-3,1,3,-2,null,-1]";
     
     if (input == NULL) {
         return NULL;
@@ -219,15 +219,12 @@ struct TreeNode *creatTree(int *input, int size) {
 }
 
 
-
-#pragma mark -
-
 void printTree(struct TreeNode *tree) {
     if (tree == NULL) {
         return;
     }
+    printf(" %d \n", tree->val);
     printTree(tree->left);
     printTree(tree->right);
-    printf(" %d", tree->val);
     
 }

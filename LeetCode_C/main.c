@@ -19,7 +19,7 @@
 // #include "Tree.h"
 
 int main(int argc, const char * argv[]) {
-     runEasyPart();
+//     runEasyPart();
 
 //    createTreeByString("");
     return 0;

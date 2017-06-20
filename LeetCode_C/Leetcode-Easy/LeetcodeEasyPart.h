@@ -10,7 +10,7 @@
 #define LeetcodeEasyPart_h
 
 #include <stdio.h>
-
+#include "Utilize.h"
 
 char* reverseString(char* s);   //344, 405
 

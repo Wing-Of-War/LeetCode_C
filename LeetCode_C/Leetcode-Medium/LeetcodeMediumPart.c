@@ -7,7 +7,6 @@
 //
 
 #include "LeetcodeMediumPart.h"
-#include "Tree.h"
 #include <stdlib.h>
 
 #pragma mark - 442. Find All Duplicates in an Array
@@ -18,14 +17,6 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
-int cmpfunc(const void *a, const void *b) {
-    if (*(int *)b > *(int *)a) {
-        return -1;
-    } else if (*(int *)b < *(int *)a ) {
-        return 1;
-    }
-    return 0;  //I can't figure out.
-}
 
 int* findDuplicates(int* nums, int numsSize, int* returnSize) {
     qsort(nums, numsSize, sizeof(int32_t), cmpfunc);
