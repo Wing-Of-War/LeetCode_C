@@ -15,7 +15,8 @@
 #include "Leetcode-Easy/EasyPart2.h"
 // #include "LeetcodeHardPart.h"
 // #include "LeetcodeMediumPart.h"
-
+#include "HardPart.h"
+#include "MediumPart.h"
 
 // #include "Tree.h"
 
@@ -23,6 +24,9 @@ int main(int argc, const char * argv[]) {
 //     runEasyPart();
 
 //    createTreeByString("");
-    runEasyPart2();
+//    runEasyPart2();
+//    runHardPart();
+    runMediumPart();
+    
     return 0;
 }

@@ -7,12 +7,6 @@
 //
 
 #include "EasyPart2.h"
-#include <string.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
-#include <math.h>
 
 
 #pragma mark - 557. Reverse Words in a String III

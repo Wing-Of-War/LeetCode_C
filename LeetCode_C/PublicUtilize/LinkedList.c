@@ -23,14 +23,14 @@ struct ListNode* reverseList(struct ListNode* head) {
 }
 
 
-struct ListNode *newNode(int value) {
+struct ListNode *createNode(int value) {
     struct ListNode *node = (struct ListNode *)malloc(sizeof(struct ListNode));
     node->val = value;
     node->next = NULL;
     return node;
 }
 
-void showLinkList(struct ListNode *head) {
+void printLinkList(struct ListNode *head) {
     if (head == NULL) {
         return;
     }
@@ -48,7 +48,7 @@ struct ListNode *createLinkList(int *nums, int size) {
     struct ListNode *previous = NULL;
     struct ListNode *head = NULL;
     for (int i = 0 ; i < size; i++) {
-        struct ListNode *node = newNode(nums[i]);
+        struct ListNode *node = createNode(nums[i]);
         if (previous == NULL) {
             previous = node;
             head = node;
@@ -57,6 +57,6 @@ struct ListNode *createLinkList(int *nums, int size) {
             previous = node;
         }
     }
-    showLinkList(head);
+    printLinkList(head);
     return head;
 }

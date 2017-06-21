@@ -12,6 +12,6 @@
 #include <stdio.h>
 #include "Utilize.h"
 
-void runMediumPart(void);
+void runMediumPart1(void);
 
 #endif /* LeetcodeMediumPart_h */

@@ -95,6 +95,6 @@ void flatten(struct TreeNode* root) {
 }
 
 
-void runMediumPart() {
+void runMediumPart1() {
     run442();
 }

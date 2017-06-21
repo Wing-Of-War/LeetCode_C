@@ -16,10 +16,10 @@ struct ListNode {
     struct ListNode *next;
 };
 
-struct ListNode *newNode(int value) ;
+struct ListNode *createNode(int value) ;
 struct ListNode *createLinkList(int *nums, int size) ;
 struct ListNode* reverseList(struct ListNode* head);
 
-void showLinkList(struct ListNode *head) ;
+void printLinkList(struct ListNode *head) ;
 
 #endif /* LinkedList_h */

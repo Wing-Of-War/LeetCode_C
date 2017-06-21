@@ -891,7 +891,7 @@ void run21() {
     struct ListNode *node1 = createLinkList(nums1, 4);
     struct ListNode *node2 = createLinkList(nums2, 6);
     struct ListNode *node3 = mergeTwoLists(node1, node2);
-    showLinkList(node3);
+    printLinkList(node3);
 }
 
 
@@ -956,7 +956,7 @@ void run83() {
 
     int nums[] = {1,1,2,3,3};
     struct ListNode *list = createLinkList(nums, 5);
-    showLinkList(deleteDuplicates(list));
+    printLinkList(deleteDuplicates(list));
 
     //    int nums[] = {1};
     //    struct ListNode *list = createLinkList(nums, 1);
@@ -982,7 +982,7 @@ void run206(void) {
     int input[size] = {1,2,3,4,5,6};
     struct ListNode *node = createLinkList(input, size);
     struct ListNode *reversList = reverseList(node);
-    showLinkList(reversList);
+    printLinkList(reversList);
 }
 
 
@@ -2585,7 +2585,7 @@ void run19() {
     struct ListNode *list =  createLinkList(inputArray, size);
     struct ListNode* removeNode = removeNthFromEnd(list, 0);
 
-    showLinkList(removeNode);
+    printLinkList(removeNode);
 
 }
 
