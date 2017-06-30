@@ -10,6 +10,84 @@
 #include <string.h>
 
 
+#pragma mark - 566. Reshape the Matrix
+//https://leetcode.com/problems/reshape-the-matrix/#/description
+
+int** matrixReshape(int** nums, int numsRowSize, int numsColSize, int r, int c, int** columnSizes, int* returnSize) {
+    if (numsRowSize*numsColSize != r * c) {
+        r = numsRowSize;
+        c = numsColSize;
+    }
+    int **returnShape = (int **)malloc(sizeof(int *) * r);
+    *columnSizes = (int *)malloc(sizeof(int) * r);
+    *returnSize = r;
+    
+    for (int i = 0 ; i < r; i++) {
+        returnShape[i] = (int *)malloc(sizeof(int) * c);
+        (*columnSizes)[i] = c;
+    }
+    
+    for (int i = 0 ; i < numsColSize * numsRowSize; i++) {
+        int value = nums[i/numsColSize][i%numsColSize];
+        returnShape[i/c][i%c] = value;
+//        int value = *((int *)nums + i);
+//        if (i % c == 0) {
+//            int row = i / c;
+//            printf("new row %d\n", row);
+//            array = (int *)malloc(sizeof(c));
+//            returnShape[row] = array;
+//            (*columnSizes)[row] = c;
+//        }
+//        int index = i % c;
+//        array[index] = value;
+//        printf("index %d: value %d\n", index, value);
+    }
+    return returnShape;
+}
+
+void Func4(int **ppArr, int row, int col) {
+//    printf("ppAr[1][2] = %d\n", *((int *)ppArr + 1 * col +2));
+//    for (int i = 0; i < col * row; i++) {
+//        printf("%d \n", *((int *)ppArr + i));
+//    }
+    
+    for (int i = 0 ; i < row * col; i++) {
+        int value = ppArr[i/col][i%col];
+    }
+        
+}
+
+void run566() {
+    int row = 2;
+    int col = 3;
+    int nums[2][3] = {{2,3,4},{5,6,7}};
+    int *columnSizes;
+    int returnSize;
+    //    for (int i = 0; i < 6; i++) {
+    //        printf("%d\n", *(p+i));
+    //    }
+    //
+    //    for (int i = 0; i < row; i++) {
+    //        for (int j = 0; j < col ; j++) {
+    //            printf("%d ", *(*(input+i)+j));
+    //        }
+    //        printf("\n");
+    //    }
+    Func4((int **)nums,3, 2);
+    
+    int **returnShape = matrixReshape((int **)nums, row, col, col, row, &columnSizes, &returnSize);
+    
+    Func4(returnShape, 3, 2);
+    
+    //    int *p = input[0];
+    //    int output[3][2];
+    //    int *p2 = output[0];
+    //    for (int i = 0; i < row*col; i++) {
+    //        printf("%d ", *(p+i));
+    //        *(p2+i) = *(p+i);
+    //    }
+}
+
 #pragma mark - 500. Keyboard Row
 //https://leetcode.com/problems/keyboard-row/#/description
 
@@ -238,7 +316,7 @@ void runEasyPart2() {
 //    run561();
 //    run476();
 //    run556();
-//    run566();
-    run500();
+    run566();
+//    run500();
 }
 
