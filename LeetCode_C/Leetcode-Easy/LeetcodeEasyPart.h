@@ -14,6 +14,6 @@
 
 char* reverseString(char* s);   //344, 405
 
-void runEasyPart();
+void runEasyPart(void);
 
 #endif /* LeetcodeEasyPart_h */

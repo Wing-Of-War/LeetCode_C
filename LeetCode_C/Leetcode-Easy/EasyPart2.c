@@ -7,6 +7,49 @@
 //
 
 #include "EasyPart2.h"
+#include <string.h>
+
+
+#pragma mark - 500. Keyboard Row
+//https://leetcode.com/problems/keyboard-row/#/description
+
+char** findWords(char** words, int wordsSize, int* returnSize) {
+    int key[26] = {2,3,3,2,1,2,2,2,1,2,2,2,3,3,1,1,1,1,2,1,1,3,1,3,1,3};
+    char **result = (char **)malloc(sizeof(char *) * wordsSize);
+    for (int i = 0; i < wordsSize; i++) {
+        char *word = *(words + i);
+        char *p = word;
+        bool samerow = true;
+        int row = key[tolower(*p) - 'a'];
+        p++;
+        while (*p) {
+            if (row != key[tolower(*p) - 'a']) {
+                samerow = false;
+                break;
+            }
+            p++;
+        }
+        if (samerow) {
+            result[*returnSize] = word;
+            (*returnSize)++;
+        }
+    }
+    return result;
+}
+
+void run500() {
+//    char *testcase[4] = {
+//        "Hello", "Alaska", "Dad", "Peace"
+//    };
+    char *testcase[4] = {
+        "qz","wq","asdddafadsfa","adfadfadfdassfawde"
+    };
+    int returnSize=0;
+    char **result = findWords(testcase, 4, &returnSize);
+    printf("1. %s\n", result[0]);
+    printf("2. %s\n", result[1]);
+    
+}
 
 
 #pragma mark - 557. Reverse Words in a String III
@@ -194,6 +237,8 @@ void runEasyPart2() {
 //    run617();
 //    run561();
 //    run476();
-    run556();
+//    run556();
+//    run566();
+    run500();
 }
 

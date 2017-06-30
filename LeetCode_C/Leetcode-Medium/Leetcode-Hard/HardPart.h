@@ -13,7 +13,7 @@
 #include "Utilize.h"
 
 
-void runHardPart();
+void runHardPart(void);
 
 
 #endif /* HardPart_h */

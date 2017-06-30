@@ -22,11 +22,14 @@
 
 int main(int argc, const char * argv[]) {
 //     runEasyPart();
-
-//    createTreeByString("");
-//    runEasyPart2();
-//    runHardPart();
-    runMediumPart();
+    runEasyPart2();
     
+//    runHardPart();
+//    runMediumPart();
+    
+//    int x[4] = {1,2,3,4};
+//    printf("%d", sizeof(&x));
+//    int *p1 = &x + 1;
+//    int *p2 = x;
     return 0;
 }

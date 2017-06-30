@@ -12,6 +12,6 @@
 #include <stdio.h>
 #include "Utilize.h"
 
-void runMediumPart();
+void runMediumPart(void);
 
 #endif /* MediumPart_h */
