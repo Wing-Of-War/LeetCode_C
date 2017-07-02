@@ -10,6 +10,30 @@
 #include <string.h>
 
 
+#pragma mark - 575. Distribute Candies
+
+
+int distributeCandies(int* candies, int candiesSize) {
+    long records[200001] = {};
+    int types = 0;
+    for (int i = 0; i < candiesSize; i++) {
+        long value = candies[i] + 100000;
+        if (records[value] == 0) {
+            types ++;
+        }
+        records[value]++;
+    }
+    if (types > (candiesSize/2)) {
+        return candiesSize/2;
+    }
+    return types;
+}
+
+void run575() {
+    int input[4] = {1,1,2,3};
+    distributeCandies(input, 4);
+}
+
 #pragma mark - 566. Reshape the Matrix
 //https://leetcode.com/problems/reshape-the-matrix/#/description
 
@@ -316,7 +340,8 @@ void runEasyPart2() {
 //    run561();
 //    run476();
 //    run556();
-    run566();
+//    run566();
 //    run500();
+    run575();
 }
 
