@@ -9,6 +9,32 @@
 #include "EasyPart2.h"
 #include <string.h>
 
+#pragma mark - 496. Next Greater Element I
+
+int* nextGreaterElement(int* findNums, int findNumsSize, int* nums, int numsSize, int* returnSize) {
+    int *result = (int *)malloc(sizeof(int) * findNumsSize);
+    for (int i = 0; i < findNumsSize; i++) {
+        result[i] = -1;
+        bool beginToFind = false;
+        for (int j = 0 ; j < numsSize; j++) {
+            if (findNums[i] == nums[j]) {
+                beginToFind = true;
+            }
+            if (beginToFind & (findNums[i] < nums[j])) {
+                result[i] = nums[j];
+                break;
+            }
+        }
+    }
+    *returnSize = findNumsSize;
+    return result;
+}
+
+void run496() {
+    int input1[] = {4,1,2};
+    int input2[] = {1,3,2,4};
+    nextGreaterElement(input1, 3, input2, 2, NULL);
+}
 
 #pragma mark - 575. Distribute Candies
 
@@ -76,7 +102,7 @@ void Func4(int **ppArr, int row, int col) {
 //    }
     
     for (int i = 0 ; i < row * col; i++) {
-        int value = ppArr[i/col][i%col];
+//        int value = ppArr[i/col][i%col];
     }
         
 }
@@ -342,6 +368,7 @@ void runEasyPart2() {
 //    run556();
 //    run566();
 //    run500();
-    run575();
+//    run575();
+    run496();
 }
 
